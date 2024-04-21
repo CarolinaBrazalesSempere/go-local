@@ -1,0 +1,37 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+}
+
+.search-container input:focus-visible {
+  outline: white;
+}
+
+.search-container input:focus {
+  background-color: #ecececf4;
+}
+
+@media (min-width: 768px) {
+  .search-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .search-container input {
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+
+  .search-container input:last-child {
+    margin-right: 0;
+  }
+}

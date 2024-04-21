@@ -1,0 +1,18 @@
+.hero-banner {
+  width: 100%; /* La imagen ocupa todo el ancho */
+}
+
+.hero-text {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrar vertical y horizontalmente */
+  color: #3f3d56;
+  text-align: center;
+  font-weight: bold;
+  font-size: 56px;
+}
+
+.hero-banner-container {
+  position: relative;
+}

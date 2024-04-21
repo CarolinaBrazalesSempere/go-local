@@ -1,0 +1,13 @@
+.navbar-brand-img {
+  width: 71px;
+}
+
+ul > li > a {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.navbar-session-img {
+  width: 48px;
+}
