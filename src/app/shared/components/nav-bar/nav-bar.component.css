@@ -11,3 +11,7 @@ ul > li > a {
 .navbar-session-img {
   width: 48px;
 }
+
+a.navbar-brand {
+  margin: 0px;
+}
