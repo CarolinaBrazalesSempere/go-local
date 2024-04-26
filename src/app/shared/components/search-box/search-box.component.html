@@ -1,10 +1,17 @@
 <form class="container">
     <div class="search-container">
-        <input type="text" placeholder="Parámetro 1">
-        <input type="text" placeholder="Parámetro 2">
-        <input type="text" placeholder="Parámetro 3">
-        <button class="btn btn-primary" type="button">Suscribirme</button>
+        <div class="input-group">
+            <input type="text" placeholder="País" class="form-control with-icon" id="country">
+            <label for="pais"><img src="assets/img/location.svg"></label>
+        </div>
+        <div class="input-group">
+            <input type="text" placeholder="Ciudad" class="form-control with-icon" id="city">
+            <label for="ciudad"><img src="assets/img/building.svg"></label>
+        </div>
+        <div class="input-group">
+            <input type="text" placeholder="Fecha" class="form-control with-icon" id="date">
+            <label for="fecha"><img src="assets/img/calendar.svg"></label>
+        </div>
+        <button class="btn-search" type="button">Buscar</button>
     </div>
-
-
 </form>

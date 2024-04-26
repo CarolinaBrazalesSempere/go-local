@@ -16,3 +16,17 @@
 .hero-banner-container {
   position: relative;
 }
+
+@media (max-width: 576px) {
+  .hero-text {
+    font-size: 20px;
+    top: 16%;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .hero-text {
+    font-size: 32px;
+    top: 16%;
+  }
+}
