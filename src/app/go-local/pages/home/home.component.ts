@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {}
+export class HomeComponent {
+  //TODO: INTENTAR QUE LA INFO ESTÉ EN ARRAYS Y ACCEDER A LAS POSICIONES CON NG FOR
+}
