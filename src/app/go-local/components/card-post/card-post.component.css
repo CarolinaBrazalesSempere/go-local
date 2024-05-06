@@ -11,3 +11,15 @@
   width: 18rem;
   margin: 32px;
 }
+
+.read-more {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: auto;
+  }
+}

@@ -53,6 +53,10 @@ h4 {
   h3 {
     font-size: 1rem;
   }
+
+  .card {
+    max-width: auto;
+  }
 }
 
 @media (min-width: 577px) and (max-width: 992px) {

@@ -23,4 +23,8 @@
   .card {
     width: auto;
   }
+
+  .btn-medium {
+    width: 100%;
+  }
 }
