@@ -8,19 +8,37 @@ body {
 }
 
 /*Text styles*/
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  color: #3e3737;
+}
 h1 {
   font-weight: 700;
   font-size: 3.5rem;
+  color: #3e3737;
 }
 
 h2 {
   font-weight: 700;
   font-size: 2rem;
+  color: #3e3737;
 }
 
 h3 {
   font-size: 1.6rem;
+  color: #3e3737;
   font-weight: 700;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3e3737;
 }
 
 @media (max-width: 576px) {
@@ -69,4 +87,8 @@ h3 {
   border-radius: 8px;
   text-transform: uppercase;
   border: none;
+}
+
+.align-self {
+  align-self: center;
 }
