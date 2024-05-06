@@ -1,32 +1,54 @@
 .hero-banner {
-  width: 100%; /* La imagen ocupa todo el ancho */
+  width: 100%;
 }
 
 .hero-text {
   position: absolute;
   top: 16%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centrar vertical y horizontalmente */
+  transform: translate(-50%, -50%);
   color: #3f3d56;
   text-align: center;
-  font-weight: bold;
-  font-size: 56px;
 }
 
 .hero-banner-container {
   position: relative;
 }
 
-@media (max-width: 576px) {
-  .hero-text {
-    font-size: 20px;
-    top: 16%;
+.info-block > section {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+}
+
+.info-block > section > img {
+  width: 40px;
+  margin-bottom: 16px;
+  align-self: center;
+}
+
+.be-guide-block > div > button {
+  align-self: center;
+  margin-top: 16px;
+}
+
+@media (min-width: 575px) {
+  .info-block,
+  .be-guide-block {
+    margin-top: 48px;
   }
 }
 
-@media (min-width: 577px) and (max-width: 992px) {
-  .hero-text {
-    font-size: 32px;
-    top: 16%;
+@media (max-width: 967px) {
+  .image-container img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .be-guide-block {
+    padding: 32px;
   }
 }
