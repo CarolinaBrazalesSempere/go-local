@@ -2,6 +2,71 @@
   font-family: "Montserrat", sans-serif;
 }
 
+/*General text color*/
 body {
-  color: #3f3d56;
+  color: #3e3737;
+}
+
+/*Text styles*/
+h1 {
+  font-weight: 700;
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+.btn-medium {
+  width: 230px;
+  height: 45px;
+  background-color: #f24e1e;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.32px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  border: none;
+}
+
+.btn-small {
+  width: 123px;
+  height: 33px;
+  background-color: #f24e1e;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.32px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  border: none;
 }
