@@ -35,16 +35,25 @@
             <p>¿Eres un amante de tu ciudad o región? ¿Conoces cada callejón oculto, cada historia interesante y cada
                 rincón auténtico? ¡Entonces únete a nuestra comunidad como guía local y comparte tu pasión por tu
                 entorno con viajeros de todo el mundo! </p>
+            <a class="link-secondary d-md-none d-flex" (click)="rotateChevron()" data-bs-toggle="collapse"
+                href="#collapseInfo" aria-expanded="false" aria-controls="collapseInfo">
+                Leer más
+                <img class="chevron-down" [ngClass]="{'chevron-up': isRotated}" src="assets/img/chevron.svg">
+            </a>
 
-            <p>Convertirse en guía local es una oportunidad única para compartir
-                tus conocimientos y experiencias mientras muestras lo mejor de tu destino a aquellos que lo visitan.
-                Desde la joya escondida que solo los lugareños conocen hasta los monumentos emblemáticos, cada recorrido
-                que ofreces es una oportunidad para mostrar la verdadera esencia de tu hogar. </p>
+            <div class="collapse d-md-block" id="collapseInfo" [ngClass]="{'show': !isCollapsed}">
+                <p>Convertirse en guía local es una oportunidad única para compartir
+                    tus conocimientos y experiencias mientras muestras lo mejor de tu destino a aquellos que lo visitan.
+                    Desde la joya escondida que solo los lugareños conocen hasta los monumentos emblemáticos, cada
+                    recorrido
+                    que ofreces es una oportunidad para mostrar la verdadera esencia de tu hogar. </p>
 
-            <p>Enseña la historia, la
-                gastronomía, la arquitectura o la naturaleza ¡Crea tus propias experiencias y deja una impresión
-                duradera en cada viajero que tenga la fortuna de explorar contigo! Únete a nosotros y convierte tu amor
-                por tu ciudad en una emocionante aventura como guía local.</p>
+                <p>Enseña la historia, la
+                    gastronomía, la arquitectura o la naturaleza ¡Crea tus propias experiencias y deja una impresión
+                    duradera en cada viajero que tenga la fortuna de explorar contigo! Únete a nosotros y convierte tu
+                    amor
+                    por tu ciudad en una emocionante aventura como guía local.</p>
+            </div>
             <button class="btn-medium">Unirme</button>
         </div>
     </section>
