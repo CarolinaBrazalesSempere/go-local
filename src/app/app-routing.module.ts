@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './go-local/pages/home/home.component';
 import { FaqsComponent } from './go-local/pages/faqs/faqs.component';
 import { BlogComponent } from './go-local/pages/blog/blog.component';
+import { PerfilUsuarioComponent } from './go-local/pages/perfil-usuario/perfil-usuario.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'blog',
     component: BlogComponent,
+  },
+  {
+    path: 'perfil-usuario',
+    component: PerfilUsuarioComponent,
   },
   {
     path: '**',

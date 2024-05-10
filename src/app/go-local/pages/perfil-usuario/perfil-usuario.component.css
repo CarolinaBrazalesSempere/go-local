@@ -1,0 +1,21 @@
+.my-5-custom{
+  margin-top: 72px;
+  margin-bottom: 72px;
+}
+
+.custom-border-bottom {
+  border-bottom: 1px solid #ccc;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.foto{
+  margin-left: auto;
+  margin-top: 110px;
+}
+
+.boton{
+  margin-top: -25px;
+}
+
