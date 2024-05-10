@@ -7,10 +7,11 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
 import { FooterComponent } from './components/footer/footer.component';
 import { OpinionComponent } from './components/opinion/opinion.component';
 import { TarjetaGuiaComponent } from './components/tarjeta-guia/tarjeta-guia.component';
+import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 
 @NgModule({
-  declarations: [NavBarComponent, SearchBoxComponent, FooterComponent, OpinionComponent,TarjetaGuiaComponent ],
+  declarations: [NavBarComponent, SearchBoxComponent, FooterComponent, OpinionComponent,TarjetaGuiaComponent, SobreMiComponent ],
   imports: [CommonModule, RouterModule],
-  exports: [NavBarComponent, SearchBoxComponent, FooterComponent, OpinionComponent,TarjetaGuiaComponent ],
+  exports: [NavBarComponent, SearchBoxComponent, FooterComponent, OpinionComponent,TarjetaGuiaComponent, SobreMiComponent ],
 })
 export class SharedModule {}

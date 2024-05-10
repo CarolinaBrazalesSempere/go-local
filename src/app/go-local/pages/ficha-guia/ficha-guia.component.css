@@ -14,12 +14,20 @@
   width: 50%;
 }
 
+
+
 .posibilidades, .caracteristicas{
   margin-left: 10%;
 }
 
 hr{
   width: 100%;
+}
+
+@media (max-width: 967px){
+  .d-flex{
+    display: grid !important;
+  }
 }
 
 

@@ -48,6 +48,18 @@
   margin-left: auto;
 }
 
+.w-custom{
+  width: 300px;
+}
+
+@media (max-width: 967px){
+  .card{
+    display: flex;
+    position: relative;
+    margin-left: auto;
+  }
+}
+
 
 
 
