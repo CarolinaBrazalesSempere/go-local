@@ -8,9 +8,10 @@ import { FaqsComponent } from './go-local/pages/faqs/faqs.component';
 
 import { SharedModule } from './shared/shared.module';
 import { GoLocalModule } from './go-local/go-local.module';
+import { ArticuloComponent } from './go-local/pages/articulo/articulo.component';
 
 @NgModule({
-  declarations: [AppComponent, BlogComponent, FaqsComponent],
+  declarations: [AppComponent, BlogComponent, FaqsComponent, ArticuloComponent],
   imports: [SharedModule, BrowserModule, AppRoutingModule, GoLocalModule],
   providers: [],
   bootstrap: [AppComponent],
