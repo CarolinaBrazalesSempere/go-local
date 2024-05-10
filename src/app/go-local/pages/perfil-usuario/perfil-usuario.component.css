@@ -12,10 +12,29 @@
 
 .foto{
   margin-left: auto;
-  margin-top: 110px;
 }
 
 .boton{
   margin-top: -25px;
+}
+
+.formulario{
+  width: 60%;
+}
+
+@media (max-width: 967px) {
+  .form-foto {
+    display: grid !important;
+  }
+  .form-foto .foto,
+  .form-foto .formulario {
+    order: initial !important;
+  }
+
+  .form-foto .foto{
+    margin: 0 auto;
+    margin-top: 62px;
+    margin-bottom: 62px;
+  }
 }
 
