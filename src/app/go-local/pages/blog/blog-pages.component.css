@@ -9,3 +9,69 @@
   background: #FFF;
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+
+/* No funciona */
+.custom-gap {
+  gap: 14px;
+}
+
+.top-text > p {
+  font-size: 18px;
+}
+
+.top-text > h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+ .mid-text > h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.mid-text > p {
+  font-size: 18px;
+}
+
+.bottom-text > p {
+  font-size: 14px;
+}
+
+.bottom-text > h4 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+#mid-img-1 {
+  border-radius: 8px 8px 0px 0px;
+  background: #FFCEA1;
+}
+
+#mid-img-2 {
+  border-radius: 8px 8px 0px 0px;
+  background: rgba(242, 78, 30, 0.11);
+}
+
+#bottom-img-1 {
+  border-radius: 8px 8px 0px 0px;
+  background: #FFB099;
+}
+
+#bottom-img-2 {
+  border-radius: 8px 8px 0px 0px;
+  background: #FFD978;
+}
+
+#bottom-img-3 {
+  border-radius: 8px 8px 0px 0px;
+  background: #C3E4F6;
+}
+
+
+#bottom-img-4 {
+  border-radius: 8px 8px 0px 0px;
+  background: #FFD9C3;
+}
