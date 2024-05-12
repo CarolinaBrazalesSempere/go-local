@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { FaqsModalService } from '../../services/faqs-modal.service';
 
 @Component({
   selector: 'app-faqs-page',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class FaqsPageComponent {
 
+  constructor(private faqsModalService: FaqsModalService) { }
+
+  openModal() {
+    this.faqsModalService.showModal();
+  }
 }

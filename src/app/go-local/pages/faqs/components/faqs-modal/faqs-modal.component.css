@@ -1,0 +1,36 @@
+#name {
+  background-color: #E6E6E6;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#address {
+  background-color: #E6E6E6;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#message {
+  background-color: #E6E6E6;
+  border: none;
+  border-radius: 8px;
+}
+
+#terms-link {
+  color: #F24E1E;
+}
+
+#contact-button {
+  background-color: #F24E1E;
+  border: none;
+  border-radius: 8px;
+  color: #FCFCFC;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  text-align: center;
+}
+

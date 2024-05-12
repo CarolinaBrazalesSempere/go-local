@@ -1,1 +1,34 @@
-<p>faqs-modal works!</p>
+<div id="faqsModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="faqsModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">¡No dudes en preguntar!</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+
+      <div id="body-container" class="modal-body">
+        <div id="name-container" class="mb-3">
+          <input type="text" id="name" class="form-control" placeholder="Nombre">
+        </div>
+
+        <div id="address-container" class="mb-3">
+          <input type="text" id="address" class="form-control" placeholder="E-Mail">
+        </div>
+
+        <div id="message-container" class="mb-3">
+          <textarea id="message" class="form-control" placeholder="¿Qué dudas tienes?" rows="3"></textarea>
+        </div>
+
+        <div id="terms-container" class="form-check mb-3">
+          <input type="checkbox" id="acceptTerms" class="form-check-input">
+          <label for="acceptTerms" class="form-check-label">Acepto los <a id="terms-link" href="#">términos y condiciones</a></label>
+        </div>
+
+        <button type="button" id="contact-button" class="btn btn-primary">Contáctanos</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

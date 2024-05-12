@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { FaqsPageComponent } from './components/faqs-page/faqs-page.component';
 import { FaqsModalComponent } from './components/faqs-modal/faqs-modal.component';
+import { FaqsModalService } from './services/faqs-modal.service';
 
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     FaqsModalComponent,
@@ -17,6 +18,12 @@ import { FaqsModalComponent } from './components/faqs-modal/faqs-modal.component
     FaqsModalComponent,
     FaqsPageComponent
   ],
-  providers: [],
+  providers: [
+    FaqsModalService
+  ],
+  bootstrap: [
+    FaqsModalComponent,
+    FaqsPageComponent
+  ]
 })
 export class FaqsModule { }
