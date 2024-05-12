@@ -23,11 +23,9 @@
   right: 8px;
 }
 
-/* Necesario modificar*/
-/* #body-container {
-  margin-left: 114px;
-  margin-right: 114px;
-} */
+#body-container .row {
+  --bs-gutter-x: 1rem;
+}
 
 #name {
   background-color: #E6E6E6;
@@ -49,10 +47,14 @@
   border-radius: 8px;
 }
 
-/* Necesario modificar*/
-/* #button-container {
-  margin-bottom: 88px;
-} */
+.form-check-input[type="checkbox"] {
+  border-radius: 0;
+  border-color: #3f3d56;
+}
+
+.form-check-input[type="checkbox"]:checked {
+  background-color: #F24E1E;
+}
 
 #terms-link {
   color: #F24E1E;
@@ -70,7 +72,6 @@
   text-align: center;
   padding: 12px;
 }
-
 
 @media (max-width: 768px) {
   .modal-header {
@@ -93,9 +94,7 @@
 }
 
 @media (max-width: 576px) {
-
   #contact-button {
     font-size: 16px;
   }
 }
-

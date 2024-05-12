@@ -6,6 +6,7 @@
 #faqs-title-text {
   color: #3f3d56;
   font-size: 48px;
+  font-style: normal;
   font-weight: 700;
   line-height: 140%;
   text-align: center;
@@ -14,23 +15,17 @@
 .accordion {
   border-radius: 8px;
   box-shadow: 2px 2px 4px 3px rgba(0, 0, 0, 0.25);
-  /* margin-left: 20%; */
-  /* margin-right: 20%; */
   margin-left: 144px;
   margin-right: 144px;
   min-width: 320px;
 }
 
-@media (max-width: 576px) {
-  .accordion {
-    min-width: 320px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
-
 .accordion-button {
-  font-weight: bold;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
 }
 
 /* Cambia el color del encabezado cuando está activo */
@@ -61,6 +56,7 @@
   color: #3f3d56;
   cursor: pointer;
   font-size: 48px;
+  font-style: normal;
   font-weight: 600;
   line-height: 140%;
   padding: 0;
@@ -84,3 +80,10 @@
   transform: scaleX(1);
 }
 
+@media (max-width: 576px) {
+  .accordion {
+    min-width: 320px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
