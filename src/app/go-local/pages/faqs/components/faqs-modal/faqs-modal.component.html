@@ -1,31 +1,40 @@
 <div id="faqsModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="faqsModalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">¡No dudes en preguntar!</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <button type="button" class="close-button" data-bs-dismiss="modal" aria-label="Close">
+          <img src=".\assets\img\close-buton\close-button.svg" />
         </button>
+        <h4 class="modal-title flex-grow-1">¡No dudes en preguntar!</h4>
+        <!-- <button type="button" class="close-button" data-bs-dismiss="modal" aria-label="Close">
+          <img src=".\assets\img\close-buton\close-button.svg" />
+        </button> -->
       </div>
 
       <div id="body-container" class="modal-body">
-        <div id="name-container" class="mb-3">
-          <input type="text" id="name" class="form-control" placeholder="Nombre">
-        </div>
+        <div class="row">
+          <div id="name-container" class="col-md-6 mb-3">
+            <input type="text" id="name" class="form-control" placeholder="Nombre">
+          </div>
 
-        <div id="address-container" class="mb-3">
-          <input type="text" id="address" class="form-control" placeholder="E-Mail">
+          <div id="address-container" class="col-md-6 mb-3">
+            <input type="text" id="address" class="form-control" placeholder="E-Mail">
+          </div>
         </div>
 
         <div id="message-container" class="mb-3">
-          <textarea id="message" class="form-control" placeholder="¿Qué dudas tienes?" rows="3"></textarea>
+          <textarea id="message" class="form-control" placeholder="¿Qué dudas tienes?" rows="10"></textarea>
         </div>
 
-        <div id="terms-container" class="form-check mb-3">
-          <input type="checkbox" id="acceptTerms" class="form-check-input">
-          <label for="acceptTerms" class="form-check-label">Acepto los <a id="terms-link" href="#">términos y condiciones</a></label>
+        <div id="button-container" class="text-center">
+          <div id="terms-container" class="form-check mb-3 d-flex align-items-center justify-content-center">
+            <input type="checkbox" id="acceptTerms" class="form-check-input me-2  mt-0">
+            <label for="acceptTerms" class="form-check-label">Acepto los <a id="terms-link" href="#">términos y condiciones</a></label>
+          </div>
+          <div class="d-grid gap-2 col-8 mx-auto">
+            <button type="button" id="contact-button" class="btn btn-primary">Contáctanos</button>
+          </div>
         </div>
-
-        <button type="button" id="contact-button" class="btn btn-primary">Contáctanos</button>
       </div>
     </div>
   </div>

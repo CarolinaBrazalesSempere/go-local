@@ -6,7 +6,6 @@
 #faqs-title-text {
   color: #3f3d56;
   font-size: 48px;
-  font-style: normal;
   font-weight: 700;
   line-height: 140%;
   text-align: center;
@@ -62,7 +61,6 @@
   color: #3f3d56;
   cursor: pointer;
   font-size: 48px;
-  font-style: normal;
   font-weight: 600;
   line-height: 140%;
   padding: 0;
@@ -86,40 +84,3 @@
   transform: scaleX(1);
 }
 
-/* MODAL */
-
-#name {
-  background-color: #E6E6E6;
-  border: none;
-  border-radius: 8px;
-  text-align: center;
-}
-
-#address {
-  background-color: #E6E6E6;
-  border: none;
-  border-radius: 8px;
-  text-align: center;
-}
-
-#message {
-  background-color: #E6E6E6;
-  border: none;
-  border-radius: 8px;
-}
-
-#terms-link {
-  color: #F24E1E;
-}
-
-#contact-button {
-  background-color: #F24E1E;
-  border: none;
-  border-radius: 8px;
-  color: #FCFCFC;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 140%;
-  text-align: center;
-}
