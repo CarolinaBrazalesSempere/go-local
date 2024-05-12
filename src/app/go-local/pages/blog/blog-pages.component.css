@@ -2,6 +2,25 @@
   background: #FFB39C;
   border-radius: 8px;
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1rem;
+}
+
+#mid {
+  display: flex;
+  justify-content: space-between;
+}
+
+#bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-text, .mid-text, .bottom-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .blog-article {
@@ -10,22 +29,30 @@
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-/* No funciona */
-.custom-gap {
-  gap: 14px;
+.custom-mid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.custom-bottom {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .top-text > p {
+  padding-top: 0;
   font-size: 18px;
 }
 
 .top-text > h1 {
+  padding: 1rem;
   font-size: 32px;
   font-weight: 700;
   line-height: 140%;
 }
 
  .mid-text > h3 {
+  padding: 1rem;
   font-size: 24px;
   font-weight: 700;
   line-height: 140%;
@@ -33,16 +60,23 @@
 
 .mid-text > p {
   font-size: 18px;
+  padding-top: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.bottom-text > h4 {
+  padding: 1rem;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 140%;
 }
 
 .bottom-text > p {
   font-size: 14px;
-}
-
-.bottom-text > h4 {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 140%;
+  padding-top: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 #mid-img-1 {
@@ -75,3 +109,57 @@
   border-radius: 8px 8px 0px 0px;
   background: #FFD9C3;
 }
+
+.pagination .page-item .arrow {
+  border: none;
+  padding-right: 0rem;
+  padding-left: 0rem;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.page-item {
+  margin: 4px;
+}
+
+.page-link {
+  border: 1px solid #3f3d56;
+  color: #3f3d56;
+}
+
+.arrow-img {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  border: none;
+}
+
+/* Falta cambiar el comportamiento del boton al pulsar*/
+.page-number {
+  --bs-pagination-hover-bg: rgba(242, 78, 30, 0.11);
+}
+
+/* #mid-article-1 {
+  margin: 1.5rem;
+}
+
+#mid-article-2 {
+  margin: 1.5rem;
+} */
+
+/* #bottom-article-1 {
+  margin: 1.5rem;
+}
+
+#bottom-article-2 {
+  margin: 1.5rem;
+}
+
+#bottom-article-3 {
+  margin: 1.5rem;
+}
+
+#bottom-article-4 {
+  margin: 1.5rem;
+} */
