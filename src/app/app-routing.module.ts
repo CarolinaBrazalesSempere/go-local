@@ -5,6 +5,9 @@ import { FaqsComponent } from './go-local/pages/faqs/faqs.component';
 import { BlogComponent } from './go-local/pages/blog/blog.component';
 import { SearchByDestinationComponent } from './go-local/pages/search-by-destination/search-by-destination.component';
 import { ErrorComponent } from './go-local/pages/error/error.component';
+import { BlogPageComponent } from './go-local/pages/blog/blog-pages.component';
+import { FaqsPageComponent } from './go-local/pages/faqs/components/faqs-page/faqs-page.component';
+
 
 const routes: Routes = [
   {
@@ -14,11 +17,11 @@ const routes: Routes = [
   },
   {
     path: 'faqs',
-    component: FaqsComponent,
+    component: FaqsPageComponent,
   },
   {
     path: 'blog',
-    component: BlogComponent,
+    component: BlogPageComponent,
   },
   {
     path: 'destinations',

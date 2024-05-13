@@ -10,6 +10,8 @@ import { ErrorComponent } from './pages/error/error.component';
 import { CardGuideDestinationComponent } from './components/card-guide-destination/card-guide-destination.component';
 import { BookGuideBtnComponent } from './components/book-guide-btn/book-guide-btn.component';
 
+import { FaqsModule } from './pages/faqs/faqs.module';
+
 @NgModule({
   declarations: [
     GlCardGuidesComponent,
@@ -22,5 +24,19 @@ import { BookGuideBtnComponent } from './components/book-guide-btn/book-guide-bt
   ],
   imports: [CommonModule, RouterModule, SharedModule],
   exports: [GlCardGuidesComponent, HomeComponent, SearchByDestinationComponent],
+
+     HomeComponent,
+    ],
+  imports: [
+    CommonModule,
+    RouterModule,
+    FaqsModule,
+    SharedModule,
+  ],
+  exports: [
+    GlCardGuidesComponent,
+    HomeComponent,
+  ],
+
 })
 export class GoLocalModule {}
