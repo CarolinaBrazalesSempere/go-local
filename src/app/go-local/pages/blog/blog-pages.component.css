@@ -5,16 +5,22 @@
   display: flex;
   justify-content: space-between;
   padding-left: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 #mid {
   display: flex;
   justify-content: space-between;
+  gap: 3rem !important;
+  margin-bottom: 3rem;
 }
 
 #bottom {
   display: flex;
   justify-content: space-between;
+  gap: 3rem !important;
+  margin-bottom: 3rem;
 }
 
 .top-text, .mid-text, .bottom-text {
@@ -110,6 +116,10 @@
   background: #FFD9C3;
 }
 
+#pagination-container {
+  margin-bottom: 3rem;
+}
+
 .pagination .page-item .arrow {
   border: none;
   padding-right: 0rem;
@@ -135,31 +145,45 @@
   border: none;
 }
 
-/* Falta cambiar el comportamiento del boton al pulsar*/
+/* TODO: Falta cambiar el comportamiento del boton al pulsar*/
+
 .page-number {
   --bs-pagination-hover-bg: rgba(242, 78, 30, 0.11);
 }
 
-/* #mid-article-1 {
-  margin: 1.5rem;
+/* TODO: Falta el resposive del contenedor #top */
+
+@media (max-width: 768px) {
+  #top {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 1rem;
+  }
+
+  .col {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  #mid, #bottom {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 
-#mid-article-2 {
-  margin: 1.5rem;
-} */
+@media (max-width: 576px) {
+  .col {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 
-/* #bottom-article-1 {
-  margin: 1.5rem;
+  #mid, #bottom {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 }
 
-#bottom-article-2 {
-  margin: 1.5rem;
-}
 
-#bottom-article-3 {
-  margin: 1.5rem;
-}
 
-#bottom-article-4 {
-  margin: 1.5rem;
-} */
+
+
