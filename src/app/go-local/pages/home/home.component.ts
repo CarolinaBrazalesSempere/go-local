@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  //TODO: INTENTAR QUE LA INFO ESTÉ EN ARRAYS Y ACCEDER A LAS POSICIONES CON NG FOR
+  isRotated: boolean = false;
+  isCollapsed: boolean = true;
+
+  rotateChevron() {
+    this.isRotated = !this.isRotated;
+    this.isCollapsed = !this.isCollapsed;
+  }
 }
