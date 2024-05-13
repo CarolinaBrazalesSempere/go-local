@@ -22,21 +22,8 @@ import { FaqsModule } from './pages/faqs/faqs.module';
     CardGuideDestinationComponent,
     BookGuideBtnComponent,
   ],
-  imports: [CommonModule, RouterModule, SharedModule],
-  exports: [GlCardGuidesComponent, HomeComponent, SearchByDestinationComponent],
 
-     HomeComponent,
-    ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    FaqsModule,
-    SharedModule,
-  ],
-  exports: [
-    GlCardGuidesComponent,
-    HomeComponent,
-  ],
-
+  imports: [CommonModule, RouterModule, FaqsModule, SharedModule],
+  exports: [GlCardGuidesComponent, HomeComponent],
 })
 export class GoLocalModule {}
