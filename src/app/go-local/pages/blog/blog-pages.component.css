@@ -145,7 +145,7 @@
   border: none;
 }
 
-/* TODO: Falta cambiar el comportamiento del boton al pulsar*/
+/* TODO: Falta cambiar el comportamiento del boton al pulsar */
 
 .page-number {
   --bs-pagination-hover-bg: rgba(242, 78, 30, 0.11);
