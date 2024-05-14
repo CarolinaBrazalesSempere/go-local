@@ -7,11 +7,10 @@ import { BlogPageComponent } from './go-local/pages/blog/blog-pages.component';
 
 import { SharedModule } from './shared/shared.module';
 import { GoLocalModule } from './go-local/go-local.module';
-import { ArticuloComponent } from './go-local/pages/articulo/articulo.component';
-
+import { FichaGuiaComponent } from './go-local/pages/ficha-guia/ficha-guia.component';
 
 @NgModule({
-  declarations: [AppComponent, BlogPageComponent,ArticuloComponent],
+  declarations: [AppComponent, BlogPageComponent,ArticuloComponent, FichaGuiaComponent],
   imports: [SharedModule, BrowserModule, AppRoutingModule, GoLocalModule],
   providers: [],
   bootstrap: [AppComponent],
