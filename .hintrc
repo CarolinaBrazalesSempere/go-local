@@ -3,13 +3,6 @@
     "development"
   ],
   "hints": {
-    "axe/forms": [
-      "default",
-      {
-        "label": "off"
-      }
-    ],
-    "button-type": "off",
     "axe/text-alternatives": [
       "default",
       {
