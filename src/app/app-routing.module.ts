@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './go-local/pages/home/home.component';
+import { LoginComponent } from './go-local/pages/login/login.component';
 import { FichaGuiaComponent } from './go-local/pages/ficha-guia/ficha-guia.component';
 import { ArticuloComponent } from './go-local/pages/articulo/articulo.component';
 import { SearchByDestinationComponent } from './go-local/pages/search-by-destination/search-by-destination.component';
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'ficha-guia',
     component: FichaGuiaComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: '**',

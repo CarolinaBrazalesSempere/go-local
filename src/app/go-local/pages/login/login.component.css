@@ -1,0 +1,86 @@
+.left-100{
+  left: 450px;
+}
+
+.formulario{
+  padding-right: 30px;
+}
+
+.imagen{
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.w-custom{
+  width: 70%;
+}
+
+.inputs{
+  width: 85%;
+}
+
+.inputs input {
+  border-color: #8b8b8b  !important;
+}
+
+
+.label-terminos{
+  font-size: small;
+}
+
+.terminos{
+  color: #F24E1E;
+}
+
+.input-large{
+  font-size: 1rem;
+}
+
+.bg-color{
+  background-color: #E6E6E6;
+}
+
+.btn-medium{
+  font-size: small;
+  box-shadow: 4px 4px 4px rgba(1, 1, 1, 0.4);
+}
+
+.container-login{
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  font-size: x-small;
+  right: 10px;
+  width: 20px; /* Ancho del botón */
+  height: 20px; /* Alto del botón */
+  text-align: center;
+  color: inherit;
+  border: 2px solid black;
+  text-decoration: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+::placeholder {
+  color: #AFABAB;
+  font-size: x-small;
+}
+
+@media (max-width:976px){
+  .imagen{
+    display: none;
+  }
+
+  .container-login{
+    width: 100%;
+    background-color: blue;
+  }
+}
+
+
+
