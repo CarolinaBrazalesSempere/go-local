@@ -11,6 +11,10 @@ import { CardGuideDestinationComponent } from './components/card-guide-destinati
 import { BookGuideBtnComponent } from './components/book-guide-btn/book-guide-btn.component';
 
 import { FaqsModule } from './pages/faqs/faqs.module';
+import { FichaGuiaComponent } from './pages/ficha-guia/ficha-guia.component';
+import { LoginComponent } from './pages/login/login.component';
+import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
+import { ArticuloComponent } from './pages/articulo/articulo.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { FaqsModule } from './pages/faqs/faqs.module';
     ErrorComponent,
     CardGuideDestinationComponent,
     BookGuideBtnComponent,
+    FichaGuiaComponent,
+    LoginComponent,
+    PerfilUsuarioComponent,
+    ArticuloComponent,
   ],
 
   imports: [CommonModule, RouterModule, FaqsModule, SharedModule],
