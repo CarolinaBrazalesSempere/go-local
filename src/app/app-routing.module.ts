@@ -1,22 +1,34 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './go-local/pages/home/home.component';
-import { FaqsComponent } from './go-local/pages/faqs/faqs.component';
-import { BlogComponent } from './go-local/pages/blog/blog.component';
 import { FichaGuiaComponent } from './go-local/pages/ficha-guia/ficha-guia.component';
+import { ArticuloComponent } from './go-local/pages/articulo/articulo.component';
+import { SearchByDestinationComponent } from './go-local/pages/search-by-destination/search-by-destination.component';
+import { ErrorComponent } from './go-local/pages/error/error.component';
+import { BlogPageComponent } from './go-local/pages/blog/blog-pages.component';
+import { FaqsPageComponent } from './go-local/pages/faqs/components/faqs-page/faqs-page.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    pathMatch: 'full',
   },
   {
     path: 'faqs',
-    component: FaqsComponent,
+    component: FaqsPageComponent,
   },
   {
     path: 'blog',
-    component: BlogComponent,
+    component: BlogPageComponent,
+  },
+  {
+    path: 'destinations',
+    component: SearchByDestinationComponent,
+  },
+  {
+    path: 'articulo',
+    component: ArticuloComponent,
   },
   {
     path: 'ficha-guia',
@@ -24,7 +36,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    component: ErrorComponent,
   },
 ];
 
