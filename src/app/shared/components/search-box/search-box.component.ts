@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'shared-search-box',
@@ -7,7 +12,6 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./search-box.component.css'],
 })
 export class SearchBoxComponent {
-
   // Los valores que recibe de los input del html
   searchCountry = new FormControl('');
   searchCity = new FormControl('');
@@ -15,20 +19,27 @@ export class SearchBoxComponent {
 
   // Los valores validados de los input que envia al servicio donde
   // se realizara la busqueda
-  inputCountry?: string | null;
-  inputCity?: string | null;
-  inputDate?: string | null;
+  inputCountry: string = '';
+  inputCity: string = '';
+  inputDate: string = '';
 
-  constructor() {}
+  destinationForm: FormGroup;
+  constructor(private formBuilder: FormBuilder) {
+    this.destinationForm = this.formBuilder.group({
+      searchCountry: ['', Validators.required],
+      searchCity: ['', Validators.required],
+      searchDate: ['', Validators.required],
+    });
+  }
 
   // TODO: Logica del metodo search
   search() {
-
-    const searchCountry = this.searchCountry.value!.trim();
-    const searchCity = this.searchCity.value!.trim();
-    const searchDate = this.searchDate.value!.trim();
-
-    if (searchCountry.length >= 3 && searchCity.length >= 3 && searchDate.length >= 3) {
+    if (this.destinationForm.valid) {
+      const searchCountry = this.destinationForm
+        .get('searchCountry')!
+        .value.trim();
+      const searchCity = this.destinationForm.get('searchCity')!.value.trim();
+      const searchDate = this.destinationForm.get('searchDate')!.value.trim();
 
       this.inputCountry = searchCountry;
       this.inputCity = searchCity;
@@ -37,9 +48,8 @@ export class SearchBoxComponent {
       console.log(this.inputCountry);
       console.log(this.inputCity);
       console.log(this.inputDate);
-
+    } else {
+      console.log('Formulario no válido');
     }
-
   }
-
 }
