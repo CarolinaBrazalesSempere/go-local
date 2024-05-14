@@ -45,7 +45,7 @@ export class SearchBoxComponent {
       console.log(this.inputCity);
       console.log(this.inputDate);
     } else {
-      console.log('Formulario no válido');
+      console.log('errroooooooooor');
     }
   }
 }
