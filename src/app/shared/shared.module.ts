@@ -10,8 +10,22 @@ import { TarjetaGuiaComponent } from './components/tarjeta-guia/tarjeta-guia.com
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 
 @NgModule({
-  declarations: [NavBarComponent, SearchBoxComponent, FooterComponent, OpinionComponent,TarjetaGuiaComponent, SobreMiComponent ],
+  declarations: [
+    NavBarComponent,
+    SearchBoxComponent,
+    FooterComponent,
+    OpinionComponent,
+    TarjetaGuiaComponent,
+    SobreMiComponent,
+  ],
   imports: [CommonModule, RouterModule],
-  exports: [NavBarComponent, SearchBoxComponent, FooterComponent, OpinionComponent,TarjetaGuiaComponent, SobreMiComponent ],
+  exports: [
+    NavBarComponent,
+    SearchBoxComponent,
+    FooterComponent,
+    OpinionComponent,
+    TarjetaGuiaComponent,
+    SobreMiComponent,
+  ],
 })
 export class SharedModule {}
