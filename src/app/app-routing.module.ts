@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './go-local/pages/home/home.component';
+import { PerfilUsuarioComponent } from './go-local/pages/perfil-usuario/perfil-usuario.component';
 import { LoginComponent } from './go-local/pages/login/login.component';
 import { FichaGuiaComponent } from './go-local/pages/ficha-guia/ficha-guia.component';
 import { ArticuloComponent } from './go-local/pages/articulo/articulo.component';
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'perfil-usuario',
+    component: PerfilUsuarioComponent,
   },
   {
     path: '**',
