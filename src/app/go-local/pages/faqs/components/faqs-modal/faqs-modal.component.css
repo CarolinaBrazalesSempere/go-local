@@ -1,0 +1,100 @@
+.modal-header {
+  border-bottom: none;
+  text-align: center;
+  padding: 16px;
+  position: relative;
+}
+
+.modal-title {
+  color: #3f3d56;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 140%;
+
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+#body-container .row {
+  --bs-gutter-x: 1rem;
+}
+
+#name {
+  background-color: #E6E6E6;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#address {
+  background-color: #E6E6E6;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#message {
+  background-color: #E6E6E6;
+  border: none;
+  border-radius: 8px;
+}
+
+.form-check-input[type="checkbox"] {
+  border-radius: 0;
+  border-color: #3f3d56;
+}
+
+.form-check-input[type="checkbox"]:checked {
+  background-color: #F24E1E;
+}
+
+#terms-link {
+  color: #F24E1E;
+}
+
+#contact-button {
+  background-color: #F24E1E;
+  border: none;
+  border-radius: 8px;
+  color: #FCFCFC;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  text-align: center;
+  padding: 12px;
+}
+
+@media (max-width: 768px) {
+  .modal-header {
+    padding-top: 40px;
+  }
+
+  .modal-title {
+    font-size: 32px;
+  }
+
+  .close-button {
+    top: 8px;
+    right: 8px;
+  }
+
+  #contact-button {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 576px) {
+  #contact-button {
+    font-size: 16px;
+  }
+}

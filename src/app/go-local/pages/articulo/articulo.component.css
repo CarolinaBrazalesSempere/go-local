@@ -1,0 +1,65 @@
+.hero-banner {
+  width: 100%;
+  margin-bottom: 56px;
+}
+
+.hero-text {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #3f3d56;
+  text-align: center;
+}
+
+.hero-banner-container {
+  position: relative;
+}
+
+.mt-5-custom{
+  margin-top: 390px;
+}
+
+.hero-text{
+  margin-top: 96px;
+}
+
+.hero-text-costumbres{
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #3f3d56;
+  text-align: center;
+}
+
+.custom-font-size{
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.hero-text-text{
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #3f3d56;
+  text-align: center;
+  margin-top: 208px;
+  width: 70%;
+}
+
+.banner-articulo{
+  background-color: #FFD978;
+}
+
+.mt-articulo{
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.tarjeta{
+  width: 100%;
+}
+
+
