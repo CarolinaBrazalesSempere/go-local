@@ -5,10 +5,23 @@ import { RouterModule } from '@angular/router';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [NavBarComponent, SearchBoxComponent, FooterComponent],
-  imports: [CommonModule, RouterModule],
-  exports: [NavBarComponent, SearchBoxComponent, FooterComponent],
+  declarations: [
+    NavBarComponent,
+    SearchBoxComponent,
+    FooterComponent,
+  ],
+  imports: [
+    CommonModule,
+    RouterModule,
+    ReactiveFormsModule,
+  ],
+  exports: [
+    NavBarComponent,
+    SearchBoxComponent,
+    FooterComponent,
+  ],
 })
 export class SharedModule {}
