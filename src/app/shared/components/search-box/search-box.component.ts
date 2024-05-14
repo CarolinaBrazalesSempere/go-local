@@ -13,8 +13,8 @@ export class SearchBoxComponent {
   searchCity = new FormControl('');
   searchDate = new FormControl('');
 
-  // Los valores validados de los input que envia al componente donde
-  // se mostrara la busqueda. Puede ser necesario utilizar @Output
+  // Los valores validados de los input que envia al servicio donde
+  // se realizara la busqueda
   inputCountry?: string | null;
   inputCity?: string | null;
   inputDate?: string | null;
