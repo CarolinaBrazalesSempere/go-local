@@ -33,6 +33,18 @@
   margin-top: 16px;
 }
 
+.chevron-down {
+  width: 16px;
+  height: 16px;
+  translate: 16px;
+  rotate: 90deg;
+}
+
+.chevron-up {
+  rotate: -90deg;
+  transition: transform 0.3 ease;
+}
+
 @media (min-width: 575px) {
   .info-block,
   .be-guide-block {

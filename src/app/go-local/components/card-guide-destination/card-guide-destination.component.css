@@ -1,0 +1,22 @@
+img {
+  width: 90px;
+  border-radius: 90px;
+}
+
+.card {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  max-width: 650px;
+  gap: 32px;
+  justify-content: space-between;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px 3px rgba(0, 0, 0, 0.25);
+  padding: 16px;
+}
+
+.card-text {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}

@@ -1,0 +1,22 @@
+.error_img {
+  width: 100%;
+}
+
+h1 {
+  max-width: 30%;
+  font-size: 2.5rem;
+}
+
+@media (min-width: 578px) and (max-width: 1440px) {
+  h1 {
+    max-width: 50%;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 577px) {
+  h1 {
+    max-width: 100%;
+    font-size: 1.5rem;
+  }
+}
