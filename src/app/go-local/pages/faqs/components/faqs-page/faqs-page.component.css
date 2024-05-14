@@ -1,0 +1,89 @@
+#faqs-title-container {
+  margin-bottom: 66px;
+  margin-top: 66px;
+}
+
+#faqs-title-text {
+  color: #3f3d56;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  text-align: center;
+}
+
+.accordion {
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px 3px rgba(0, 0, 0, 0.25);
+  margin-left: 144px;
+  margin-right: 144px;
+  min-width: 320px;
+}
+
+.accordion-button {
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+/* Cambia el color del encabezado cuando está activo */
+.accordion-button:not(.collapsed) {
+  background: rgba(242, 78, 30, 0.11);
+  color: #3f3d56;
+}
+
+/* Elimina los bordes en los elementos activos*/
+.accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.accordion-item {
+  border-color: CBCBCB;
+}
+
+#faqs-contact-container {
+  margin-bottom: 152px;
+  margin-top: 152px;
+  text-align: center;
+}
+
+.btn-like-title {
+  background-color: transparent;
+  border: none;
+  color: #3f3d56;
+  cursor: pointer;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  padding: 0;
+  position: relative;
+}
+
+.btn-like-title::after {
+  background-color: #3f3d56;
+  bottom: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.btn-like-title:hover::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 576px) {
+  .accordion {
+    min-width: 320px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
