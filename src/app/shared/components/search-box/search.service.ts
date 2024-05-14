@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class SearchService {
-  private url: string = '';
+  private url: string = 'https://localhost8080';
   constructor(private http: HttpClient) {}
 
   search(destination: string): Observable<any> {

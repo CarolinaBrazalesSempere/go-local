@@ -12,11 +12,6 @@ import {
   styleUrls: ['./search-box.component.css'],
 })
 export class SearchBoxComponent {
-  // Los valores que recibe de los input del html
-  searchCountry = new FormControl('');
-  searchCity = new FormControl('');
-  searchDate = new FormControl('');
-
   // Los valores validados de los input que envia al servicio donde
   // se realizara la busqueda
   inputCountry: string = '';
@@ -24,6 +19,7 @@ export class SearchBoxComponent {
   inputDate: string = '';
 
   destinationForm: FormGroup;
+
   constructor(private formBuilder: FormBuilder) {
     this.destinationForm = this.formBuilder.group({
       searchCountry: ['', Validators.required],
@@ -33,7 +29,7 @@ export class SearchBoxComponent {
   }
 
   // TODO: Logica del metodo search
-  search() {
+  search(): void {
     if (this.destinationForm.valid) {
       const searchCountry = this.destinationForm
         .get('searchCountry')!
