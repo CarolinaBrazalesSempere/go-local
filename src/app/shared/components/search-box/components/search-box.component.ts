@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SearchService } from '../services/search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'shared-search-box',
@@ -19,6 +20,7 @@ export class SearchBoxComponent {
   constructor(
     private formBuilder: FormBuilder,
     private searchService: SearchService,
+    private router: Router
   ) {
     this.destinationForm = this.formBuilder.group({
       searchCountry: ['', Validators.required],
@@ -33,24 +35,23 @@ export class SearchBoxComponent {
       const searchCountry = this.destinationForm
         .get('searchCountry')!
         .value.trim();
-      const searchCity = this.destinationForm
-        .get('searchCity')!
-        .value.trim();
-      const searchDate = this.destinationForm
-        .get('searchDate')!
-        .value.trim();
+      const searchCity = this.destinationForm.get('searchCity')!.value.trim();
+      const searchDate = this.destinationForm.get('searchDate')!.value.trim();
 
       this.inputCountry = searchCountry;
       this.inputCity = searchCity;
       this.inputDate = searchDate;
-
-      console.log(this.inputCountry);
-      console.log(this.inputCity);
-      console.log(this.inputDate);
-      // Para comprobar que los parametros de busqueda son enviados al metodo
-      // search del servicio
-      const destination = `${this.inputCountry} ${this.inputCity} ${this.inputDate}`;
+      this.router.navigate(['/destinations'], {
+        queryParams: {
+          country: searchCountry,
+          city: searchCity,
+          date: searchDate,
+        },
+      });
+      /* const destination = `${searchCountry} ${searchCity} ${searchDate}`;
       this.searchService.search(destination);
+      this.router.navigate(['/destinations']);
+      console.log(destination); */
     } else {
       console.log('≽^•⩊•^≼');
     }
