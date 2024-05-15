@@ -12,6 +12,7 @@ export class SearchService {
   constructor(private http: HttpClient) {}
 
   search(destination: string): Observable<any> {
+    console.log(destination); // Comprueba que el servicio recibe los parametros de busqueda
     return this.http.post<any>(`${this.url}/search`, destination);
   }
 }

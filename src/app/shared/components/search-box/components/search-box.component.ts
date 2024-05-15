@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'shared-search-box',
@@ -15,7 +16,10 @@ export class SearchBoxComponent {
 
   destinationForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private searchService: SearchService,
+  ) {
     this.destinationForm = this.formBuilder.group({
       searchCountry: ['', Validators.required],
       searchCity: ['', Validators.required],
@@ -43,8 +47,12 @@ export class SearchBoxComponent {
       console.log(this.inputCountry);
       console.log(this.inputCity);
       console.log(this.inputDate);
+      // Para comrpobar que los parametros de busqueda son enviados al metodo
+      // search del servicio
+      const destination = `${this.inputCountry} ${this.inputCity} ${this.inputDate}`;
+      this.searchService.search(destination);
     } else {
-      console.log('errroooooooooor');
+      console.log('≽^•⩊•^≼');
     }
   }
 }
