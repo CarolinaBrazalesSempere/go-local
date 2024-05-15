@@ -47,7 +47,7 @@ export class SearchBoxComponent {
       console.log(this.inputCountry);
       console.log(this.inputCity);
       console.log(this.inputDate);
-      // Para comrpobar que los parametros de busqueda son enviados al metodo
+      // Para comprobar que los parametros de busqueda son enviados al metodo
       // search del servicio
       const destination = `${this.inputCountry} ${this.inputCity} ${this.inputDate}`;
       this.searchService.search(destination);
