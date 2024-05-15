@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -29,8 +29,12 @@ export class SearchBoxComponent {
       const searchCountry = this.destinationForm
         .get('searchCountry')!
         .value.trim();
-      const searchCity = this.destinationForm.get('searchCity')!.value.trim();
-      const searchDate = this.destinationForm.get('searchDate')!.value.trim();
+      const searchCity = this.destinationForm
+        .get('searchCity')!
+        .value.trim();
+      const searchDate = this.destinationForm
+        .get('searchDate')!
+        .value.trim();
 
       this.inputCountry = searchCountry;
       this.inputCity = searchCity;

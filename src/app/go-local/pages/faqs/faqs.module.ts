@@ -11,19 +11,18 @@ import { FaqsModalService } from './services/faqs-modal.service';
     CommonModule,
   ],
   exports: [
-    FaqsModalComponent,
     FaqsPageComponent
   ],
   declarations: [
     FaqsModalComponent,
-    FaqsPageComponent
+    FaqsPageComponent,
   ],
   providers: [
-    FaqsModalService
+    FaqsModalService,
   ],
   bootstrap: [
     FaqsModalComponent,
-    FaqsPageComponent
+    FaqsPageComponent,
   ]
 })
 export class FaqsModule { }
