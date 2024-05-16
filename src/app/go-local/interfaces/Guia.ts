@@ -1,4 +1,4 @@
-export interface guia {
+export interface Guia {
   idGuia : number;
   idioma : string;
 }
