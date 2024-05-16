@@ -12,6 +12,7 @@ import { ErrorComponent } from './pages/error/error.component';
 import { GlCardGuidesComponent } from './components/gl-card-guides/gl-card-guides.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchByDestinationComponent } from './pages/search-by-destination/search-by-destination.component';
+import { ItinerarioListComponent } from './components/itinerario-list/itinerario-list.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { SearchByDestinationComponent } from './pages/search-by-destination/sear
     GlCardGuidesComponent,
     HomeComponent,
     SearchByDestinationComponent,
+    ItinerarioListComponent
   ],
 
   imports: [

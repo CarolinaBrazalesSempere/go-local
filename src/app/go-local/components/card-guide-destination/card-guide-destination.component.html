@@ -12,8 +12,11 @@
                 </svg>
                 <p>4,7</p>
             </div>
-            <p>Xàtiva, València, España</p>
+            <p >Xàtiva, València, España</p>
             <p>Idiomas: español, inglés, catalán</p>
+            <div *ngFor="let itinerario of itinerarios">
+              <p>{{ itinerario.descripcion }}</p>
+            </div>
             <gl-book-guide-btn></gl-book-guide-btn>
         </div>
     </div>
@@ -25,4 +28,5 @@
             ¡Prepárate para descubrir y disfrutar al máximo junto a mí!
         </p>
     </div>
+
 </div>
