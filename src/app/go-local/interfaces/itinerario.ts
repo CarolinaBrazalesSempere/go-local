@@ -1,7 +1,5 @@
-
-import { Ciudad } from "./ciudad";
-import { Guia } from "./guia";
-
+import { Ciudad } from './ciudad';
+import { Guia } from './Guia';
 
 export interface Itinerario {
   id_itinerario: number;
@@ -9,7 +7,7 @@ export interface Itinerario {
   ciudad: Ciudad;
   descripcion: string;
   duracion: number;
-  fechaDisponible: Date; // No tengo claro como manejar las fechas
+  fechaDisponible: Date;
   plazas_max: number;
   monte: boolean;
   playa: boolean;

@@ -17,4 +17,5 @@
         </div>
         <button class="btn-search" type="button" (click)="search()">Buscar</button>
     </div>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
 </form>

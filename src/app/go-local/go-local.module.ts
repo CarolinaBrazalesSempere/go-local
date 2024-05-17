@@ -14,7 +14,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { SearchByDestinationComponent } from './pages/search-by-destination/search-by-destination.component';
 import { ItinerarioListComponent } from './components/itinerario-list/itinerario-list.component';
 
-
 @NgModule({
   declarations: [
     BookGuideBtnComponent,
@@ -24,18 +23,10 @@ import { ItinerarioListComponent } from './components/itinerario-list/itinerario
     GlCardGuidesComponent,
     HomeComponent,
     SearchByDestinationComponent,
-    ItinerarioListComponent
+    ItinerarioListComponent,
   ],
 
-  imports: [
-    CommonModule,
-    FaqsModule,
-    RouterModule,
-    SharedModule,
-  ],
-  exports: [
-    GlCardGuidesComponent,
-    HomeComponent,
-  ],
+  imports: [CommonModule, FaqsModule, RouterModule, SharedModule],
+  exports: [GlCardGuidesComponent, HomeComponent],
 })
 export class GoLocalModule {}

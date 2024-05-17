@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SearchService } from '../services/search.service';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service'; // Asegúrate de que la ruta sea correcta
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'shared-search-box',
@@ -9,18 +10,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-box.component.css'],
 })
 export class SearchBoxComponent {
-  // Los valores validados de los input que envia al servicio donde
-  // se realizara la busqueda
   inputCountry: string = '';
   inputCity: string = '';
   inputDate: string = '';
+  errorMessage: string = '';
 
   destinationForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private searchService: SearchService,
-    private router: Router
+    private router: Router,
+    private apiService: ApiService
   ) {
     this.destinationForm = this.formBuilder.group({
       searchCountry: ['', Validators.required],
@@ -29,8 +29,7 @@ export class SearchBoxComponent {
     });
   }
 
-  // TODO: Logica del metodo search
-  search(): void {
+  async search(): Promise<void> {
     if (this.destinationForm.valid) {
       const searchCountry = this.destinationForm
         .get('searchCountry')!
@@ -41,19 +40,35 @@ export class SearchBoxComponent {
       this.inputCountry = searchCountry;
       this.inputCity = searchCity;
       this.inputDate = searchDate;
-      this.router.navigate(['/destinations'], {
-        queryParams: {
-          country: searchCountry,
-          city: searchCity,
-          date: searchDate,
-        },
-      });
-      /* const destination = `${searchCountry} ${searchCity} ${searchDate}`;
-      this.searchService.search(destination);
-      this.router.navigate(['/destinations']);
-      console.log(destination); */
+
+      const searchDateObj = new Date(searchDate);
+
+      try {
+        const itinerarios = await firstValueFrom(
+          this.apiService.buscarItinerariosPorCiudadPaisYFecha(
+            searchCity,
+            searchCountry,
+            searchDateObj
+          )
+        );
+        if (itinerarios.length > 0) {
+          this.router.navigate(['/destinations'], {
+            queryParams: {
+              country: searchCountry,
+              city: searchCity,
+              date: searchDate,
+            },
+          });
+        } else {
+          console.log('No se encontraron itinerarios.');
+          this.errorMessage =
+            'Ocurrió un error al realizar la búsqueda. Por favor, inténtalo de nuevo más tarde.';
+        }
+      } catch (error) {
+        console.error('Error en la búsqueda:', error);
+      }
     } else {
-      console.log('≽^•⩊•^≼');
+      console.log('Formulario inválido');
     }
   }
 }

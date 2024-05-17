@@ -3,4 +3,9 @@
     <p>{{nombrePais}}</p>
     <p>{{fechaDisponible}}</p>
     <gl-card-guide-destination></gl-card-guide-destination>
+    <div *ngFor="let guia of guias">
+        <h2>{{ guia.guia.idGuia }}</h2>
+        <!-- Mostrar más detalles del guía si es necesario -->
+    </div>
+
 </main>
