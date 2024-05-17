@@ -8,23 +8,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./card-guide-destination.component.css'],
 })
 export class CardGuideDestinationComponent {
-  itinerarios: Itinerario[] = [];
-  // nombreCiudad: string = '';
-  // nombrePais: string = '';
-  // fechaDisponible: Date = new Date();
+  constructor(private apiService: ApiService) {}
 
-  constructor(private apiService: ApiService) { }
-
-  ngOnInit(): void {
-    this.apiService.getAllItinerarios().subscribe(data => {
-      this.itinerarios = data;
-    });
-
-  }
-  // buscarItinerarios(): void {
-  //   this.apiService.buscarItinerariosPorCiudadPaisYFecha(this.nombreCiudad, this.nombrePais, this.fechaDisponible)
-  //     .subscribe(data => {
-  //       this.itinerarios = data;
-  //     });
-  // }
+  ngOnInit(): void {}
 }

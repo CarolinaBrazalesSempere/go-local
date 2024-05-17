@@ -11,10 +11,6 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  getAllItinerarios(): Observable<Itinerario[]> {
-    return this.http.get<Itinerario[]>(`${this.baseUrl}/itinerario/todos`);
-  }
-
   buscarItinerariosPorCiudadPaisYFecha(
     nombreCiudad: string,
     nombrePais: string,

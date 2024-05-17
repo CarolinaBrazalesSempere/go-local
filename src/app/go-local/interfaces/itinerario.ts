@@ -5,6 +5,7 @@ export interface Itinerario {
   id_itinerario: number;
   guia: Guia;
   ciudad: Ciudad;
+
   descripcion: string;
   duracion: number;
   fechaDisponible: Date;

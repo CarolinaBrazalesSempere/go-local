@@ -9,16 +9,10 @@ import { ApiService } from 'src/app/api.service';
 })
 export class GlCardGuidesComponent implements OnInit {
   itinerarios: Itinerario[] = [];
-  nombreCiudad: string ="";
-  nombrePais: string = "";
+  nombreCiudad: string = '';
+  nombrePais: string = '';
   fechaDisponible: Date = new Date();
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {}
 
-  ngOnInit(): void {
-    this.apiService.getAllItinerarios().subscribe(data => {
-      this.itinerarios = data;
-    });
-  }
-  
-
+  ngOnInit(): void {}
 }
