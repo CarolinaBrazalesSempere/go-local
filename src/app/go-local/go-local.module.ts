@@ -1,8 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
 import { FaqsModule } from './pages/faqs/faqs.module';
 import { SharedModule } from '../shared/shared.module';
+
 import { BookGuideBtnComponent } from './components/book-guide-btn/book-guide-btn.component';
 import { CardGuideDestinationComponent } from './components/card-guide-destination/card-guide-destination.component';
 import { CardPostComponent } from './components/card-post/card-post.component';
@@ -16,26 +18,34 @@ import { LoginComponent } from './pages/login/login.component';
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
 import { ArticuloComponent } from './pages/articulo/articulo.component';
 
+
 @NgModule({
   declarations: [
+    ArticuloComponent,
     BookGuideBtnComponent,
+    BookGuideBtnComponent,
+    CardGuideDestinationComponent,
     CardGuideDestinationComponent,
     CardPostComponent,
     ErrorComponent,
+    ErrorComponent,
+    FichaGuiaComponent,
     GlCardGuidesComponent,
     HomeComponent,
-    SearchByDestinationComponent,
     ItinerarioListComponent,
-    ErrorComponent,
-    CardGuideDestinationComponent,
-    BookGuideBtnComponent,
-    FichaGuiaComponent,
     LoginComponent,
     PerfilUsuarioComponent,
-    ArticuloComponent,
+    SearchByDestinationComponent,
   ],
 
-  imports: [CommonModule, FaqsModule, RouterModule, SharedModule],
-  exports: [GlCardGuidesComponent, HomeComponent],
+  imports: [
+    CommonModule,
+    FaqsModule,
+    RouterModule,
+    SharedModule,
+  ],
+  exports: [
+    GlCardGuidesComponent,
+    HomeComponent],
 })
 export class GoLocalModule {}

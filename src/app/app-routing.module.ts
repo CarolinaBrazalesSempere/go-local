@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { HomeComponent } from './go-local/pages/home/home.component';
 import { SignupComponent } from './go-local/pages/signup/signup.component';
 import { PerfilUsuarioComponent } from './go-local/pages/perfil-usuario/perfil-usuario.component';
@@ -10,6 +11,7 @@ import { SearchByDestinationComponent } from './go-local/pages/search-by-destina
 import { ErrorComponent } from './go-local/pages/error/error.component';
 import { BlogPageComponent } from './go-local/pages/blog/blog-pages.component';
 import { FaqsPageComponent } from './go-local/pages/faqs/components/faqs-page/faqs-page.component';
+
 
 const routes: Routes = [
   {
@@ -56,7 +58,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  imports: [
+    RouterModule.forRoot(routes),
+  ],
+  exports: [
+    RouterModule,
+  ],
 })
 export class AppRoutingModule {}
