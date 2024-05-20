@@ -21,12 +21,10 @@ export class LoginComponent {
   ) {}
 
   onLogin():void {
-
     console.log(this.loginData);
-
     this.authService.login(this.loginData).subscribe({
       next: (user) => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['']);
       },
       error: (error) => {
         console.error('Error during login', error);
@@ -34,5 +32,9 @@ export class LoginComponent {
     });
   }
 
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['']);
+  }
 
 }
