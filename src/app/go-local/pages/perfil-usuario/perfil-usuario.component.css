@@ -1,0 +1,40 @@
+.my-5-custom{
+  margin-top: 72px;
+  margin-bottom: 72px;
+}
+
+.custom-border-bottom {
+  border-bottom: 1px solid #ccc;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.foto{
+  margin-left: auto;
+}
+
+.boton{
+  margin-top: -25px;
+}
+
+.formulario{
+  width: 60%;
+}
+
+@media (max-width: 967px) {
+  .form-foto {
+    display: grid !important;
+  }
+  .form-foto .foto,
+  .form-foto .formulario {
+    order: initial !important;
+  }
+
+  .form-foto .foto{
+    margin: 0 auto;
+    margin-top: 62px;
+    margin-bottom: 62px;
+  }
+}
+

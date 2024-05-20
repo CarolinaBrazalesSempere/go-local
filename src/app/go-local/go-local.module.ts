@@ -1,10 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
 import { FaqsModule } from './pages/faqs/faqs.module';
 import { SharedModule } from '../shared/shared.module';
-
 import { BookGuideBtnComponent } from './components/book-guide-btn/book-guide-btn.component';
 import { CardGuideDestinationComponent } from './components/card-guide-destination/card-guide-destination.component';
 import { CardPostComponent } from './components/card-post/card-post.component';
@@ -13,6 +11,14 @@ import { GlCardGuidesComponent } from './components/gl-card-guides/gl-card-guide
 import { HomeComponent } from './pages/home/home.component';
 import { SearchByDestinationComponent } from './pages/search-by-destination/search-by-destination.component';
 import { ItinerarioListComponent } from './components/itinerario-list/itinerario-list.component';
+import { CardGuideDestinationComponent } from './components/card-guide-destination/card-guide-destination.component';
+import { BookGuideBtnComponent } from './components/book-guide-btn/book-guide-btn.component';
+import { FaqsModule } from './pages/faqs/faqs.module';
+import { FichaGuiaComponent } from './pages/ficha-guia/ficha-guia.component';
+import { LoginComponent } from './pages/login/login.component';
+import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
+import { ArticuloComponent } from './pages/articulo/articulo.component';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +30,14 @@ import { ItinerarioListComponent } from './components/itinerario-list/itinerario
     HomeComponent,
     SearchByDestinationComponent,
     ItinerarioListComponent,
+    ErrorComponent,
+    CardGuideDestinationComponent,
+    BookGuideBtnComponent,
+    FichaGuiaComponent,
+    LoginComponent,
+    PerfilUsuarioComponent,
+    ArticuloComponent,
+
   ],
 
   imports: [CommonModule, FaqsModule, RouterModule, SharedModule],
