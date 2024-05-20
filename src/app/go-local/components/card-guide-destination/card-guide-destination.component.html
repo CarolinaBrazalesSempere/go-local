@@ -1,28 +1,35 @@
-<div class="card">
+<div class="row">
+  <div class="col-md-6 mb-5" *ngFor="let guia of guias">
 
-    <div class="d-flex flex-column w-50">
+    <div class="card">
+      <div class="d-flex flex-column w-50">
         <img class="card-img-top" src="assets/img/img-prof-ph.png" alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-                    <path
-                        d="M3.30977 14.9435C2.95593 15.1415 2.55443 14.7945 2.62593 14.3515L3.38677 9.6215L0.157349 6.2655C-0.144234 5.9515 0.0125156 5.3775 0.416766 5.3155L4.9066 4.6195L6.9086 0.2925C7.08918 -0.0975 7.57777 -0.0975 7.75835 0.2925L9.76035 4.6195L14.2502 5.3155C14.6544 5.3775 14.8112 5.9515 14.5087 6.2655L11.2802 9.6215L12.041 14.3515C12.1125 14.7945 11.711 15.1415 11.3572 14.9435L7.3321 12.6875L3.30977 14.9435Z"
-                        fill="#F24E1E" />
-                </svg>
-                <p>4,7</p>
+          <div class="card-name-review">
+            <h5 class="card-title">{{guia.guia.usuario.nombre}}</h5>
+            <div class="card-name-review">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                <path
+                  d="M3.30977 14.9435C2.95593 15.1415 2.55443 14.7945 2.62593 14.3515L3.38677 9.6215L0.157349 6.2655C-0.144234 5.9515 0.0125156 5.3775 0.416766 5.3155L4.9066 4.6195L6.9086 0.2925C7.08918 -0.0975 7.57777 -0.0975 7.75835 0.2925L9.76035 4.6195L14.2502 5.3155C14.6544 5.3775 14.8112 5.9515 14.5087 6.2655L11.2802 9.6215L12.041 14.3515C12.1125 14.7945 11.711 15.1415 11.3572 14.9435L7.3321 12.6875L3.30977 14.9435Z"
+                  fill="#F24E1E" />
+              </svg>
+              <p>4,7</p>
             </div>
-            <p>Xàtiva, València, España</p>
-            <p>Idiomas: español, inglés, catalán</p>
-            <gl-book-guide-btn></gl-book-guide-btn>
+          </div>
+          <div class="ciudadPais">
+            <span>Ciudad: </span>
+            <span>{{nombreCiudad}}</span>,
+            <span>{{nombrePais}}</span>
+          </div>
+          <p>Idiomas: {{guia.guia.idioma}}</p>
+
+          <gl-book-guide-btn routerLink=""></gl-book-guide-btn>
         </div>
+      </div>
+      <div class="card-text">
+        <p>{{guia.guia.usuario.sobreMi}}</p>
+      </div>
+
     </div>
-    <div class="card-text">
-        <p>
-            ¡Hola! Soy tu guía turística, ¡y estoy aquí para llevarte en una aventura emocionante por la hermosa
-            comunidad valenciana! Con mi energía positiva y mi amor por esta tierra, te aseguro que vivirás momentos
-            inolvidables. Desde los vibrantes festivales hasta los sabores irresistibles de la gastronomía local
-            ¡Prepárate para descubrir y disfrutar al máximo junto a mí!
-        </p>
-    </div>
+  </div>
 </div>
