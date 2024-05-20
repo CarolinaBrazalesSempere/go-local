@@ -1,0 +1,21 @@
+<form class="container" [formGroup]="destinationForm">
+    <div class="search-container">
+        <div class="input-group">
+            <input type="text" formControlName="searchCountry" placeholder="País" class="form-control with-icon"
+                id="country">
+            <label for="pais"><img src="assets/img/location.svg"></label>
+        </div>
+        <div class="input-group">
+            <input type="text" formControlName="searchCity" placeholder="Ciudad" class="form-control with-icon"
+                id="city">
+            <label for="ciudad"><img src="assets/img/building.svg"></label>
+        </div>
+        <div class="input-group">
+            <input type="text" formControlName="searchDate" placeholder="Fecha" class="form-control with-icon"
+                id="date">
+            <label for="fecha"><img src="assets/img/calendar.svg"></label>
+        </div>
+        <button class="btn-search" type="button" (click)="search()">Buscar</button>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+</form>
