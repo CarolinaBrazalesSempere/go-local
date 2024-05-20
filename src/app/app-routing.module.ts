@@ -34,7 +34,7 @@ const routes: Routes = [
     component: ArticuloComponent,
   },
   {
-    path: 'ficha-guia',
+    path: 'ficha-guia/:idGuia',
     component: FichaGuiaComponent,
   },
   {
