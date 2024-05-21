@@ -39,13 +39,6 @@ html, body {
   border-color: #8b8b8b !important;
 }
 
-.label-terminos {
-  font-size: small;
-}
-
-.terminos {
-  color: #F24E1E;
-}
 
 .input-large {
   font-size: 1rem;
@@ -55,14 +48,8 @@ html, body {
   background-color: #E6E6E6;
 }
 
-.btn-medium {
-  font-size: small;
-  box-shadow: 4px 4px 4px rgba(1, 1, 1, 0.4);
-}
-
 ::placeholder {
-  color: #AFABAB;
-  font-size: x-small;
+  font-size: small;
 }
 
 @media (max-width: 976px) {
@@ -72,8 +59,21 @@ html, body {
 
   .container-login {
     width: 100%;
-    background-color: blue;
+
   }
+}
+
+#login-button {
+  background-color: #F24E1E;
+  border: none;
+  border-radius: 8px;
+  color: #FCFCFC;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  text-align: center;
+  padding: 12px;
 }
 
 
