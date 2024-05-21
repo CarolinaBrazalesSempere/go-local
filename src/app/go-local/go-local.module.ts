@@ -15,6 +15,7 @@ import { FichaGuiaComponent } from './pages/ficha-guia/ficha-guia.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
 import { ArticuloComponent } from './pages/articulo/articulo.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { ArticuloComponent } from './pages/articulo/articulo.component';
     ArticuloComponent,
   ],
 
-  imports: [CommonModule, FaqsModule, RouterModule, SharedModule],
+  imports: [CommonModule, FaqsModule, RouterModule, SharedModule, FormsModule],
   exports: [GlCardGuidesComponent, HomeComponent],
 })
 export class GoLocalModule {}
