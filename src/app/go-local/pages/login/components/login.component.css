@@ -1,86 +1,81 @@
-.left-100{
-  left: 450px;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-.formulario{
-  padding-right: 30px;
+.container {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.imagen{
+.container-login {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: white;
+  width: 70%;
+  margin: 5rem auto;
+}
+
+.imagen {
   margin-top: 80px;
   margin-bottom: 80px;
 }
 
-.w-custom{
-  width: 70%;
+.formulario {
+  padding-right: 30px;
+  position: absolute;
+  left: 450px;
 }
 
-.inputs{
+.inputs {
   width: 85%;
 }
 
 .inputs input {
-  border-color: #8b8b8b  !important;
+  border-color: #8b8b8b !important;
 }
 
-
-.label-terminos{
+.label-terminos {
   font-size: small;
 }
 
-.terminos{
+.terminos {
   color: #F24E1E;
 }
 
-.input-large{
+.input-large {
   font-size: 1rem;
 }
 
-.bg-color{
+.bg-color {
   background-color: #E6E6E6;
 }
 
-.btn-medium{
+.btn-medium {
   font-size: small;
   box-shadow: 4px 4px 4px rgba(1, 1, 1, 0.4);
 }
-
-.container-login{
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.2);
-}
-
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  font-size: x-small;
-  right: 10px;
-  width: 20px; /* Ancho del botón */
-  height: 20px; /* Alto del botón */
-  text-align: center;
-  color: inherit;
-  border: 2px solid black;
-  text-decoration: none;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
 
 ::placeholder {
   color: #AFABAB;
   font-size: x-small;
 }
 
-@media (max-width:976px){
-  .imagen{
+@media (max-width: 976px) {
+  .imagen {
     display: none;
   }
 
-  .container-login{
+  .container-login {
     width: 100%;
     background-color: blue;
   }
 }
+
 
 
 

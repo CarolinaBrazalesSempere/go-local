@@ -1,20 +1,20 @@
-<div class="container  d-flex justify-content-center align-item-center">
-  <div class="container-login  my-5 bg-white w-custom rounded d-flex position-relative" >
+<div class="container d-flex justify-content-center align-item-center">
+  <div class="container-login my-5 bg-white w-custom d-flex position-relative">
     <div class="imagen custom-width">
       <img src="assets/img/login.svg" alt="login" class="hero-banner">
     </div>
-    <div class="formulario my-5 position-absolute left-100 d-flex flex-column align-items-center ">
+    <div class="formulario my-5 position-absolute left-100 d-flex flex-column align-items-center">
       <p class="fw-bold fs-2">¡Haz el login y a viajar!</p>
       <div class="inputs d-grid gap-3">
-        <input [(ngModel)]="email" type="text" placeholder="E-mail" class=" bg-color border rounded form-control input-large border-1 ">
-        <input [(ngModel)]="password" type="text" placeholder="Contraseña" class="bg-color border rounded form-control input-large border-1 ">
-        <label class=" label-terminos align-items-center text-center w-100 ">
-          <input type="checkbox" class="border rounded  ">
+        <input [(ngModel)]="email" type="text" placeholder="E-mail" class="bg-color border rounded form-control input-large border-1">
+        <input [(ngModel)]="password" type="text" placeholder="Contraseña" class="bg-color border rounded form-control input-large border-1">
+        <label class="label-terminos align-items-center text-center w-100">
+          <input type="checkbox" class="border rounded">
           Acepto los <a class="terminos" href="">términos y condiciones</a>
         </label>
-        <button (click)="login()" class="btn-medium mt-2 w-100 ">INICIAR SESIÓN</button>
+        <button (click)="login()" class="btn-medium mt-2 w-100">INICIAR SESIÓN</button>
       </div>
     </div>
-    <a href="#" class="close-button fw-bold">X</a>
   </div>
 </div>
+

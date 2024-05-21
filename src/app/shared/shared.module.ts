@@ -1,32 +1,39 @@
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { SearchBoxComponent } from './components/search-box/components/search-box.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
+import { FooterComponent } from './components/footer/footer.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { OpinionComponent } from './components/opinion/opinion.component';
-import { TarjetaGuiaComponent } from './components/tarjeta-guia/tarjeta-guia.component';
+import { SearchBoxComponent } from './components/search-box/components/search-box.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
+import { TarjetaGuiaComponent } from './components/tarjeta-guia/tarjeta-guia.component';
+
 
 @NgModule({
   declarations: [
-    NavBarComponent,
-    SearchBoxComponent,
     FooterComponent,
+    NavBarComponent,
     OpinionComponent,
-    TarjetaGuiaComponent,
+    SearchBoxComponent,
     SobreMiComponent,
+    TarjetaGuiaComponent,
   ],
-  imports: [CommonModule, HttpClientModule, ReactiveFormsModule, RouterModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule,
+  ],
   exports: [
-    NavBarComponent,
-    SearchBoxComponent,
     FooterComponent,
+    NavBarComponent,
     OpinionComponent,
-    TarjetaGuiaComponent,
+    SearchBoxComponent,
     SobreMiComponent,
+    TarjetaGuiaComponent,
   ],
 })
 export class SharedModule {}
