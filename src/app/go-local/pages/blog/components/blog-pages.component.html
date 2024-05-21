@@ -88,7 +88,7 @@
   </div>
 </div> -->
 
-<div class="container mt-3">
+<!-- <div class="container mt-3">
 
   <div id="top" class="row blog-article">
     <div class="col top-text">
@@ -192,4 +192,9 @@
     </li>
   </ul>
 </nav>
+ -->
 
+ <div *ngFor="let entry of blogEntries" class="blog-entry">
+  <h2>{{ entry.titulo}}</h2>
+  <p>{{ entry.contenido }}</p>
+</div>

@@ -1,0 +1,17 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PostBlog } from 'src/app/go-local/interfaces/PostBlog';
+
+@Injectable({providedIn: 'root'})
+export class BlogService {
+
+  private baseUrl = 'http://localhost:8083/blog/todos';
+
+  constructor(private http: HttpClient) { }
+
+  getBlogEntries(): Observable<PostBlog[]> {
+    return this.http.get<PostBlog[]>(this.baseUrl);
+  }
+
+}

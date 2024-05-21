@@ -16,6 +16,8 @@ import { LoginComponent } from './pages/login/components/login.component';
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
 import { ArticuloComponent } from './pages/articulo/articulo.component';
 import { FormsModule } from '@angular/forms';
+import { BlogPageComponent } from './pages/blog/components/blog-pages.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,10 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     PerfilUsuarioComponent,
     ArticuloComponent,
+    BlogPageComponent,
   ],
 
-  imports: [CommonModule, FaqsModule, FormsModule, RouterModule, SharedModule],
+  imports: [CommonModule, FaqsModule, FormsModule, RouterModule, SharedModule, HttpClientModule],
   exports: [GlCardGuidesComponent, HomeComponent],
 })
 export class GoLocalModule {}
