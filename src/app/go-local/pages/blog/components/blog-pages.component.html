@@ -1,92 +1,3 @@
-<!-- <div id="top">
-  <div>
-    <h2>Viajar con responsabilidad y de forma consciente</h2>
-    <p>
-      Viajar con responsabilidad implica tomar decisiones conscientes para minimizar nuestro impacto negativo y maximizar
-      los beneficios para el medio ambiente, las comunidades locales y la preservación cultural. Desde investigar
-      previamente sobre el destino hasta optar por medios de transporte sostenibles y apoyar la economía local, cada
-      acción cuenta.
-    </p>
-  </div>
-  <div>
-    <img>
-  </div>
-</div>
-
-<div id="mid">
-  <div>
-    <div>
-      <img>
-    </div>
-    <div>
-      <h3>5 pueblos que visitar en Cádiz</h3>
-      <p>
-        Descubre la esencia costera de Cádiz a través de sus encantadores destinos. Sumérgete en playas de arena dorada,
-        explora calles pintorescas y admira vistas panorámicas.
-      </p>
-    </div>
-  </div>
-
-
-  <div>
-    <div>
-      <img>
-    </div>
-    <div>
-      <h3>Qué visitar en París en 4 días</h3>
-      <p>
-        Explora la icónica ciudad de París durante cuatro días inolvidables. Admira la Torre Eiffel y pasea por los Campos
-        Elíseos hasta llegar al Arco de Triunfo. Sumérgete en la historia en el Louvre.
-      </p>
-    </div>
-  </div>
-</div>
-
-<div id="botton">
-  <div>
-    <div>
-      <img>
-    </div>
-    <div>
-      <h4>Senderismo en Navarra</h4>
-      <p>Descubre la belleza natural de Navarra a través del senderismo. Desde las impresionantes montañas de los Pirineos
-        hasta los paisajes verdes de la Selva de Irati.</p>
-    </div>
-  </div>
-
-  <div>
-    <div>
-      <img>
-    </div>
-    <div>
-      <h4>¿Qué es el esmorzaret?</h4>
-      <p>Te contamos esta tradición culinaria típica de la Comunidad Valenciana tan contundente que se suele disfrutar en la
-        mañana, generalmente los fines de semana.</p>
-    </div>
-  </div>
-
-  <div>
-    <div>
-      <img>
-    </div>
-    <div>
-      <h4>Visita Praga en 3 días</h4>
-      <p>Explora la encantadora ciudad de Praga en tres días intensos. Explora el impresionante Castillo de Praga y el
-        Puente de Carlos. Disfruta de esta joya europea en 3 días.</p>
-    </div>
-  </div>
-
-  <div>
-    <div>
-      <img>
-    </div>
-    <div>
-      <h4>5 rutas en coche por Euskadi</h4>
-      <p>Descubre Euskadi en coche, en este artículo te contamos cómo sacarle el máximo partido a tu experiencia sobre
-        ruedas a este paraíso de la naturaleza con cinco impresionantes rutas.</p>
-    </div>
-  </div>
-</div> -->
 
 <div class="container mt-3">
 
@@ -126,24 +37,6 @@
 
 </div>
 
-<!-- <nav id="pagination-container">
-  <ul class="pagination justify-content-center">
-    <li class="page-item">
-      <a class="page-link arrow" href="#">
-        <img src=".\assets\img\pagination\left-arrow.svg" class="arrow-img">
-      </a>
-    </li>
-    <li class="page-item page-number"><a class="page-link" href="#">1</a></li>
-    <li class="page-item page-number"><a class="page-link" href="#">2</a></li>
-    <li class="page-item page-number"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link arrow" href="#">
-        <img src=".\assets\img\pagination\right-arrow.svg" class="arrow-img">
-      </a>
-    </li>
-  </ul>
-</nav> -->
-
 <nav id="pagination-container">
   <ul class="pagination justify-content-center">
     <li class="page-item" [class.disabled]="currentPage === 0">
@@ -161,28 +54,3 @@
     </li>
   </ul>
 </nav>
-
- <!-- <div *ngFor="let entry of blogEntries" class="blog-entry">
-  <h2>{{ entry.titulo}}</h2>
-  <p>{{ entry.contenido }}</p>
-</div> -->
-<!--
-<div *ngIf="firstContainer" class="first-container">
-  <h2>{{ firstContainer.titulo }}</h2>
-  <p>{{ firstContainer.contenido }}</p>
-</div>
-
-<div class="second-container" *ngFor="let entry of secondContainer">
-  <h2>{{ entry.titulo }}</h2>
-  <p>{{ entry.contenido }}</p>
-</div>
-
-<div class="third-container" *ngFor="let entry of thirdContainer">
-  <h2>{{ entry.titulo }}</h2>
-  <p>{{ entry.contenido }}</p>
-</div>
-
-<div class="pagination">
-  <button (click)="prevPage()" [disabled]="currentPage === 0">Anterior</button>
-  <button (click)="nextPage()" [disabled]="(currentPage + 1) * pageSize >= blogEntries.length">Siguiente</button>
-</div> -->
