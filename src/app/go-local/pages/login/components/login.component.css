@@ -48,6 +48,10 @@ html, body {
   background-color: #E6E6E6;
 }
 
+#email, #password {
+  border: none;
+}
+
 ::placeholder {
   font-size: small;
 }

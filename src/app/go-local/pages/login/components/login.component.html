@@ -6,8 +6,8 @@
     <div class="formulario my-5 d-flex flex-column align-items-center">
       <p class="fw-bold fs-2">¡Haz el login y a viajar!</p>
       <div class="inputs d-grid gap-3">
-        <input [(ngModel)]="email" type="text" placeholder="E-mail" class="bg-color border rounded form-control input-large border-1">
-        <input [(ngModel)]="password" type="text" placeholder="Contraseña" class="bg-color border rounded form-control input-large border-1">
+        <input [(ngModel)]="email" id="email" type="text" placeholder="E-mail" class="bg-color rounded form-control input-large ">
+        <input [(ngModel)]="password" id="password" type="text" placeholder="Contraseña" class="bg-color rounded form-control input-large">
         <button (click)="login()" id="login-button" class="btn btn-primary border-1 w-100">INICIAR SESIÓN</button>
       </div>
     </div>
