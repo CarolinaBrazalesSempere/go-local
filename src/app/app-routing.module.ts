@@ -28,13 +28,20 @@ const routes: Routes = [
   {
     path: 'destinations',
     component: SearchByDestinationComponent,
+    children: [
+      {
+        path: 'guia',
+        component: FichaGuiaComponent,
+      },
+    ],
   },
+
   {
     path: 'articulo',
     component: ArticuloComponent,
   },
   {
-    path: 'ficha-guia',
+    path: 'guia',
     component: FichaGuiaComponent,
   },
   {

@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './card-guide-destination.component.html',
   styleUrls: ['./card-guide-destination.component.css'],
 })
-export class CardGuideDestinationComponent implements OnInit{
+export class CardGuideDestinationComponent implements OnInit {
   itinerarios: Itinerario[] = [];
   nombreCiudad: string = '';
   nombrePais: string = '';
@@ -22,6 +22,7 @@ export class CardGuideDestinationComponent implements OnInit{
       this.nombreCiudad = params['city'];
       this.nombrePais = params['country'];
       this.fechaDisponible = params['date'];
+
       this.apiService
         .buscarItinerariosPorCiudadPaisYFecha(
           this.nombreCiudad,

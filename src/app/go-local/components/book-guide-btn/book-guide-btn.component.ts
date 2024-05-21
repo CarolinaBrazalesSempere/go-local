@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'gl-book-guide-btn',
   templateUrl: './book-guide-btn.component.html',
   styleUrls: ['./book-guide-btn.component.css'],
 })
-export class BookGuideBtnComponent {}
+export class BookGuideBtnComponent {
+  @Input() routerLink: any[] | string | null = null;
+}
