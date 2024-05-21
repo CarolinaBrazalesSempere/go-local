@@ -126,7 +126,7 @@
 
 </div>
 
-<nav id="pagination-container">
+<!-- <nav id="pagination-container">
   <ul class="pagination justify-content-center">
     <li class="page-item">
       <a class="page-link arrow" href="#">
@@ -142,14 +142,31 @@
       </a>
     </li>
   </ul>
-</nav>
+</nav> -->
 
+<nav id="pagination-container">
+  <ul class="pagination justify-content-center">
+    <li class="page-item" [class.disabled]="currentPage === 0">
+      <a class="page-link arrow" (click)="prevPage()">
+        <img src="./assets/img/pagination/left-arrow.svg" class="arrow-img">
+      </a>
+    </li>
+    <li *ngFor="let page of getPagesArray()" class="page-item page-number" [class.active]="page === currentPage">
+      <a class="page-link" (click)="setPage(page)">{{ page + 1 }}</a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage === totalPages - 1">
+      <a class="page-link arrow" (click)="nextPage()">
+        <img src="./assets/img/pagination/right-arrow.svg" class="arrow-img">
+      </a>
+    </li>
+  </ul>
+</nav>
 
  <!-- <div *ngFor="let entry of blogEntries" class="blog-entry">
   <h2>{{ entry.titulo}}</h2>
   <p>{{ entry.contenido }}</p>
 </div> -->
-
+<!--
 <div *ngIf="firstContainer" class="first-container">
   <h2>{{ firstContainer.titulo }}</h2>
   <p>{{ firstContainer.contenido }}</p>
@@ -168,4 +185,4 @@
 <div class="pagination">
   <button (click)="prevPage()" [disabled]="currentPage === 0">Anterior</button>
   <button (click)="nextPage()" [disabled]="(currentPage + 1) * pageSize >= blogEntries.length">Siguiente</button>
-</div>
+</div> -->

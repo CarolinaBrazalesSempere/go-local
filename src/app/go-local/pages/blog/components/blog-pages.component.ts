@@ -20,30 +20,33 @@ export class BlogPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.blogService.getBlogEntries().subscribe(data => {
-
       this.blogEntries = data.sort((a, b) => a.idPost - b.idPost);
+      this.totalPages = Math.ceil(this.blogEntries.length / this.pageSize);
       this.setPage(this.currentPage);
     });
   }
 
   setPage(page: number): void {
+    this.currentPage = page;
     const start = page * this.pageSize;
     const end = start + this.pageSize;
     this.displayedEntries = this.blogEntries.slice(start, end);
   }
 
   nextPage(): void {
-    if ((this.currentPage + 1) * this.pageSize < this.blogEntries.length) {
-      this.currentPage++;
-      this.setPage(this.currentPage);
+    if (this.currentPage < this.totalPages - 1) {
+      this.setPage(this.currentPage + 1);
     }
   }
 
   prevPage(): void {
     if (this.currentPage > 0) {
-      this.currentPage--;
-      this.setPage(this.currentPage);
+      this.setPage(this.currentPage - 1);
     }
+  }
+
+  getPagesArray(): number[] {
+    return new Array(this.totalPages).fill(0).map((_, i) => i);
   }
 
   get firstContainer(): PostBlog | undefined {
