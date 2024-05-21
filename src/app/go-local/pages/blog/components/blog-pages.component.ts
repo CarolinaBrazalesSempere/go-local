@@ -11,13 +11,53 @@ import { CommonModule } from '@angular/common';
 export class BlogPageComponent implements OnInit {
 
   blogEntries: PostBlog[] = [];
+  displayedEntries: PostBlog[] = [];
+  currentPage: number = 0;
+  pageSize: number = 7;
+  totalPages: number = 0;
 
   constructor(private blogService: BlogService) {}
 
   ngOnInit(): void {
     this.blogService.getBlogEntries().subscribe(data => {
-      this.blogEntries = data;
+
+      this.blogEntries = data.sort((a, b) => a.idPost - b.idPost);
+      this.setPage(this.currentPage);
     });
   }
 
+  setPage(page: number): void {
+    const start = page * this.pageSize;
+    const end = start + this.pageSize;
+    this.displayedEntries = this.blogEntries.slice(start, end);
+  }
+
+  nextPage(): void {
+    if ((this.currentPage + 1) * this.pageSize < this.blogEntries.length) {
+      this.currentPage++;
+      this.setPage(this.currentPage);
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 0) {
+      this.currentPage--;
+      this.setPage(this.currentPage);
+    }
+  }
+
+  get firstContainer(): PostBlog | undefined {
+    return this.displayedEntries[0];
+  }
+
+  get secondContainer(): PostBlog[] {
+    return this.displayedEntries.slice(1, 3);
+  }
+
+  get thirdContainer(): PostBlog[] {
+    return this.displayedEntries.slice(3, 7);
+  }
+
 }
+
+
