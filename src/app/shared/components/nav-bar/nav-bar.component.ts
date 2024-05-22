@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from './../../../go-local/Services/Auth.service';
+import { AuthService } from '../../../go-local/services/Auth.service';
 
 @Component({
   selector: 'shared-nav-bar',
