@@ -145,10 +145,13 @@
   border: none;
 }
 
-/* TODO: Falta cambiar el comportamiento del boton al pulsar */
-
 .page-number {
   --bs-pagination-hover-bg: rgba(242, 78, 30, 0.11);
+}
+
+.page-number.active .page-link {
+  background-color: #f24e1e !important;
+  color: #fff !important;
 }
 
 /* TODO: Falta el resposive del contenedor #top */

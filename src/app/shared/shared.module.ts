@@ -4,13 +4,12 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { SearchBoxComponent } from './components/search-box/components/search-box.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { OpinionComponent } from './components/opinion/opinion.component';
-import { TarjetaGuiaComponent } from './components/tarjeta-guia/tarjeta-guia.component';
+import { SearchBoxComponent } from './components/search-box/components/search-box.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
-
+import { TarjetaGuiaComponent } from './components/tarjeta-guia/tarjeta-guia.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +20,7 @@ import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
     SobreMiComponent,
     TarjetaGuiaComponent,
   ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    RouterModule,
-  ],
+  imports: [CommonModule, HttpClientModule, ReactiveFormsModule, RouterModule],
   exports: [
     FooterComponent,
     NavBarComponent,
