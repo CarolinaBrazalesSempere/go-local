@@ -1,9 +1,8 @@
-<div class="card">
+<div *ngFor="let entry of blogEntries" class="card">
     <img src="assets/img/placeholder-img.png" class="card-img-top" alt="...">
     <div class="card-body">
-        <h4>5 rutas en coche por Euskadi</h4>
-        <p class="card-text">Descubre Euskadi en coche, en este artículo te contamos cómo sacarle el máximo partido a tu
-            experiencia sobre ruedas a este paraíso de la naturaleza.</p>
+        <h4>{{entry.titulo}}</h4>
+        <p class="card-text">{{entry.contenido}}</p>
 
         <div class="read-more">
             <a href="#" class="link-read-more">Leer más</a>
