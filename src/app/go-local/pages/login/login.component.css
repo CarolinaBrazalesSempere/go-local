@@ -31,6 +31,10 @@ html, body {
   left: 450px;
 }
 
+#form-content {
+  display: contents;
+}
+
 .inputs {
   width: 85%;
 }
@@ -48,7 +52,7 @@ html, body {
   background-color: #E6E6E6;
 }
 
-#email, #password {
+#username, #password {
   border: none;
 }
 
