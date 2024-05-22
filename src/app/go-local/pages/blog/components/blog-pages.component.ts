@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 
 import { PostBlog } from 'src/app/go-local/interfaces/PostBlog';
@@ -22,7 +22,7 @@ export class BlogPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.blogService.getBlogEntries().subscribe(data => {
-      this.blogEntries = data.sort((a, b) => a.idPost - b.idPost);
+      this.blogEntries = data.sort((a, b) => b.idPost - a.idPost);
       this.totalPages = Math.ceil(this.blogEntries.length / this.pageSize);
       this.setPage(this.currentPage);
     });

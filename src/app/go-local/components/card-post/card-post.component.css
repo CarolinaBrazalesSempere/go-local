@@ -1,3 +1,11 @@
+#card-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto; /* Añade desplazamiento horizontal si es necesario */
+
+
+}
+
 .link-read-more {
   font-size: 16px;
   font-weight: 700;

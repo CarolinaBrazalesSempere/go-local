@@ -10,12 +10,14 @@ import { PostBlog } from '../../interfaces/PostBlog';
 export class CardPostComponent implements OnInit{
 
   blogEntries: PostBlog[] = [];
+  displayedEntries: PostBlog[] = [];
 
   constructor(private blogService: BlogService) {}
 
   ngOnInit(): void {
     this.blogService.getBlogEntries().subscribe(data => {
-      this.blogEntries = data.slice(0, 4);
+      this.blogEntries = data.sort((a, b) => b.idPost - a.idPost).slice(0, 4);
+      this.displayedEntries = this.blogEntries;
     });
   }
 
