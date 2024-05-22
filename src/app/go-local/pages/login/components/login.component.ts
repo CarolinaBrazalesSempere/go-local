@@ -1,47 +1,55 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../services/authentication.service';
-import { tap, catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { AuthService } from '../../../services/Auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-
-  email: string = '';
+  username: string = '';
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private authenticationService: AuthenticationService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
-  // login(): void {
-  //   this.authenticationService.login(this.email, this.password).subscribe(
-  //     response => {
-  //       localStorage.setItem('token', response.token); // Almacena el token
-  //       this.router.navigate(['']); // Redirige a home
-  //     },
-  //     error => {
-  //       this.errorMessage = 'Email o contraseña incorrectos'; // Meter en el html con ngIf
-  //     }
-  //   );
+  // login() {
+  //   this.authService.login(this.username, this.password)
+  //     .subscribe(
+  //       () => {
+  //         console.log('Inicio de sesión exitoso');
+  //         this.authService.setLoggedInUsername(this.username);
+  //         this.router.navigate(['/']);
+  //       },
+  //       error => {
+  //         console.error('Error en el inicio de sesión:', error);
+  //         this.errorMessage = 'Usuario o contraseña incorrectos';
+  //       }
+  //     );
   // }
 
-  login(): void {
-    this.authenticationService.login(this.email, this.password)
-      .pipe(
-        tap(response => {
-          localStorage.setItem('token', response.token); // Almacena el token
-          this.router.navigate(['']); // Redirige a home
-        }),
-        catchError(error => {
-          this.errorMessage = 'Email o contraseña incorrectos'; // Meter en el html con ngIf
-          return of(null);
-        })
-      )
-      .subscribe();
+  login() {
+    this.authService.login(this.username, this.password).subscribe(
+      () => {
+        this.authService.setLoggedInUsername(this.username);
+        this.router.navigate(['/']);
+      },
+      (error) => {
+        if (error.status === 401) {
+          const errorBody = error.error;
+          if (errorBody === 'Usuario incorrecto') {
+            this.errorMessage = 'Usuario incorrecto';
+          } else {
+            this.errorMessage = 'Contraseña incorrecta';
+          }
+        }
+      }
+    );
   }
 
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 }

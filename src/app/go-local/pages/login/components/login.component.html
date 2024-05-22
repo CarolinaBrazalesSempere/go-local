@@ -1,17 +1,27 @@
 <div class="container d-flex justify-content-center align-item-center">
   <div class="container-login my-5 bg-white w-custom d-flex position-relative">
     <div class="imagen custom-width">
-      <img src="assets/img/login.svg" alt="login" class="hero-banner">
+      <img src="assets/img/login.svg" alt="login" class="hero-banner" />
     </div>
     <div class="formulario my-5 d-flex flex-column align-items-center">
       <p class="fw-bold fs-2">¡Haz el login y a viajar!</p>
-      <div class="inputs d-grid gap-3">
-        <input [(ngModel)]="email" id="email" type="text" placeholder="E-mail" class="bg-color rounded form-control input-large ">
-        <input [(ngModel)]="password" id="password" type="text" placeholder="Contraseña" class="bg-color rounded form-control input-large">
-        <button (click)="login()" id="login-button" class="btn btn-primary border-1 w-100">INICIAR SESIÓN</button>
-      </div>
+      <form (ngSubmit)="login()" id="form-content">
+        <div class="inputs d-grid gap-3">
+          <input [(ngModel)]="username" name="username" id="username" type="text" required placeholder="Usuario"
+            class="bg-color rounded form-control input-large" />
+          <input [(ngModel)]="password" name="password" id="password" type="password" placeholder="Contraseña"
+            class="bg-color rounded form-control input-large" />
+          <button id="login-button" class="btn btn-primary border-1 w-100">
+            INICIAR SESIÓN
+          </button>
+          <p class="label-terminos align-items-center text-center w-100">¿Todavía no tienes cuenta? <a class="terminos"
+              routerLink="/signup">Regístrate aquí</a></p>
+          <div *ngIf="errorMessage" class="alert alert-danger d-flex justify-content-center align-items-center">{{
+            errorMessage }}</div>
+        </div>
+
+      </form>
+
     </div>
   </div>
 </div>
-
-

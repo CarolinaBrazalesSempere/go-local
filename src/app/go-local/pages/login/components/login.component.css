@@ -1,34 +1,39 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
 
 .container {
-  min-height: 70vh;
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  min-height: 70vh;
   position: relative;
 }
 
 .container-login {
+  background-color: white;
   display: flex;
   flex-direction: column;
-  position: relative;
-  background-color: white;
-  width: 70%;
   margin: 5rem auto;
+  position: relative;
+  width: 70%;
 }
 
 .imagen {
-  margin-top: 80px;
   margin-bottom: 80px;
+  margin-top: 80px;
 }
 
 .formulario {
+  left: 450px;
   padding-right: 30px;
   position: absolute;
-  left: 450px;
+}
+
+#form-content {
+  display: contents;
 }
 
 .inputs {
@@ -39,16 +44,16 @@ html, body {
   border-color: #8b8b8b !important;
 }
 
-
 .input-large {
   font-size: 1rem;
 }
 
 .bg-color {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
 }
 
-#email, #password {
+#username,
+#password {
   border: none;
 }
 
@@ -63,23 +68,27 @@ html, body {
 
   .container-login {
     width: 100%;
-
   }
 }
 
 #login-button {
-  background-color: #F24E1E;
-  border: none;
+  background-color: #f24e1e;
   border-radius: 8px;
-  color: #FCFCFC;
+  border: none;
+  color: #fcfcfc;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
-  text-align: center;
   padding: 12px;
+  text-align: center;
 }
 
+.label-terminos {
+  font-size: small;
+}
 
-
-
+.terminos {
+  color: #f24e1e;
+  cursor: pointer;
+}
