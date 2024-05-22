@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../services/blog.service';
-import { PostBlog } from 'src/app/go-local/interfaces/PostBlog';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+
+import { PostBlog } from 'src/app/go-local/interfaces/PostBlog';
+import { BlogService } from '../services/blog.service';
+
 
 @Component({
   selector: 'app-blog',
