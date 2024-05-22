@@ -15,7 +15,7 @@ export class CardPostComponent implements OnInit{
 
   ngOnInit(): void {
     this.blogService.getBlogEntries().subscribe(data => {
-      this.blogEntries = data;
+      this.blogEntries = data.slice(0, 4);
     });
   }
 
