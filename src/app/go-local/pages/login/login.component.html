@@ -5,14 +5,12 @@
     </div>
     <div class="formulario my-5 d-flex flex-column align-items-center">
       <p class="fw-bold fs-2">¡Haz el login y a viajar!</p>
-      <form (ngSubmit)="login()">
-        <div class="inputs d-grid gap-3">
-          <input type="text" id="username" [(ngModel)]="username" name="username" required placeholder="Username" class="bg-color rounded form-control input-large ">
-          <input type="password" id="password" [(ngModel)]="password" name="password" required placeholder="Username" placeholder="Contraseña" class="bg-color rounded form-control input-large">
-          <button class="btn-medium mt-2 w-100 ">INICIAR SESIÓN</button>
-        </div>
-      </form>
-
+      <div class="inputs d-grid gap-3">
+        <input [(ngModel)]="username" id="email" type="text" placeholder="E-mail" class="bg-color rounded form-control input-large ">
+        <input [(ngModel)]="password" id="password" type="text" placeholder="Contraseña" class="bg-color rounded form-control input-large">
+        <button (click)="login()" id="login-button" class="btn btn-primary border-1 w-100">INICIAR SESIÓN</button>
+      </div>
     </div>
   </div>
 </div>
+
