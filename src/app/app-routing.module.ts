@@ -12,7 +12,6 @@ import { ErrorComponent } from './go-local/pages/error/error.component';
 import { BlogPageComponent } from './go-local/pages/blog/blog-pages.component';
 import { FaqsPageComponent } from './go-local/pages/faqs/components/faqs-page/faqs-page.component';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -36,7 +35,7 @@ const routes: Routes = [
     component: ArticuloComponent,
   },
   {
-    path: 'ficha-guia',
+    path: 'ficha-guia/:idGuia',
     component: FichaGuiaComponent,
   },
   {
@@ -58,11 +57,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes),
-  ],
-  exports: [
-    RouterModule,
-  ],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

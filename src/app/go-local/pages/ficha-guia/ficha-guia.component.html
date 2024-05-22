@@ -1,9 +1,10 @@
-<div class="container my-0 ">
+<div class="container my-0 " >
   <div class="row">
-    <p class="fw-bold fs-1">Andrea García Rodríguez</p>
+
+    <p class="fw-bold fs-1">{{guia.usuario.nombre}}</p>
     <div class=" orden d-flex">
       <div class=" sobreMi">
-        <shared-sobre-mi></shared-sobre-mi>
+        <shared-sobre-mi [sobreMi]="guia.usuario.sobreMi"></shared-sobre-mi>
       </div>
       <div class="col-md-6">
         <div class="ficha-guia">

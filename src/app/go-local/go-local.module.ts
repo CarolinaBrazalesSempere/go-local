@@ -18,34 +18,25 @@ import { LoginComponent } from './pages/login/login.component';
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
 import { ArticuloComponent } from './pages/articulo/articulo.component';
 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    ArticuloComponent,
     BookGuideBtnComponent,
-    BookGuideBtnComponent,
-    CardGuideDestinationComponent,
     CardGuideDestinationComponent,
     CardPostComponent,
     ErrorComponent,
-    ErrorComponent,
-    FichaGuiaComponent,
     GlCardGuidesComponent,
     HomeComponent,
     ItinerarioListComponent,
     LoginComponent,
     PerfilUsuarioComponent,
     SearchByDestinationComponent,
+    FichaGuiaComponent,
+    ArticuloComponent,
   ],
 
-  imports: [
-    CommonModule,
-    FaqsModule,
-    RouterModule,
-    SharedModule,
-  ],
-  exports: [
-    GlCardGuidesComponent,
-    HomeComponent],
+  imports: [CommonModule, FaqsModule, RouterModule, SharedModule, FormsModule],
+  exports: [GlCardGuidesComponent, HomeComponent],
 })
 export class GoLocalModule {}

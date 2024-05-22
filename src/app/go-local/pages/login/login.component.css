@@ -1,85 +1,87 @@
-.left-100{
-  left: 450px;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-.formulario{
-  padding-right: 30px;
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 70vh;
+  position: relative;
 }
 
-.imagen{
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
-.w-custom{
+.container-login {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem auto;
+  position: relative;
   width: 70%;
 }
 
-.inputs{
+.imagen {
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+
+.formulario {
+  left: 450px;
+  padding-right: 30px;
+  position: absolute;
+}
+
+#form-content {
+  display: contents;
+}
+
+.inputs {
   width: 85%;
 }
 
 .inputs input {
-  border-color: #8b8b8b  !important;
+  border-color: #8b8b8b !important;
 }
 
 
-.label-terminos{
-  font-size: small;
-}
-
-.terminos{
-  color: #F24E1E;
-}
-
-.input-large{
+.input-large {
   font-size: 1rem;
 }
 
-.bg-color{
+.bg-color {
   background-color: #E6E6E6;
 }
 
-.btn-medium{
-  font-size: small;
-  box-shadow: 4px 4px 4px rgba(1, 1, 1, 0.4);
+#username, #password {
+  border: none;
 }
-
-.container-login{
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.2);
-}
-
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  font-size: x-small;
-  right: 10px;
-  width: 20px; /* Ancho del botón */
-  height: 20px; /* Alto del botón */
-  text-align: center;
-  color: inherit;
-  border: 2px solid black;
-  text-decoration: none;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
 
 ::placeholder {
-  color: #AFABAB;
-  font-size: x-small;
+  font-size: small;
 }
 
-@media (max-width:976px){
-  .imagen{
+@media (max-width: 976px) {
+  .imagen {
     display: none;
   }
 
-  .container-login{
+  .container-login {
     width: 100%;
-    background-color: blue;
+
   }
+}
+
+#login-button {
+  background-color: #F24E1E;
+  border-radius: 8px;
+  border: none;
+  color: #FCFCFC;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  padding: 12px;
+  text-align: center;
 }
 
 

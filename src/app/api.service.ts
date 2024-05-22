@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { Itinerario } from './go-local/interfaces/itinerario';
+import { Guia } from './go-local/interfaces/Guia';
 
 
 @Injectable({
@@ -25,15 +26,7 @@ export class ApiService {
         .slice(0, 10)}`
     );
   }
-
-  private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      // Error del lado del cliente o de la red
-      console.error('An error occurred:', error.error.message);
-    } else {
-      // El backend devolvió un código de respuesta no exitoso
-      console.error(`Backend returned code ${error.status}, body was: ${error.error}`);
-    }
-    return throwError('Something bad happened; please try again later.');
+  getGuiaById(idGuia: number): Observable<Guia> {
+    return this.http.get<Guia>(`${this.baseUrl}/guia/${idGuia}`);
   }
 }
