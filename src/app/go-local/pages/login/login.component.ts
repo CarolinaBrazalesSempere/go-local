@@ -33,7 +33,6 @@ export class LoginComponent {
     this.authService.login(this.username, this.password)
       .subscribe(
         () => {
-          console.log('Inicio de sesión exitoso');
           this.authService.setLoggedInUsername(this.username);
           this.router.navigate(['/']);
         },
