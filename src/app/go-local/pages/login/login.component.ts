@@ -19,9 +19,7 @@ export class LoginComponent {
       .subscribe(
         () => {
           console.log('Inicio de sesión exitoso');
-          // Establecer el nombre de usuario en el AuthService
           this.authService.setLoggedInUsername(this.username);
-          // Redirigir al usuario al home después del inicio de sesión exitoso
           this.router.navigate(['/']);
         },
         error => {
@@ -33,7 +31,6 @@ export class LoginComponent {
 
   logout() {
     this.authService.logout();
-    // Redirigir al usuario a la página de inicio de sesión o a cualquier otra página
     this.router.navigate(['/login']);
   }
 }

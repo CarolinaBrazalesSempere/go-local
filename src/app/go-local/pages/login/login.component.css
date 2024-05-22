@@ -4,31 +4,31 @@ html, body {
 }
 
 .container {
-  min-height: 70vh;
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  min-height: 70vh;
   position: relative;
 }
 
 .container-login {
+  background-color: white;
   display: flex;
   flex-direction: column;
-  position: relative;
-  background-color: white;
-  width: 70%;
   margin: 5rem auto;
+  position: relative;
+  width: 70%;
 }
 
 .imagen {
-  margin-top: 80px;
   margin-bottom: 80px;
+  margin-top: 80px;
 }
 
 .formulario {
+  left: 450px;
   padding-right: 30px;
   position: absolute;
-  left: 450px;
 }
 
 #form-content {
@@ -73,15 +73,15 @@ html, body {
 
 #login-button {
   background-color: #F24E1E;
-  border: none;
   border-radius: 8px;
+  border: none;
   color: #FCFCFC;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
-  text-align: center;
   padding: 12px;
+  text-align: center;
 }
 
 
