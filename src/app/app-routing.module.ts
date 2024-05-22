@@ -12,7 +12,6 @@ import { PerfilUsuarioComponent } from './go-local/pages/perfil-usuario/perfil-u
 import { SearchByDestinationComponent } from './go-local/pages/search-by-destination/search-by-destination.component';
 import { SignupComponent } from './go-local/pages/signup/signup.component';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -36,7 +35,7 @@ const routes: Routes = [
     component: ArticuloComponent,
   },
   {
-    path: 'ficha-guia',
+    path: 'ficha-guia/:idGuia',
     component: FichaGuiaComponent,
   },
   {

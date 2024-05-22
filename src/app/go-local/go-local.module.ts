@@ -1,8 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
 import { FaqsModule } from './pages/faqs/faqs.module';
 import { SharedModule } from '../shared/shared.module';
+
 import { BookGuideBtnComponent } from './components/book-guide-btn/book-guide-btn.component';
 import { CardGuideDestinationComponent } from './components/card-guide-destination/card-guide-destination.component';
 import { CardPostComponent } from './components/card-post/card-post.component';
@@ -27,19 +29,24 @@ import { HttpClientModule } from '@angular/common/http';
     ErrorComponent,
     GlCardGuidesComponent,
     HomeComponent,
-    SearchByDestinationComponent,
     ItinerarioListComponent,
-    ErrorComponent,
-    CardGuideDestinationComponent,
-    BookGuideBtnComponent,
-    FichaGuiaComponent,
     LoginComponent,
     PerfilUsuarioComponent,
+    SearchByDestinationComponent,
+    FichaGuiaComponent,
     ArticuloComponent,
     BlogPageComponent,
   ],
 
-  imports: [CommonModule, FaqsModule, FormsModule, RouterModule, SharedModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    FaqsModule,
+    FormsModule,
+    RouterModule,
+    SharedModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   exports: [GlCardGuidesComponent, HomeComponent],
 })
 export class GoLocalModule {}
