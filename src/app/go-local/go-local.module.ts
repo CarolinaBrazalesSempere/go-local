@@ -32,6 +32,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     PerfilUsuarioComponent,
     SearchByDestinationComponent,
+    FichaGuiaComponent,
+    ArticuloComponent,
   ],
 
   imports: [CommonModule, FaqsModule, RouterModule, SharedModule, FormsModule],
