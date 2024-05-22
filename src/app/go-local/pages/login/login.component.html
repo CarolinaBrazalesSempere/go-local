@@ -27,8 +27,11 @@
           <button id="login-button" class="btn btn-primary border-1 w-100">
             INICIAR SESIÓN
           </button>
+          <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
         </div>
+
       </form>
+
     </div>
   </div>
 </div>
