@@ -1,35 +1,44 @@
 <div class="container mt-3">
-  <div *ngIf="firstContainer" id="top" class="row blog-article">
-    <div class="col top-text">
-      <h2>{{ firstContainer.titulo }}</h2>
-      <p>{{ firstContainer.contenido }}</p>
+
+
+    <div *ngIf="firstContainer" id="top" class="row blog-article">
+      <a [routerLink]="['/articulo', firstContainer.idPost]" class="link">
+        <div class="col top-text">
+          <h2>{{ firstContainer.titulo }}</h2>
+          <p>{{ firstContainer.contenido }}</p>
+        </div>
+        <div class="col d-flex justify-content-center align-items-center">
+          <img src=".\assets\img\blog\blog-article-1.svg" class="img-fluid mt-3 mb-3" />
+        </div>
+      </a>
     </div>
-    <div class="col d-flex justify-content-center align-items-center">
-      <img src=".\assets\img\blog\blog-article-1.svg" class="img-fluid mt-3 mb-3" />
-    </div>
-  </div>
+
 
   <div id="mid" class="row">
     <div *ngFor="let entry of secondContainer" id="mid-article-1" class="col custom-mid blog-article">
-      <div id="mid-img-1" class="d-flex justify-content-center align-items-center">
-        <img src=".\assets\img\blog\blog-article-2.svg" class="img-fluid mt-1" />
-      </div>
-      <div class="mid-text">
-        <h3>{{ entry.titulo }}</h3>
-        <p>{{ entry.contenido }}</p>
-      </div>
+      <a [routerLink]="['/articulo', entry.idPost]" class="link">
+        <div id="mid-img-1" class="d-flex justify-content-center align-items-center">
+          <img src=".\assets\img\blog\blog-article-2.svg" class="img-fluid mt-1" />
+        </div>
+        <div class="mid-text">
+          <h3>{{ entry.titulo }}</h3>
+          <p>{{ entry.contenido }}</p>
+        </div>
+      </a>
     </div>
   </div>
 
   <div id="bottom" class="row">
     <div *ngFor="let entry of thirdContainer" id="bottom-article-1" class="col custom-bottom blog-article">
-      <div id="bottom-img-1" class="d-flex justify-content-center align-items-center">
-        <img src=".\assets\img\blog\blog-article-4.svg" class="img-fluid mt-3" />
-      </div>
-      <div class="bottom-text">
-        <h4>{{ entry.titulo }}</h4>
-        <p>{{ entry.contenido }}</p>
-      </div>
+      <a [routerLink]="['/articulo', entry.idPost]" class="link">
+        <div id="bottom-img-1" class="d-flex justify-content-center align-items-center">
+          <img src=".\assets\img\blog\blog-article-4.svg" class="img-fluid mt-3" />
+        </div>
+        <div class="bottom-text">
+          <h4>{{ entry.titulo }}</h4>
+          <p>{{ entry.contenido }}</p>
+        </div>
+      </a>
     </div>
   </div>
 </div>
