@@ -44,7 +44,7 @@ Una vez tengas el proyecto en tu máquina lo tendrás que importar en tu workspa
 ### Base de datos
 
 Para utilizar la aplicación tienes que crear la base de datos del proyecto. Para hacer esto abre el directorio `bbdd` que encontrarás dentro del repositorio del back-end
-y ejecuta el `script golocal.sql`. 
+y ejecuta el script `golocal.sql`. 
 
 Para poblar de datos la base de datos ejecuta el script `datos_golocal.sql`.
 
