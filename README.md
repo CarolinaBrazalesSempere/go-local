@@ -43,12 +43,12 @@ Una vez tengas el proyecto en tu máquina lo tendrás que importar en tu workspa
 
 ### Base de datos
 
-Para utilizar la aplicación tienes que crear la base de datos del proyecto. Para hacer esto abre el directorio `bbdd` que encontrarás dentro del repositorio del back-end
+Para usar la aplicación tienes que crear la base de datos del proyecto. Para hacer esto abre el directorio `bbdd` que encontrarás dentro del repositorio del back-end
 y ejecuta el script `golocal.sql`. 
 
 Para poblar de datos la base de datos ejecuta el script `datos_golocal.sql`.
 
-Asegúrate de que el servidor de la base de datos esté en ejecución y ten cuenta que puede que sea necesario añadir la conexión a la base de datos en el JPA del proyecto de back-end.
+Asegúrate de que el servidor de la base de datos está en ejecución y ten cuenta que puede que sea necesario añadir la conexión a la base de datos en el JPA del proyecto del back-end.
 
 ## Inicialización del proyecto
 
