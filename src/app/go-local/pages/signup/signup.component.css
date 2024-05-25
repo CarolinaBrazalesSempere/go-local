@@ -4,24 +4,22 @@
 
 .formulario {
   right: 100px;
+  width: 100%;
 }
 
 .imagen {
   margin-top: 80px;
   margin-bottom: 80px;
-  right: 5px;
+  right: 32px;
+  width: 100%;
 }
 
 .titulo {
-  width: 370px;
-}
-
-.w-custom {
-  width: 70%;
+  width: 100%;
 }
 
 .inputs {
-  width: 80%;
+  width: 100%;
 }
 
 .inputs input {

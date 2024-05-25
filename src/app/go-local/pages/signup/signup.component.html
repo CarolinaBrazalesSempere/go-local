@@ -1,29 +1,38 @@
 <div class="container d-flex justify-content-center align-item-center">
-  <div class="container-login  my-5 bg-white w-custom rounded d-flex position-relative">
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm"
+    class="container-login my-5 bg-white w-custom rounded d-flex position-relative">
     <div class="imagen position-relative custom-width">
       <img src="assets/img/signup.svg" alt="login" class="hero-banner">
     </div>
-    <div class="formulario my-5 d-flex flex-column align-items-center position-relative">
-      <div class="titulo">
-        <p class="fw-bold fs-2 ">Aquí empieza tu viaje</p>
-      </div>
+    <div class="formulario my-4 d-flex flex-column align-items-center position-relative">
+
+      <h1 class="fw-bold fs-2 ">Aquí empieza tu viaje</h1>
+
       <div class="inputs d-grid gap-3">
-        <input type="text" placeholder="E-mail" class=" bg-color border rounded form-control input-large border-1 ">
-        <input type="text" placeholder="País" class="bg-color border rounded form-control input-large border-1 ">
-        <input type="text" placeholder="Ciudad" class="bg-color border rounded form-control input-large border-1 ">
-        <input type="text" placeholder="Fecha de nacimiento"
-          class="bg-color border rounded form-control input-large border-1 ">
-        <input type="text" placeholder="Contraseña" class="bg-color border rounded form-control input-large border-1 ">
-        <label class=" label-terminos align-items-center text-center w-100 ">
-          <input type="checkbox" class="border rounded">
+        <input type="text" name="nombre" [(ngModel)]="user.nombre" placeholder="Nombre"
+          class="bg-color border rounded form-control input-large border-1" required>
+        <input type="text" name="apellidos" [(ngModel)]="user.apellidos" placeholder="Apellidos"
+          class="bg-color border rounded form-control input-large border-1" required>
+        <input type="text" name="apellidos" [(ngModel)]="user.dni" placeholder="DNI"
+          class="bg-color border rounded form-control input-large border-1" required>
+        <input type="email" name="email" [(ngModel)]="user.email" placeholder="E-mail"
+          class="bg-color border rounded form-control input-large border-1" required>
+        <input type="tel" name="telefono" [(ngModel)]="user.telefono" placeholder="Teléfono"
+          class="bg-color border rounded form-control input-large border-1" required>
+        <input type="text" name="username" [(ngModel)]="user.username" placeholder="Nombre de usuario"
+          class="bg-color border rounded form-control input-large border-1" required>
+        <input type="password" name="contrasena" [(ngModel)]="user.contrasena" placeholder="Contraseña"
+          class="bg-color border rounded form-control input-large border-1" required>
+        <input type="text" name="sobremi" [(ngModel)]="user.sobreMi" placeholder="Cuéntanos algo sobre ti"
+          class="bg-color border rounded form-control input-large border-1">
+        <label class="label-terminos align-items-center text-center w-100">
+          <input type="checkbox" name="terminos" class="border rounded" required>
           Acepto los <a class="terminos" href="">términos y condiciones</a>
         </label>
-        <button class="btn-medium mt-2 w-100 ">¡UNIRME!</button>
+        <button type="submit" class="btn-medium mt-2 w-100">¡UNIRME!</button>
         <p class="label-terminos align-items-center text-center w-100">¿Ya tienes una cuenta? <a class="terminos"
-            routerLink="/login">inicia
-            sesión</a></p>
+            routerLink="/login">Inicia sesión</a></p>
       </div>
     </div>
-
-  </div>
+  </form>
 </div>

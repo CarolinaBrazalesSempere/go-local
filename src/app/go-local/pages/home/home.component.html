@@ -4,9 +4,9 @@
 </div>
 <shared-search-box></shared-search-box>
 <main class="container">
-  <div *ngIf="loggedInUsername">
-    <p>Bienvenido, {{ loggedInUsername }}</p>
-  </div>
+    <div *ngIf="loggedInUsername">
+        <p>Bienvenido, {{ loggedInUsername }}</p>
+    </div>
     <div class="row info-block">
         <section class="col-md-4">
             <img src="assets/img/destino.svg">
@@ -57,7 +57,7 @@
                     amor
                     por tu ciudad en una emocionante aventura como guía local.</p>
             </div>
-            <button class="btn-medium">Unirme</button>
+            <button class="btn-medium" routerLink="/signup">Unirme</button>
         </div>
     </section>
 
