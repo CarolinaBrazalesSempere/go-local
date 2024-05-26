@@ -3,6 +3,7 @@ import { Guia } from '../../interfaces/Guia';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { Itinerario } from '../../interfaces/itinerario';
+import { Reseña } from '../../interfaces/Reseña';
 
 @Component({
   selector: 'app-ficha-guia',
@@ -14,6 +15,7 @@ export class FichaGuiaComponent implements OnInit {
   guias: Itinerario | undefined;
   nombre: string = '';
   guia!: Guia;
+  reviews: Reseña[] = [];
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) {}
 
@@ -23,6 +25,9 @@ export class FichaGuiaComponent implements OnInit {
       this.apiService.getGuiaById(this.idGuia).subscribe((data) => {
         this.guia = data;
         console.log(this.guia);
+      });
+      this.apiService.getReseñasByGuiaId(this.idGuia).subscribe((data) => {
+        this.reviews = data;
       });
     });
   }
