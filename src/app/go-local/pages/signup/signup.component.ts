@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SignupService } from './signup.service';
 import { UserSignUp } from '../../interfaces/UserSignUp';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -22,7 +23,7 @@ export class SignupComponent {
   //Controlar el error mostrando un mensaje distinto con un objeto de errores
   errorMessages: { [key: string]: string } = {};
 
-  constructor(private signUp: SignupService) {}
+  constructor(private signUp: SignupService, private router: Router) {}
 
   onSubmit() {
     this.errorMessages = this.validateForm();
@@ -39,6 +40,7 @@ export class SignupComponent {
       };
 
       this.signUp.onRegister(this.user).subscribe(observer);
+      this.router.navigate(['/login']);
     }
   }
 
