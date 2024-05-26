@@ -1,4 +1,4 @@
-<div class="banner-articulo">
+<!-- <div class="banner-articulo">
   <img src="assets/img/banner-articulo.svg" alt="" class="hero-banner mt-5-custom">
   <h5 class="hero-text-costumbres mt-4 fw-bold">COSTUMBRES</h5>
   <p class="hero-text custom-font-size">¿Qué es el esmorzaret?</p>
@@ -50,5 +50,34 @@
     <div class="tarjeta">
     </div>
 
+  </div>
+</div> -->
+
+<div *ngIf="article">
+  <div class="banner-articulo">
+    <img src="assets/img/banner-articulo.svg" alt="" class="hero-banner mt-5-custom">
+    <h5 class="hero-text-costumbres mt-4 fw-bold">COSTUMBRES</h5>
+    <p class="hero-text custom-font-size">{{ article.titulo }}</p>
+    <p class="hero-text-text fs-2">{{ article.descripcion }}</p>
+  </div>
+  <div class="container my-5 ">
+    <div class="articulo mt-articulo">
+      <p class="my-4 fw-bold">{{ article.parrafo1 }}</p>
+      <p class="my-4">{{ article.contenido1 }}</p>
+
+      <p class="my-4 fw-bold">{{ article.parrafo2 }}</p>
+      <p class="my-4">{{ article.contenido2 }}</p>
+
+      <p class="my-4 fw-bold">{{ article.parrafo3 }}</p>
+      <p class="my-4">{{ article.contenido3 }}</p>
+
+      <p class="my-4 fw-bold">{{ article.parrafo4 }}</p>
+      <p class="my-4">{{ article.contenido4 }}</p>
+    </div>
+    <div class="relacionados">
+      <p class="fs-1 fw-bold mb-5">Artículos relacionados</p>
+      <div class="tarjeta">
+      </div>
+    </div>
   </div>
 </div>

@@ -1,3 +1,8 @@
+.link {
+  text-decoration: none;
+  display: contents;
+}
+
 #top {
   background: #FFB39C;
   border-radius: 8px;
@@ -154,6 +159,24 @@
   color: #fff !important;
 }
 
+/* TODO: Falta ajustar correctamente los elementos del contenedor #top */
+
+#top-footer {
+  width: 100%;
+}
+
+#mid-footer, #bottom-footer {
+  padding-left: 1rem;
+}
+
+#top-footer p, #mid-footer p, #bottom-footer p {
+  padding-right: 1rem;
+  color: #3F3D56;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 140%;
+}
+
 /* TODO: Falta el resposive del contenedor #top */
 
 @media (max-width: 768px) {
@@ -185,6 +208,12 @@
     margin-right: 0.5rem;
   }
 }
+
+
+
+
+
+
 
 
 
