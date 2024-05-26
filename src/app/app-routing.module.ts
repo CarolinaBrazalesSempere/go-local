@@ -31,7 +31,7 @@ const routes: Routes = [
     component: SearchByDestinationComponent,
   },
   {
-    path: 'articulo',
+    path: 'articulo/:idPost',
     component: ArticuloComponent,
   },
   {
