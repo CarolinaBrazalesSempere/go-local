@@ -4,28 +4,22 @@
 
 .formulario {
   right: 100px;
+  width: 100%;
 }
 
 .imagen {
   margin-top: 80px;
   margin-bottom: 80px;
-  right: 5px;
+  right: 32px;
+  width: 100%;
 }
 
 .titulo {
-  width: 370px;
-}
-
-.w-custom {
-  width: 70%;
+  width: 100%;
 }
 
 .inputs {
-  width: 80%;
-}
-
-.inputs input {
-  border-color: #8b8b8b !important;
+  width: 100%;
 }
 
 .label-terminos {
@@ -51,7 +45,15 @@
 
 ::placeholder {
   color: #afabab;
-  font-size: x-small;
+  font-size: small;
+}
+.alert {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  width: auto;
+  text-align: center;
 }
 
 @media (max-width: 575px) {

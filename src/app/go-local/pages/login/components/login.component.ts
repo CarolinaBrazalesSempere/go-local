@@ -12,6 +12,7 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
+
   //Hace que se guarde la sesion incluso refrescando la pagina
   constructor(private authService: authService, private router: Router) {
     this.authService.getIsLoggedIn().subscribe(isLoggedIn => {
@@ -20,20 +21,6 @@ export class LoginComponent {
       }
     });
   }
-  // login() {
-  //   this.authService.login(this.username, this.password)
-  //     .subscribe(
-  //       () => {
-  //         console.log('Inicio de sesión exitoso');
-  //         this.authService.setLoggedInUsername(this.username);
-  //         this.router.navigate(['/']);
-  //       },
-  //       error => {
-  //         console.error('Error en el inicio de sesión:', error);
-  //         this.errorMessage = 'Usuario o contraseña incorrectos';
-  //       }
-  //     );
-  // }
 
   login() {
     this.authService.login(this.username, this.password).subscribe(
