@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { Itinerario } from './go-local/interfaces/itinerario';
 import { Guia } from './go-local/interfaces/Guia';
+import { Ciudad } from './go-local/interfaces/ciudad';
 
 
 @Injectable({
@@ -32,6 +33,10 @@ export class ApiService {
 
   getGuides(): Observable<Guia[]> {
     return this.http.get<Guia[]>(`${this.baseUrl}/guia/todos`);
+  }
+
+  getCiudadByGuiaId(idGuia: number): Observable<Ciudad> {
+    return this.http.get<Ciudad>(`${this.baseUrl}/guia/ciudad/${idGuia}`);
   }
 
 }
