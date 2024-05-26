@@ -4,21 +4,20 @@
   border-radius: 8px;
   border: none;
 }
-
+.card-container {
+  gap: 32px;
+}
 .card-body {
   gap: 16px;
   display: flex;
   flex-direction: column;
 }
 
-.chevron-left {
-  rotate: 180deg;
+.card-review {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
 }
-
-.chevron {
-  padding: 8px;
-}
-
 @media (max-width: 576px) {
   .card {
     width: auto;
