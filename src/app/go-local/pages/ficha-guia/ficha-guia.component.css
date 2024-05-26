@@ -1,36 +1,51 @@
-.my-0{
+.my-0 {
   margin-top: 64px !important;
 }
 
-.mb-5{
+.mb-5 {
   margin-bottom: 56px !important;
 }
 
-.sobreMi-text{
+.sobreMi-text {
   width: 100%;
 }
 
-.incluye{
+.incluye {
   width: 50%;
 }
 
-
-
-.posibilidades, .caracteristicas{
+.posibilidades,
+.caracteristicas {
   margin-left: 10%;
 }
 
-hr{
+hr {
   width: 100%;
 }
 
-@media (max-width: 967px){
-  .d-flex{
+.opinion-container {
+  margin-bottom: 8em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.opinion-cards {
+  width: calc(40% - 10px);
+  margin-right: 20px;
+}
+
+@media (max-width: 967px) {
+  .d-flex {
     display: grid !important;
   }
 }
 
+@media (max-width: 992px) {
+  .opinion-container {
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+  }
 
-
-
-
+  .opinion-cards {
+    width: 100%;
+  }
+}

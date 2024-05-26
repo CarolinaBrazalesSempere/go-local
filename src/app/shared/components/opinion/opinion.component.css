@@ -1,25 +1,23 @@
-.border-custom{
+.border-custom {
   border: 3px solid #f24e1e !important;
 }
 
-.custom-shadow{
+.custom-shadow {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
-.mr-4{
+.mr-4 {
   margin-right: 60px !important;
 }
 
-/* Estilo para el contenedor */
 .rounded-box {
-  width: 120px; /* Ancho fijo */
-  height: 120px; /* Alto fijo */
-  border-radius: 50%; /* Borde redondeado para crear una caja redonda */
-  overflow: hidden; /* Ocultar cualquier contenido que se salga de la caja */
-  position: relative; /* Establecer la posición relativa para poder superponer la imagen y la máscara */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
 }
 
-/* Estilo para la imagen */
 .rounded-image {
   width: 100%;
   height: 100%;
@@ -27,13 +25,27 @@
   border-radius: 50%;
 }
 
-/* Estilo para la máscara circular */
 .round-mask {
-  width: 100%; /* Ancho completo */
-  height: 100%; /* Altura completa */
-  border-radius: 50%; /* Borde redondeado para crear una máscara circular */
-  position: absolute; /* Establecer la posición absoluta para superponer la máscara sobre la imagen */
-  top: 0; /* Colocar la máscara en la parte superior */
-  left: 0; /* Colocar la máscara en la izquierda */
-  background-color: rgba(255, 255, 255, 0); /* Hacer la máscara transparente */
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.name-opinion-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.opinion-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card {
+  padding: 8px;
 }
