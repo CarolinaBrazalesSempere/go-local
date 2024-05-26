@@ -14,21 +14,6 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  // login() {
-  //   this.authService.login(this.username, this.password)
-  //     .subscribe(
-  //       () => {
-  //         console.log('Inicio de sesión exitoso');
-  //         this.authService.setLoggedInUsername(this.username);
-  //         this.router.navigate(['/']);
-  //       },
-  //       error => {
-  //         console.error('Error en el inicio de sesión:', error);
-  //         this.errorMessage = 'Usuario o contraseña incorrectos';
-  //       }
-  //     );
-  // }
-
   login() {
     this.authService.login(this.username, this.password).subscribe(
       () => {

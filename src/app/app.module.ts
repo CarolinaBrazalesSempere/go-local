@@ -6,23 +6,18 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
     GoLocalModule,
     SharedModule,
+    FormsModule,
   ],
-  providers: [
-
-  ],
-  bootstrap: [
-    AppComponent,
-  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

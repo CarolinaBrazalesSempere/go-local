@@ -1,11 +1,10 @@
-export interface Usuario {
-  idUsuario: number;
-  dni: string;
+export interface UserSignUp {
   nombre: string;
   apellidos: string;
   email: string;
-  telefono: number;
+  telefono: string;
   contrasena: string;
   sobreMi: string;
   username: string;
+  dni: string;
 }

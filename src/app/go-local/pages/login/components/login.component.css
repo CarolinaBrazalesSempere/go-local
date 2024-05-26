@@ -37,11 +37,12 @@ body {
 }
 
 .inputs {
-  width: 85%;
+  width: 100%;
 }
 
 .inputs input {
   border-color: #8b8b8b !important;
+  height: 54px;
 }
 
 .input-large {
@@ -68,6 +69,11 @@ body {
 
   .container-login {
     width: 100%;
+  }
+  .formulario {
+    left: 0px;
+    padding-right: 0px;
+    position: relative;
   }
 }
 
