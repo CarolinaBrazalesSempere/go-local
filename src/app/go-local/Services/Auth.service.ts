@@ -6,19 +6,29 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class authService {
   private loginUrl = 'http://localhost:8083/login';
   private loggedInUsernameSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
   private isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {
 
+    //Hace que se guarde la sesion incluso refrescando la pagina
+    const username = localStorage.getItem('username');
+    if (username) {
+      this.loggedInUsernameSubject.next(username);
+      this.isLoggedInSubject.next(true);
+    }
+  }
   login(username: string, password: string): Observable<any> {
     return this.http.post(this.loginUrl, { username, password }, { responseType: 'text' });
   }
 
+  //Hace que se guarde la sesion incluso refrescando la pagina
   setLoggedInUsername(username: string): void {
+    localStorage.setItem('username', username);
     this.loggedInUsernameSubject.next(username);
+    this.setIsLoggedIn(true);  // Asegura que el estado de sesión también se actualice
   }
 
   getLoggedInUsername(): Observable<string> {
@@ -38,4 +48,5 @@ export class AuthService {
     this.setIsLoggedIn(false);
     this.router.navigate(['/login']);
   }
+
 }

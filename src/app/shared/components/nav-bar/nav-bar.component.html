@@ -20,7 +20,7 @@
       </ul>
     </div>
     <div *ngIf="isLogged()">
-      <p class="navbar-text">Bienvenido, {{ loggedInUsername }}</p>
+      <p class="navbar-text pe-auto" routerLink="/perfil-usuario">Bienvenido, {{ loggedInUsername }}</p>
       <button class="btn btn-outline-danger" (click)="logout()">Cerrar sesión</button>
     </div>
     <div *ngIf="!isLogged()">

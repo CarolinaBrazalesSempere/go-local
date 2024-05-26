@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/Auth.service';
+import { authService } from '../../services/auth.service';
 
 @Component({
   selector: 'gl-home-home-page',
@@ -12,7 +12,7 @@ export class HomeComponent {
   username: string | null = null;
   loggedInUsername: string = '';
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: authService){}
 
   rotateChevron() {
     this.isRotated = !this.isRotated;
