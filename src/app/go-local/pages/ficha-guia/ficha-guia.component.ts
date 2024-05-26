@@ -12,10 +12,10 @@ import { Reseña } from '../../interfaces/Reseña';
 })
 export class FichaGuiaComponent implements OnInit {
   idGuia: number = 0;
-  guias: Itinerario | undefined;
-  nombre: string = '';
   guia!: Guia;
   reviews: Reseña[] = [];
+  itinerario!: Itinerario;
+
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) {}
 
@@ -25,6 +25,11 @@ export class FichaGuiaComponent implements OnInit {
       this.apiService.getGuiaById(this.idGuia).subscribe((data) => {
         this.guia = data;
         console.log(this.guia);
+
+        // Obtener el itinerario asociado al guía
+        this.apiService.getItinerarioByIdGuia(this.idGuia).subscribe((itinerario) => {
+          this.itinerario = itinerario; // Asignar el itinerario obtenido
+        });
       });
       this.apiService.getReseñasByGuiaId(this.idGuia).subscribe((data) => {
         this.reviews = data;

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../../../go-local/services/Auth.service';
+import { Component, OnInit } from '@angular/core';
+import { authService } from 'src/app/go-local/services/auth.service';
+
 
 @Component({
   selector: 'shared-nav-bar',
@@ -7,9 +8,10 @@ import { AuthService } from '../../../go-local/services/Auth.service';
   styleUrls: ['./nav-bar.component.css'],
 })
 export class NavBarComponent {
+  usuario: string = '';
   loggedInUsername: string = '';
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: authService) {
     this.authService.getLoggedInUsername().subscribe(username => {
       this.loggedInUsername = username;
     });
