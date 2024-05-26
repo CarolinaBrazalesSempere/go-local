@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { authService } from '../../services/auth.service';
+import { Usuario } from '../../interfaces/Usuario';
+
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -7,10 +9,13 @@ import { authService } from '../../services/auth.service';
   styleUrls: ['./perfil-usuario.component.css']
 })
 export class PerfilUsuarioComponent{
-  usuario: string = '';
-  constructor(private authService: authService) {}
+  loggedInUser: Usuario | null = null;
 
-
+  constructor(private authService: authService) {
+    this.authService.getLoggedInUser().subscribe(user => {
+      this.loggedInUser = user;
+    });
+  }
 
 
 }

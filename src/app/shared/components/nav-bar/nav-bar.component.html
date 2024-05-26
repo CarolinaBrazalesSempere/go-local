@@ -8,7 +8,7 @@
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
+        <li class="nav-item" >
           <a class="nav-link" aria-current="page" href="#">Publicar ruta</a>
         </li>
         <li class="nav-item">
@@ -20,7 +20,7 @@
       </ul>
     </div>
     <div *ngIf="isLogged()">
-      <p class="navbar-text pe-auto" routerLink="/perfil-usuario">Bienvenido, {{ loggedInUsername }}</p>
+      <p class="navbar-text pe-auto" routerLink="/perfil-usuario">Bienvenido, {{ loggedInUser?.username }}</p>
       <button class="btn btn-outline-danger" (click)="logout()">Cerrar sesión</button>
     </div>
     <div *ngIf="!isLogged()">

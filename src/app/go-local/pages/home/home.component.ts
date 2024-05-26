@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { authService } from '../../services/auth.service';
+import { authService, Usuario } from '../../services/auth.service';
 
 @Component({
   selector: 'gl-home-home-page',
@@ -9,8 +9,7 @@ import { authService } from '../../services/auth.service';
 export class HomeComponent {
   isRotated: boolean = false;
   isCollapsed: boolean = true;
-  username: string | null = null;
-  loggedInUsername: string = '';
+  loggedInUser: Usuario | null = null; // Cambiar a User
 
   constructor(private authService: authService){}
 
@@ -20,9 +19,9 @@ export class HomeComponent {
   }
 
   ngOnInit(): void {
-    this.authService.getLoggedInUsername()
-      .subscribe((username: string) => {
-        this.loggedInUsername = username;
+    this.authService.getLoggedInUser()
+      .subscribe((user: Usuario | null) => { // Cambiar a User
+        this.loggedInUser = user;
       });
   }
 }
