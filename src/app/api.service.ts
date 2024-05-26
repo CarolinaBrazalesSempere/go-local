@@ -1,8 +1,14 @@
-import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpParams,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { Itinerario } from './go-local/interfaces/itinerario';
 import { Guia } from './go-local/interfaces/Guia';
+import { Reseña } from './go-local/interfaces/Reseña';
+import { Ciudad } from './go-local/interfaces/ciudad';
 
 
 @Injectable({
@@ -39,5 +45,12 @@ export class ApiService {
     return this.http.get<Guia[]>(`${this.baseUrl}/guia/todos`);
   }
 
+  getReseñasByGuiaId(idGuia: number): Observable<Reseña[]> {
+    return this.http.get<Reseña[]>(`${this.baseUrl}/review/${idGuia}`);
+  }
+
+  getCiudadByGuiaId(idGuia: number): Observable<Ciudad> {
+    return this.http.get<Ciudad>(`${this.baseUrl}/guia/ciudad/${idGuia}`);
+  }
 
 }

@@ -11,8 +11,10 @@ export class NavBarComponent {
   loggedInUser: Usuario | null = null;
 
   constructor(private authService: authService) {
+
     this.authService.getLoggedInUser().subscribe(user => {
       this.loggedInUser = user;
+
     });
   }
 

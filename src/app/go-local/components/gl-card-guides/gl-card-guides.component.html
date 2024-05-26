@@ -1,11 +1,11 @@
 <section class="d-flex card-container">
 
-  <div *ngFor="let guide of guides" class="card">
+  <div *ngFor="let guide of displayedGuides" class="card">
     <img src="assets/img/img-placeh.png" class="card-img-top" alt="foto de una persona">
     <div class="card-body">
       <h3 class="align-self">{{ guide.usuario.nombre }}</h3>
       <div class="d-flex justify-content-between">
-        <p class="card-text">Bilbao, Bizkaia</p>
+        <p class="card-text">{{ guideCity[guide.idGuia] }}</p>
         <div class="card-review">
           <p>4,7</p>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
