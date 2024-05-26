@@ -18,9 +18,8 @@
   <div class="opinion">
     <h2 class="fw-bold fs-1">Lo que nuestros viajeros opinan de Andrea</h2>
   </div>
-  <div style="margin-bottom: 8em; display: flex; flex-wrap: wrap;">
-    <shared-opinion *ngFor="let rev of reviews" [reviews]="rev"
-      style="width: calc(40% - 10px); margin-right: 20px;"></shared-opinion>
+  <div class="opinion-container">
+    <shared-opinion *ngFor="let rev of reviews" [reviews]="rev" class="opinion-cards"></shared-opinion>
   </div>
 
 </div>
