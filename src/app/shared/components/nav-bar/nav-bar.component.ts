@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { authService } from 'src/app/go-local/services/auth.service';
 
 
@@ -8,6 +8,7 @@ import { authService } from 'src/app/go-local/services/auth.service';
   styleUrls: ['./nav-bar.component.css'],
 })
 export class NavBarComponent {
+  usuario: string = '';
   loggedInUsername: string = '';
 
   constructor(private authService: authService) {

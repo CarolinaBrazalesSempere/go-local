@@ -29,4 +29,9 @@ export class ApiService {
   getGuiaById(idGuia: number): Observable<Guia> {
     return this.http.get<Guia>(`${this.baseUrl}/guia/${idGuia}`);
   }
+
+  getItinerarioByIdGuia(idGuia: number): Observable<Itinerario> {
+    return this.http.get<Itinerario>(`${this.baseUrl}/itinerario/byGuia/${idGuia}`);
+}
+
 }

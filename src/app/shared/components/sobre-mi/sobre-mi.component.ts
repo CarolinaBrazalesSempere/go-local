@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Itinerario } from 'src/app/go-local/interfaces/itinerario';
 
 @Component({
   selector: 'shared-sobre-mi',
@@ -7,6 +8,8 @@ import { Component, Input } from '@angular/core';
 })
 export class SobreMiComponent {
   @Input()
-  sobreMi: string = ''
+  sobreMi: string = '';
+  @Input()
+  itinerario!: Itinerario;
 
 }
