@@ -98,11 +98,8 @@
           <div class="boton mt-5" style="margin-left: auto;">
             <button type="submit" class="btn-medium mt-0-custom col-3">Guardar</button>
           </div>
-
-          <div *ngIf="updateSuccessMessage" class="alert alert-success mt-3" role="alert">
-            {{ updateSuccessMessage }}
-          </div>
         </form>
+        <p *ngIf="updateSuccessMessage">{{ updateSuccessMessage }}</p>
       </div>
     </div>
   </div>

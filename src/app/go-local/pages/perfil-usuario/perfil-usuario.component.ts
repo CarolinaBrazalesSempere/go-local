@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { Usuario } from '../../interfaces/Usuario';
+import { AuthService, Usuario } from '../../services/auth.service';
 import { UserProfileService } from './user-profile.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -37,22 +36,20 @@ export class PerfilUsuarioComponent implements OnInit {
     private authService: AuthService,
     private userProfile: UserProfileService,
     private route: ActivatedRoute
-  ) {
-    const storedUser = localStorage.getItem('loggedInUser');
-    if (storedUser) {
-      this.loggedInUser = JSON.parse(storedUser);
-    }
+  ) {}
+
+  ngOnInit(): void {
+    // Obtener el usuario loggeado
     this.authService.getLoggedInUser().subscribe((user) => {
       this.loggedInUser = user;
       if (user) {
-        this.user = { ...user };
+        // Asignar el ID del usuario loggeado al usuario actual
+        this.user.idUsuario = user.idUsuario;
+        // También puedes asignar otros datos del usuario si los necesitas
+        this.user.nombre = user.nombre;
+        this.user.apellidos = user.apellidos;
+        // Asígnalo a otros campos si es necesario
       }
-    });
-  }
-
-  ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      this.user.idUsuario = +params['idUsuario'];
     });
   }
 
@@ -66,7 +63,8 @@ export class PerfilUsuarioComponent implements OnInit {
         next: (response: any) => {
           console.log(response);
           this.updateSuccessMessage = 'Perfil actualizado con éxito';
-          // Almacenar los datos actualizados en el local storage
+
+          // Actualizar el localStorage
           localStorage.setItem('userData', JSON.stringify(this.user));
         },
         error: (error: any) => {
@@ -74,10 +72,11 @@ export class PerfilUsuarioComponent implements OnInit {
         },
       };
 
+      // Asignar el ID del usuario loggeado al usuario a actualizar
       this.user.idUsuario = this.loggedInUser.idUsuario;
       this.userProfile.onUpdate(this.user).subscribe(observer);
     } else {
-      console.error('No user logged');
+      console.error('No hay usuario loggeado');
     }
   }
 }
