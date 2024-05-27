@@ -9,6 +9,7 @@ import { Itinerario } from './go-local/interfaces/itinerario';
 import { Guia } from './go-local/interfaces/Guia';
 import { Reseña } from './go-local/interfaces/Reseña';
 import { Ciudad } from './go-local/interfaces/ciudad';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -47,6 +48,23 @@ export class ApiService {
 
   getReseñasByGuiaId(idGuia: number): Observable<Reseña[]> {
     return this.http.get<Reseña[]>(`${this.baseUrl}/review/${idGuia}`);
+  }
+
+  getMediaPuntuacionByGuiaId(idGuia: number): Observable<number> {
+    return this.getReseñasByGuiaId(idGuia).pipe(
+      map(resenias => {
+        if (resenias.length === 0) {
+          return 0;
+        }
+        const totalPuntuacion = resenias.reduce((acc, resenia) => {
+          if (isNaN(resenia.puntuacion)) {
+            return acc;
+          }
+          return acc + resenia.puntuacion;
+        }, 0);
+        return totalPuntuacion / resenias.length;
+      })
+    );
   }
 
   getCiudadByGuiaId(idGuia: number): Observable<Ciudad> {

@@ -24,7 +24,6 @@ export class AuthService {
     new BehaviorSubject<Usuario | null>(null);
 
   constructor(private http: HttpClient, private router: Router) {
-    // Hace que se guarde la sesión incluso refrescando la página
     const userData = localStorage.getItem('userData');
     if (userData) {
       this.loggedInUserSubject.next(JSON.parse(userData));

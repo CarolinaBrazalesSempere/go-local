@@ -14,6 +14,7 @@ export class CardGuideDestinationComponent implements OnInit{
   nombrePais: string = '';
   fechaDisponible: Date = new Date();
   guias: Itinerario[] = [];
+  averageReviews: { [key: number]: number } = {};
 
   constructor(private apiService: ApiService, private route: ActivatedRoute) {}
 
@@ -30,6 +31,11 @@ export class CardGuideDestinationComponent implements OnInit{
         )
         .subscribe((data) => {
           this.guias = data;
+          this.guias.forEach((itinerario) => {
+            this.apiService.getMediaPuntuacionByGuiaId(itinerario.guia.idGuia).subscribe((media) => {
+              this.averageReviews[itinerario.guia.idGuia] = media;
+            });
+          });
           console.log(this.guias);
         });
     });
