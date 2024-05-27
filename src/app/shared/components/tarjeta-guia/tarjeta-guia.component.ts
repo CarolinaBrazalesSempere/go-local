@@ -17,6 +17,7 @@ export class TarjetaGuiaComponent implements OnInit {
   itinerario!: Itinerario;
   reviews: Reseña[] = [];
   ciudad!: Ciudad;
+  averageReview: number = 0;
 
   constructor(private apiService: ApiService) {}
 
@@ -24,20 +25,21 @@ export class TarjetaGuiaComponent implements OnInit {
     this.apiService.getGuiaById(this.idGuia).subscribe((data) => {
       this.guia = data;
 
-      // Obtener el itinerario asociado al guía
       this.apiService.getItinerarioByIdGuia(this.idGuia).subscribe((data) => {
         this.itinerario = data;
       });
 
-      // Obtener la ciudad del guía
       this.apiService.getCiudadByGuiaId(this.idGuia).subscribe((data) => {
         this.ciudad = data;
       });
     });
 
-    // Obtener las reseñas del guía
     this.apiService.getReseñasByGuiaId(this.idGuia).subscribe((data) => {
       this.reviews = data;
+    });
+
+    this.apiService.getMediaPuntuacionByGuiaId(this.idGuia).subscribe((data) => {
+      this.averageReview = data;
     });
   }
 }
