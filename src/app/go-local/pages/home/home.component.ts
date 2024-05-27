@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService, Usuario } from '../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
+import { Usuario } from '../../interfaces/Usuario';
+
 
 @Component({
   selector: 'gl-home-home-page',

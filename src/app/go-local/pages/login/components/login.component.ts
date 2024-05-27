@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService, Usuario } from '../../../services/auth.service';
+import { Usuario } from 'src/app/go-local/interfaces/Usuario';
+import { AuthService } from 'src/app/go-local/services/auth.service';
 
 @Component({
   selector: 'app-login',
