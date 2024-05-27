@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostBlog } from '../../interfaces/PostBlog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BlogService } from '../blog/services/blog.service';
 
 @Component({
@@ -14,16 +14,22 @@ export class ArticuloComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private blogService: BlogService
+    private blogService: BlogService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('idPost');
-    if (id) {
-      this.blogService.getBlogEntryById(+id).subscribe(data => {
-        this.article = data;
-      });
-    }
-  }
+    this.route.params.subscribe(params => {
+      const id = params['idPost'];
+      if (id) {
+        this.blogService.getBlogEntryById(+id).subscribe(data => {
+          this.article = data;
+        });
+      }
+    });
 
+    this.router.events.subscribe(() => {
+      window.scrollTo(0, 0);
+    });
+  }
 }
