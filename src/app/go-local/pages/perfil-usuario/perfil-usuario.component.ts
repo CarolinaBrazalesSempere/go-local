@@ -45,10 +45,6 @@ export class PerfilUsuarioComponent implements OnInit {
       if (user) {
         // Asignar el ID del usuario loggeado al usuario actual
         this.user.idUsuario = user.idUsuario;
-        // También puedes asignar otros datos del usuario si los necesitas
-        this.user.nombre = user.nombre;
-        this.user.apellidos = user.apellidos;
-        // Asígnalo a otros campos si es necesario
       }
     });
   }
@@ -73,7 +69,7 @@ export class PerfilUsuarioComponent implements OnInit {
       };
 
       // Asignar el ID del usuario loggeado al usuario a actualizar
-      this.user.idUsuario = this.loggedInUser.idUsuario;
+      //this.user.idUsuario = this.loggedInUser.idUsuario;
       this.userProfile.onUpdate(this.user).subscribe(observer);
     } else {
       console.error('No hay usuario loggeado');
