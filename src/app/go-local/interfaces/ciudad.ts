@@ -1,7 +1,7 @@
 import { Pais } from "./pais";
 
 export interface Ciudad {
-  id_ciudad: number;
+  idCiudad: number;
   pais: Pais;
   nombreCiudad: string;
 }

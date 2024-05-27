@@ -1,0 +1,87 @@
+<main class="container d-flex justify-content-center align-item-center">
+  <div class="container-login my-5 bg-white w-custom d-flex position-relative">
+    <form [formGroup]="itinerarioForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <!-- Campo oculto para el id del guía -->
+        <input type="hidden" formControlName="guia.idGuia">
+      </div>
+      <div *ngIf="mostrarAlerta" class="alert alert-danger" role="alert">
+        Ya tienes un itinerario creado. No puedes crear otro.
+      </div>
+      <div class="mb-3">
+        <label for="id_ciudad" class="form-label">ID de la Ciudad</label>
+        <select id="id_ciudad" formControlName="id_ciudad" class="form-control">
+          <option *ngFor="let ciudad of ciudades" [value]="ciudad.idCiudad">{{ ciudad.nombreCiudad }}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <textarea id="descripcion" formControlName="descripcion" class="form-control" rows="3" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="duracion" class="form-label">Duración (horas)</label>
+        <input type="number" id="duracion" formControlName="duracion" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="fecha_disponible" class="form-label">Fecha Disponible</label>
+        <input type="date" id="fecha_disponible" formControlName="fecha_disponible" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="plazas_max" class="form-label">Plazas Máximas</label>
+        <input type="number" id="plazas_max" formControlName="plazas_max" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="number" id="precio" formControlName="precio" class="form-control" required>
+      </div>
+
+      <!-- Checkboxes for categories -->
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="monte" formControlName="monte" class="form-check-input">
+        <label for="monte" class="form-check-label">Monte</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="playa" formControlName="playa" class="form-check-input">
+        <label for="playa" class="form-check-label">Playa</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="cultura" formControlName="cultura" class="form-check-input">
+        <label for="cultura" class="form-check-label">Cultura</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="gastronomia" formControlName="gastronomia" class="form-check-input">
+        <label for="gastronomia" class="form-check-label">Gastronomía</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="enologico" formControlName="enologico" class="form-check-input">
+        <label for="enologico" class="form-check-label">Enológico</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="ecologico" formControlName="ecologico" class="form-check-input">
+        <label for="ecologico" class="form-check-label">Ecológico</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="nocturno" formControlName="nocturno" class="form-check-input">
+        <label for="nocturno" class="form-check-label">Nocturno</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="relajacion" formControlName="relajacion" class="form-check-input">
+        <label for="relajacion" class="form-check-label">Relajación</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="rural" formControlName="rural" class="form-check-input">
+        <label for="rural" class="form-check-label">Rural</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="local" formControlName="local" class="form-check-input">
+        <label for="local" class="form-check-label">Local</label>
+      </div>
+
+      <button id="login-button" class="btn btn-primary border-1 w-100">Crear Itinerario</button>
+
+      <div *ngIf="tieneItinerario" class="alert alert-danger" role="alert">
+        Ya tienes un itinerario creado. No puedes crear otro.
+      </div>
+    </form>
+  </div>
+</main>

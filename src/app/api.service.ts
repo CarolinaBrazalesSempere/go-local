@@ -8,7 +8,7 @@ import { Observable, throwError } from 'rxjs';
 import { Itinerario } from './go-local/interfaces/itinerario';
 import { Guia } from './go-local/interfaces/Guia';
 import { Reseña } from './go-local/interfaces/Reseña';
-import { Ciudad } from './go-local/interfaces/ciudad';
+import { Ciudad } from './go-local/interfaces/Ciudad';
 
 
 @Injectable({

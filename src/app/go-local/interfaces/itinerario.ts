@@ -1,4 +1,5 @@
-import { Ciudad } from './ciudad';
+
+import { Ciudad } from './Ciudad';
 import { Guia } from './Guia';
 
 export interface Itinerario {

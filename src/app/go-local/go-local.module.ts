@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { BlogPageComponent } from './pages/blog/components/blog-pages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './pages/signup/signup.component';
+import { PublicarRutaComponent } from './pages/publicar-ruta/publicar-ruta.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     ArticuloComponent,
     BlogPageComponent,
     SignupComponent,
+    PublicarRutaComponent,
   ],
 
   imports: [
@@ -46,6 +49,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     SharedModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [GlCardGuidesComponent, HomeComponent],
 })

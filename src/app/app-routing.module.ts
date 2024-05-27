@@ -11,6 +11,7 @@ import { LoginComponent } from './go-local/pages/login/components/login.componen
 import { PerfilUsuarioComponent } from './go-local/pages/perfil-usuario/perfil-usuario.component';
 import { SearchByDestinationComponent } from './go-local/pages/search-by-destination/search-by-destination.component';
 import { SignupComponent } from './go-local/pages/signup/signup.component';
+import { PublicarRutaComponent } from './go-local/pages/publicar-ruta/publicar-ruta.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
+  },
+  {
+    path: 'publicar-ruta',
+    component: PublicarRutaComponent,
   },
   {
     path: '**',
