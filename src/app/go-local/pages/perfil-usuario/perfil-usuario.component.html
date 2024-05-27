@@ -1,74 +1,186 @@
-<div class="container my-5-custom ">
+<div class="container my-5-custom">
   <div class="informacion-foto d-flex">
-    <div class="informacion w-100 ">
+    <div class="informacion w-100">
       <p class="fw-bold fs-1">Información personal</p>
       <div class="form-foto d-flex">
         <div class="foto text-center order-2">
           <img class="imagen" src="assets/img/perfil.svg" alt="">
           <div class="boton">
-            <button class="btn-small mt-0-custom col-3 ">Editar</button>
+            <button class="btn-small mt-0-custom col-3">Editar</button>
           </div>
         </div>
-        <form action="" class=" formulario order-1">
+        <form (ngSubmit)="onSubmit()" class="formulario order-1">
           <div class="name row">
             <div class="d-flex">
               <p class="fw-bold mt-5 col-3 mt-0-custom">Nombre</p>
               <div class="boton mt-5" style="margin-left: auto;">
-                <button class="btn-small mt-0-custom col-3 ">Editar</button>
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('nombre', $event)">Editar</button>
               </div>
             </div>
-            <label for=""></label>
-            <input type="text" placeholder="{{loggedInUser?.nombre}}" class="custom-border-bottom w-100">
+            <label for="nombre"></label>
+            <input id="nombre" type="text" [(ngModel)]="user.nombre" [attr.placeholder]="loggedInUser?.nombre"
+              name="nombre" class="custom-border-bottom w-100" [disabled]="!editingField['nombre']">
           </div>
 
           <div class="last-name row">
             <div class="last-name d-flex">
-              <p class="fw-bold mt-5 col-3 mt-0-custom">Apellido</p>
+              <p class="fw-bold mt-5 col-3 mt-0-custom">Apellidos</p>
               <div class="boton mt-5" style="margin-left: auto;">
-                <button class="btn-small mt-0-custom col-3 ">Editar</button>
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('apellidos', $event)">Editar</button>
               </div>
             </div>
-            <label for=""></label>
-            <input type="text" placeholder="{{loggedInUser?.apellidos}}" class="custom-border-bottom w-100">
+            <label for="apellidos"></label>
+            <input id="apellidos" type="text" [(ngModel)]="user.apellidos" name="apellidos"
+              [attr.placeholder]="loggedInUser?.apellidos" class="custom-border-bottom w-100"
+              [disabled]="!editingField['apellidos']">
           </div>
 
           <div class="email row">
             <div class="d-flex">
               <p class="fw-bold mt-5 col-3 mt-0-custom">Email</p>
               <div class="boton mt-5" style="margin-left: auto;">
-                <button class="btn-small mt-0-custom col-3 ">Editar</button>
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('email', $event)">Editar</button>
               </div>
             </div>
-            <label for=""></label>
-            <input type="text" placeholder="{{loggedInUser?.email}}" class="custom-border-bottom w-100">
+            <label for="email"></label>
+            <input id="email" type="text" [(ngModel)]="user.email" name="email" [attr.placeholder]="loggedInUser?.email"
+              class="custom-border-bottom w-100" [disabled]="!editingField['email']">
           </div>
 
           <div class="dni row">
             <div class="d-flex">
               <p class="fw-bold mt-5 col-3 mt-0-custom">DNI</p>
               <div class="boton mt-5" style="margin-left: auto;">
-                <button class="btn-small mt-0-custom col-3 ">Editar</button>
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('dni', $event)">Editar</button>
               </div>
             </div>
-            <label for=""></label>
-            <input type="text" placeholder="{{loggedInUser?.dni}}" class="custom-border-bottom w-100">
+            <label for="dni"></label>
+            <input id="dni" type="text" [(ngModel)]="user.dni" name="dni" [attr.placeholder]="loggedInUser?.dni"
+              class="custom-border-bottom w-100" [disabled]="!editingField['dni']">
           </div>
 
-          <div class="dni row">
+          <div class="telefono row">
             <div class="d-flex">
               <p class="fw-bold mt-5 col-3 mt-0-custom">Teléfono</p>
               <div class="boton mt-5" style="margin-left: auto;">
-                <button class="btn-small mt-0-custom col-3 ">Editar</button>
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('telefono', $event)">Editar</button>
               </div>
             </div>
-            <label for=""></label>
-            <input type="text" placeholder="{{loggedInUser?.telefono}}" class="custom-border-bottom w-100">
+            <label for="telefono"></label>
+            <input id="telefono" type="text" [(ngModel)]="user.telefono" name="telefono"
+              [attr.placeholder]="loggedInUser?.telefono" class="custom-border-bottom w-100"
+              [disabled]="!editingField['telefono']">
+          </div>
+
+          <div class="username row">
+            <div class="d-flex">
+              <p class="fw-bold mt-5 col-3 mt-0-custom">Nombre de usuario</p>
+              <div class="boton mt-5" style="margin-left: auto;">
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('username', $event)">Editar</button>
+              </div>
+            </div>
+            <label for="username"></label>
+            <input id="username" type="text" [(ngModel)]="user.username" name="username"
+              [attr.placeholder]="loggedInUser?.username" class="custom-border-bottom w-100"
+              [disabled]="!editingField['username']">
+          </div>
+          <div class="contrasena row">
+            <div class="d-flex">
+              <p class="fw-bold mt-5 col-3 mt-0-custom">Contraseña</p>
+              <div class="boton mt-5" style="margin-left: auto;">
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('contrasena', $event)">Editar</button>
+              </div>
+            </div>
+            <label for="contrasena"></label>
+            <input id="contrasena" type="password" [(ngModel)]="user.contrasena" name="contrasena"
+              class="custom-border-bottom w-100" [disabled]="!editingField['contrasena']">
+          </div>
+          <div class="contrasena row">
+            <div class="d-flex">
+              <p class="fw-bold mt-5 col-3 mt-0-custom">Sobre mí</p>
+              <div class="boton mt-5" style="margin-left: auto;">
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('sobreMi', $event)">Editar</button>
+              </div>
+            </div>
+            <label for="sobreMi"></label>
+            <input id="sobreMi" type="text" [(ngModel)]="user.sobreMi" name="sobreMi" class="custom-border-bottom w-100"
+              [disabled]="!editingField['sobreMi']">
+          </div>
+          <div class="boton mt-5" style="margin-left: auto;">
+            <button type="submit" class="btn-medium mt-0-custom col-3">Guardar</button>
           </div>
         </form>
+
       </div>
+      <div *ngIf="updateSuccessMessage" class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+        {{ updateSuccessMessage }}
+        <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
     </div>
   </div>
-  <div class="boton mt-5" style="margin-left: auto;">
-    <button class="btn-medium mt-0-custom col-3 ">Editar</button>
+</div>
+<div class="incluye ">
+  <p class="fw-bold fs-4">¿QUÉ INCLUYE ESTA RESERVA CON TU GUÍA?</p>
+  <div class="posibilidades my-5 mx-4 row row-cols-2 w-75">
+    <ng-container *ngIf="">
+      <div class="col-6 ml-5 mb-4">
+        <a class="text-decoration-none">Aventuras en la Naturaleza</a>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="">
+      <div class="col-6">
+        <a class="text-decoration-none">Explorando Costas y Playas</a>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="">
+      <div class="col-6 mb-4">
+        <a class="text-decoration-none">Inmersión Cultural</a>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="">
+      <div class="col-6">
+        <a class="text-decoration-none">Viaje del Vino</a>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="">
+      <div class="col-6 mb-4">
+        <a class="text-decoration-none">Turismo Ecológico</a>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="">
+      <div class="col-6 mb-4">
+        <a class="text-decoration-none">Noches de Diversión</a>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="">
+      <div class="col-6 mb-4">
+        <a class="text-decoration-none">Relax y Bienestar</a>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="">
+      <div class="col-6 mb-4">
+        <a class="text-decoration-none">Escapada Rural</a>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="">
+      <div class="col-6 mb-4">
+        <a class="text-decoration-none">Descubriendo lo local</a>
+      </div>
+    </ng-container>
+
+  </div>
+  <hr>
+  <div class="caracteristicas mx-4">
+    <p class="mt-5 ">Cancelación gratuita durante 48h</p>
+    <p class="mb-5">Máximo 2 personas por reserva</p>
   </div>
 </div>

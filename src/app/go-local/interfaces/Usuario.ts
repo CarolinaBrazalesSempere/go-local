@@ -8,5 +8,4 @@ export interface Usuario {
   contrasena: string;
   sobreMi: string;
   username: string;
-  
 }

@@ -43,7 +43,7 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'perfil-usuario',
+    path: 'perfil-usuario/:idUser',
     component: PerfilUsuarioComponent,
   },
   {
