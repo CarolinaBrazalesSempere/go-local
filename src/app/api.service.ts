@@ -71,4 +71,6 @@ export class ApiService {
     return this.http.get<Ciudad>(`${this.baseUrl}/guia/ciudad/${idGuia}`);
   }
 
+  
+
 }
