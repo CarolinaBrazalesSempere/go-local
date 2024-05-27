@@ -71,4 +71,10 @@
   <div class="boton mt-5" style="margin-left: auto;">
     <button class="btn-medium mt-0-custom col-3 ">Editar</button>
   </div>
+  <div>
+    <gl-ficha-reserva
+    [idGuia]="loggedInUser?.idUsuario ?? 0"
+    [idCliente]="loggedInUser?.idUsuario ?? 0">
+  </gl-ficha-reserva>
+  </div>
 </div>

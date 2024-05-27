@@ -16,7 +16,6 @@ export class FichaGuiaComponent implements OnInit {
   reviews: Reseña[] = [];
   itinerario!: Itinerario;
 
-
   constructor(private route: ActivatedRoute, private apiService: ApiService) {}
 
   ngOnInit(): void {
@@ -26,9 +25,8 @@ export class FichaGuiaComponent implements OnInit {
         this.guia = data;
         console.log(this.guia);
 
-        // Obtener el itinerario asociado al guía
         this.apiService.getItinerarioByIdGuia(this.idGuia).subscribe((itinerario) => {
-          this.itinerario = itinerario; // Asignar el itinerario obtenido
+          this.itinerario = itinerario;
         });
       });
       this.apiService.getReseñasByGuiaId(this.idGuia).subscribe((data) => {
@@ -36,4 +34,5 @@ export class FichaGuiaComponent implements OnInit {
       });
     });
   }
+
 }
