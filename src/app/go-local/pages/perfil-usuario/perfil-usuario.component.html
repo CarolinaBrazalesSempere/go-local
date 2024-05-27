@@ -18,7 +18,7 @@
               </div>
             </div>
             <label for=""></label>
-            <input type="text" placeholder="Johanne" class="custom-border-bottom w-100">
+            <input type="text" placeholder="{{loggedInUser?.nombre}}" class="custom-border-bottom w-100">
           </div>
 
           <div class="last-name row">
@@ -29,7 +29,7 @@
               </div>
             </div>
             <label for=""></label>
-            <input type="text" placeholder="Jones" class="custom-border-bottom w-100">
+            <input type="text" placeholder="{{loggedInUser?.apellidos}}" class="custom-border-bottom w-100">
           </div>
 
           <div class="email row">
@@ -40,7 +40,7 @@
               </div>
             </div>
             <label for=""></label>
-            <input type="text" placeholder="johannejones@gmail.com" class="custom-border-bottom w-100">
+            <input type="text" placeholder="{{loggedInUser?.email}}" class="custom-border-bottom w-100">
           </div>
 
           <div class="dni row">
@@ -51,7 +51,7 @@
               </div>
             </div>
             <label for=""></label>
-            <input type="text" placeholder="5678904W" class="custom-border-bottom w-100">
+            <input type="text" placeholder="{{loggedInUser?.dni}}" class="custom-border-bottom w-100">
           </div>
 
           <div class="dni row">
@@ -62,7 +62,7 @@
               </div>
             </div>
             <label for=""></label>
-            <input type="text" placeholder="678 890 874" class="custom-border-bottom w-100">
+            <input type="text" placeholder="{{loggedInUser?.telefono}}" class="custom-border-bottom w-100">
           </div>
         </form>
       </div>

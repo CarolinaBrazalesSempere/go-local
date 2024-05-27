@@ -8,8 +8,8 @@
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Publicar ruta</a>
+        <li class="nav-item" >
+          <a class="nav-link" *ngIf="esGuia" aria-current="page" href="#">Publicar ruta</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/blog">Blog</a>
@@ -20,6 +20,7 @@
       </ul>
     </div>
     <div *ngIf="isLogged()">
+
       <a (click)="logout()" class="login-container">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path fill="#f24e1e"
