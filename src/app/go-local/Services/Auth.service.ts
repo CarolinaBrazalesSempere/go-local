@@ -49,4 +49,9 @@ export class AuthService {
     this.loggedInUserSubject.next(null);
     this.router.navigate(['/login']);
   }
+
+  updateLoggedInUser(user: Usuario): void {
+    localStorage.setItem('userData', JSON.stringify(user));
+    this.loggedInUserSubject.next(user);
+  }
 }
