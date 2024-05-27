@@ -49,10 +49,23 @@ export class PerfilUsuarioComponent implements OnInit {
     // Obtener el usuario loggeado
     this.authService.getLoggedInUser().subscribe((user) => {
       this.loggedInUser = user;
+      if (user) {
+        // Asignar el ID del usuario loggeado al usuario actual
+        this.user.idUsuario = user.idUsuario;
+        this.user.nombre = user.nombre;
+        this.user.apellidos = user.apellidos;
+        this.user.email = user.email;
+        this.user.dni = user.dni;
+        this.user.telefono = user.telefono;
+        this.user.sobreMi = user.sobreMi;
+        this.user.username = user.username;
+        this.user.contrasena = user.contrasena;
+      }
       if (this.loggedInUser) {
         this.user = { ...this.loggedInUser };
         this.checkIfUserIsGuia();
       }
+
     });
   }
 
@@ -117,6 +130,7 @@ export class PerfilUsuarioComponent implements OnInit {
           console.error('Error: ', error);
         },
       };
+
       // Asignar el id del usuario loggeado al usuario a actualizar
       this.user.idUsuario = this.loggedInUser.idUsuario;
       this.userProfile.onUpdate(this.user).subscribe(observer);
