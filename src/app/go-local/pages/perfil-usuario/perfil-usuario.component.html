@@ -1,74 +1,109 @@
-<div class="container my-5-custom ">
+<div class="container my-5-custom">
   <div class="informacion-foto d-flex">
-    <div class="informacion w-100 ">
+    <div class="informacion w-100">
       <p class="fw-bold fs-1">Información personal</p>
       <div class="form-foto d-flex">
         <div class="foto text-center order-2">
           <img class="imagen" src="assets/img/perfil.svg" alt="">
           <div class="boton">
-            <button class="btn-small mt-0-custom col-3 ">Editar</button>
+            <button class="btn-small mt-0-custom col-3">Editar</button>
           </div>
         </div>
-        <form action="" class=" formulario order-1">
+        <form (ngSubmit)="onSubmit()" class="formulario order-1">
           <div class="name row">
             <div class="d-flex">
               <p class="fw-bold mt-5 col-3 mt-0-custom">Nombre</p>
               <div class="boton mt-5" style="margin-left: auto;">
-                <button class="btn-small mt-0-custom col-3 ">Editar</button>
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('nombre')">Editar</button>
               </div>
             </div>
             <label for=""></label>
-            <input type="text" placeholder="{{loggedInUser?.nombre}}" class="custom-border-bottom w-100">
+            <input type="text" [(ngModel)]="user['nombre']" [attr.placeholder]="loggedInUser?.apellidos" name="nombre"
+              class="custom-border-bottom w-100" [disabled]="!editingField['nombre']">
           </div>
 
           <div class="last-name row">
             <div class="last-name d-flex">
-              <p class="fw-bold mt-5 col-3 mt-0-custom">Apellido</p>
+              <p class="fw-bold mt-5 col-3 mt-0-custom">Apellidos</p>
               <div class="boton mt-5" style="margin-left: auto;">
-                <button class="btn-small mt-0-custom col-3 ">Editar</button>
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('apellidos')">Editar</button>
               </div>
             </div>
             <label for=""></label>
-            <input type="text" placeholder="{{loggedInUser?.apellidos}}" class="custom-border-bottom w-100">
+            <input type="text" [(ngModel)]="user['apellidos']" name="apellidos"
+              [attr.placeholder]="loggedInUser?.apellidos" class="custom-border-bottom w-100"
+              [disabled]="!editingField['apellidos']">
           </div>
 
           <div class="email row">
             <div class="d-flex">
               <p class="fw-bold mt-5 col-3 mt-0-custom">Email</p>
               <div class="boton mt-5" style="margin-left: auto;">
-                <button class="btn-small mt-0-custom col-3 ">Editar</button>
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('email')">Editar</button>
               </div>
             </div>
             <label for=""></label>
-            <input type="text" placeholder="{{loggedInUser?.email}}" class="custom-border-bottom w-100">
+            <input type="text" [(ngModel)]="user['email']" name="email" [attr.placeholder]="loggedInUser?.email"
+              class="custom-border-bottom w-100" [disabled]="!editingField['email']">
           </div>
 
           <div class="dni row">
             <div class="d-flex">
               <p class="fw-bold mt-5 col-3 mt-0-custom">DNI</p>
               <div class="boton mt-5" style="margin-left: auto;">
-                <button class="btn-small mt-0-custom col-3 ">Editar</button>
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('dni')">Editar</button>
               </div>
             </div>
             <label for=""></label>
-            <input type="text" placeholder="{{loggedInUser?.dni}}" class="custom-border-bottom w-100">
+            <input type="text" [(ngModel)]="user['dni']" name="dni" [attr.placeholder]="loggedInUser?.dni"
+              class="custom-border-bottom w-100" [disabled]="!editingField['dni']">
           </div>
 
-          <div class="dni row">
+          <div class="telefono row">
             <div class="d-flex">
               <p class="fw-bold mt-5 col-3 mt-0-custom">Teléfono</p>
               <div class="boton mt-5" style="margin-left: auto;">
-                <button class="btn-small mt-0-custom col-3 ">Editar</button>
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('telefono')">Editar</button>
               </div>
             </div>
             <label for=""></label>
-            <input type="text" placeholder="{{loggedInUser?.telefono}}" class="custom-border-bottom w-100">
+            <input type="text" [(ngModel)]="user['telefono']" name="telefono"
+              [attr.placeholder]="loggedInUser?.telefono" class="custom-border-bottom w-100"
+              [disabled]="!editingField['telefono']">
+          </div>
+
+          <div class="username row">
+            <div class="d-flex">
+              <p class="fw-bold mt-5 col-3 mt-0-custom">Nombre de usuario</p>
+              <div class="boton mt-5" style="margin-left: auto;">
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('username')">Editar</button>
+              </div>
+            </div>
+            <label for=""></label>
+            <input type="text" [(ngModel)]="user['username']" name="username"
+              [attr.placeholder]="loggedInUser?.username" class="custom-border-bottom w-100"
+              [disabled]="!editingField['username']">
+          </div>
+          <div class="contrasena row">
+            <div class="d-flex">
+              <p class="fw-bold mt-5 col-3 mt-0-custom">Contraseña</p>
+              <div class="boton mt-5" style="margin-left: auto;">
+                <button class="btn-small mt-0-custom col-3" (click)="onEdit('contrasena')">Editar</button>
+              </div>
+            </div>
+            <label for=""></label>
+            <input type="password" [(ngModel)]="user['contrasena']" name="contrasena" class="custom-border-bottom w-100"
+              [disabled]="!editingField['contrasena']">
+          </div>
+          <div class="boton mt-5" style="margin-left: auto;">
+            <button type="submit" class="btn-medium mt-0-custom col-3">Guardar</button>
+          </div>
+
+          <div *ngIf="updateSuccessMessage" class="alert alert-success mt-3" role="alert">
+            {{ updateSuccessMessage }}
           </div>
         </form>
       </div>
     </div>
-  </div>
-  <div class="boton mt-5" style="margin-left: auto;">
-    <button class="btn-medium mt-0-custom col-3 ">Editar</button>
   </div>
 </div>

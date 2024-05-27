@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { authService, Usuario } from '../../../services/auth.service';
+import { AuthService, Usuario } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +12,8 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private authService: authService, private router: Router) {
-    this.authService.getLoggedInUser().subscribe(user => {
+  constructor(private authService: AuthService, private router: Router) {
+    this.authService.getLoggedInUser().subscribe((user) => {
       if (user) {
         this.router.navigate(['/']); // Redirecciona si el usuario está autenticado
       }

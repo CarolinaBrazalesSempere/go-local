@@ -13,16 +13,15 @@ export interface Usuario {
   contrasena: string;
   sobreMi: string;
   username: string;
-
 }
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class authService {
+export class AuthService {
   private loginUrl = 'http://localhost:8083/login';
-  private loggedInUserSubject: BehaviorSubject<Usuario | null> = new BehaviorSubject<Usuario | null>(null);
+  private loggedInUserSubject: BehaviorSubject<Usuario | null> =
+    new BehaviorSubject<Usuario | null>(null);
 
   constructor(private http: HttpClient, private router: Router) {
     // Hace que se guarde la sesión incluso refrescando la página
@@ -33,8 +32,8 @@ export class authService {
   }
 
   login(username: string, password: string): Observable<Usuario> {
-  return this.http.post<Usuario>(this.loginUrl, { username, password });
-}
+    return this.http.post<Usuario>(this.loginUrl, { username, password });
+  }
 
   setLoggedInUser(user: Usuario): void {
     localStorage.setItem('userData', JSON.stringify(user));
