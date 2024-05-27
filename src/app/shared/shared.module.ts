@@ -17,8 +17,7 @@ import { TarjetaGuiaComponent } from './components/tarjeta-guia/tarjeta-guia.com
     OpinionComponent,
     SearchBoxComponent,
     SobreMiComponent,
-    TarjetaGuiaComponent,
-
+    TarjetaGuiaComponent
   ],
   imports: [CommonModule, HttpClientModule, ReactiveFormsModule, RouterModule],
   exports: [

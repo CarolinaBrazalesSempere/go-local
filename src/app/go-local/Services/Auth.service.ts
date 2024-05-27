@@ -25,7 +25,6 @@ export class authService {
   private loggedInUserSubject: BehaviorSubject<Usuario | null> = new BehaviorSubject<Usuario | null>(null);
 
   constructor(private http: HttpClient, private router: Router) {
-    // Hace que se guarde la sesión incluso refrescando la página
     const userData = localStorage.getItem('userData');
     if (userData) {
       this.loggedInUserSubject.next(JSON.parse(userData));
@@ -33,8 +32,8 @@ export class authService {
   }
 
   login(username: string, password: string): Observable<Usuario> {
-  return this.http.post<Usuario>(this.loginUrl, { username, password });
-}
+    return this.http.post<Usuario>(this.loginUrl, { username, password });
+  }
 
   setLoggedInUser(user: Usuario): void {
     localStorage.setItem('userData', JSON.stringify(user));
