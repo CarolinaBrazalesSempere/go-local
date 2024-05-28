@@ -71,6 +71,10 @@ export class ApiService {
     return this.http.get<Ciudad>(`${this.baseUrl}/guia/ciudad/${idGuia}`);
   }
 
-  
+  reservarItinerario(idItinerario: number, idUsuario: number): Observable<any> {
+    const url = `${this.baseUrl}/reserva/crear?idItinerario=${idItinerario}&idUsuario=${idUsuario}`;
+    return this.http.post<any>(url, null);
+  }
+
 
 }
