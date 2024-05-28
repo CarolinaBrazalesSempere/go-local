@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AuthService, Usuario } from '../../services/auth.service';
 import { UserProfileService } from './user-profile.service';
 import { ApiService } from 'src/app/api.service';
 import { Itinerario } from '../../interfaces/itinerario';
+import { Observable, catchError, map, of } from 'rxjs';
+import { RolesService } from '../../services/roles.service';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -33,42 +35,67 @@ export class PerfilUsuarioComponent implements OnInit {
   };
   updateSuccessMessage: string | null = null;
   esGuia: boolean = false;
+  @Input()
+  itinerario!: Itinerario;
 
   constructor(
     private authService: AuthService,
     private userProfile: UserProfileService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private rolesService: RolesService,
   ) {}
 
   ngOnInit(): void {
     // Obtener el usuario loggeado
     this.authService.getLoggedInUser().subscribe((user) => {
       this.loggedInUser = user;
-      if (user) {
-        // Asignar el ID del usuario loggeado al usuario actual
-        this.user.idUsuario = user.idUsuario;
-        this.user.nombre = user.nombre;
-        this.user.apellidos = user.apellidos;
-        this.user.email = user.email;
-        this.user.dni = user.dni;
-        this.user.telefono = user.telefono;
-        this.user.sobreMi = user.sobreMi;
-        this.user.username = user.username;
-        this.user.contrasena = user.contrasena;
-
-        // Verificar si el usuario es guía
-        this.apiService.getItinerarioByIdGuia(user.idUsuario).subscribe(
-          (itinerario: Itinerario) => {
-            // Si se recibe un itinerario, significa que el usuario es guía
-            this.esGuia = true;
-          },
-          (error) => {
-            // Si hay un error o no se recibe un itinerario, el usuario no es guía
-            this.esGuia = false;
-          }
-        );
+      if (this.loggedInUser) {
+        this.user = { ...this.loggedInUser };
+        this.checkIfUserIsGuia();
       }
     });
+  }
+
+  checkIfUserIsGuia(): void {
+    if (!this.loggedInUser) {
+      return;
+    }
+
+    this.isRolGuia().subscribe((isGuia) => {
+      this.esGuia = isGuia; // Actualiza la propiedad esGuia
+      if (this.esGuia) {
+        this.loadItinerario(this.loggedInUser!.idUsuario);
+      }
+    });
+  }
+
+  isRolGuia(): Observable<boolean> {
+    if (!this.loggedInUser) {
+      return of(false);
+    }
+
+    return this.rolesService.getRolesByUserId(this.loggedInUser.idUsuario).pipe(
+      map((roles) => {
+        console.log('Roles del usuario:', roles);
+        return roles.includes('ROL_GUIA');
+      }),
+      catchError((error) => {
+        console.error('Error obteniendo roles:', error);
+        return of(false);
+      })
+    );
+  }
+
+  loadItinerario(idGuia: number): void {
+    this.userProfile.getItinerarioByIdUsuario(idGuia).subscribe(
+      (itinerario: Itinerario) => {
+        this.itinerario = itinerario;
+        console.log(this.userProfile.getItinerarioByIdUsuario(idGuia))
+      },
+      (error) => {
+        console.error('Error obteniendo itinerario:', error);
+      }
+    );
   }
 
   onEdit(field: string, event: Event) {
@@ -90,7 +117,6 @@ export class PerfilUsuarioComponent implements OnInit {
           console.error('Error: ', error);
         },
       };
-
       // Asignar el id del usuario loggeado al usuario a actualizar
       this.user.idUsuario = this.loggedInUser.idUsuario;
       this.userProfile.onUpdate(this.user).subscribe(observer);
