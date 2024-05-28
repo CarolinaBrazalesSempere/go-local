@@ -10,9 +10,10 @@
         {{ averageReview | number:'1.1-1' }} ({{ reviews.length }} Opiniones)
       </p>
       <p>{{ciudad.nombreCiudad}}, {{ciudad.pais.nombrePais}}</p>
-      <p class="mt-3">{{ guia.idioma }}</p>
+      <p class="mt-3">Idiomas: {{ guia.idioma }}</p>
       <p class="mt-3">Precio: {{itinerario.precio}}€ día</p>
+      <p class="mt-3">{{itinerario.fechaDisponible}}</p>
     </div>
-    <button class="btn-medium mt-3 mb-4">Cancelar</button>
+    <button class="btn-medium mt-3 mb-4" (click)="cancelarReserva(reserva.idReserva)">Cancelar</button>
   </div>
 </div>

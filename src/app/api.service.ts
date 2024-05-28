@@ -76,4 +76,8 @@ export class ApiService {
     return this.http.get<Reserva[]>(`${this.baseUrl}/reserva/buscar/${userId}`);
   }
 
+  deleteReserva(idReserva: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/reserva/borrar/${idReserva}`);
+  }
+
 }
