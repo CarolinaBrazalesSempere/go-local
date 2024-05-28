@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable, catchError, map, of } from 'rxjs';
 import { Usuario } from 'src/app/go-local/interfaces/Usuario';
-import { authService } from 'src/app/go-local/services/auth.service';
+import { AuthService } from 'src/app/go-local/services/auth.service';
 import { RolesService } from 'src/app/go-local/services/roles.service';
+
 
 @Component({
   selector: 'shared-nav-bar',
@@ -13,11 +14,10 @@ export class NavBarComponent {
   loggedInUser: Usuario | null = null;
   esGuia: boolean = false;
 
-  constructor(private authService: authService, private rolesService: RolesService) {
 
+  constructor(private authService: AuthService, private rolesService: RolesService) {
     this.authService.getLoggedInUser().subscribe(user => {
       this.loggedInUser = user;
-
     });
   }
 
