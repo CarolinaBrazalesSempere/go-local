@@ -31,17 +31,17 @@
             <img src="assets/img/right-dir-home.png">
         </div>
         <div class="d-md-flex flex-md-column">
-            <h2>Hazte guía local</h2>
+            <h2 class="fs-2">Hazte guía local</h2>
             <p>¿Eres un amante de tu ciudad o región? ¿Conoces cada callejón oculto, cada historia interesante y cada
                 rincón auténtico? ¡Entonces únete a nuestra comunidad como guía local y comparte tu pasión por tu
                 entorno con viajeros de todo el mundo! </p>
-            <a class="link-secondary d-md-none d-flex" (click)="rotateChevron()" data-bs-toggle="collapse"
+            <a class="link-secondary d-xl-none d-flex" (click)="rotateChevron()" data-bs-toggle="collapse"
                 href="#collapseInfo" aria-expanded="false" aria-controls="collapseInfo">
                 Leer más
                 <img class="chevron-down" [ngClass]="{'chevron-up': isRotated}" src="assets/img/chevron.svg">
             </a>
 
-            <div class="collapse d-md-block" id="collapseInfo" [ngClass]="{'show': !isCollapsed}">
+            <div class="collapse d-xl-block" id="collapseInfo" [ngClass]="{'show': !isCollapsed}">
                 <p>Convertirse en guía local es una oportunidad única para compartir
                     tus conocimientos y experiencias mientras muestras lo mejor de tu destino a aquellos que lo visitan.
                     Desde la joya escondida que solo los lugareños conocen hasta los monumentos emblemáticos, cada
@@ -59,7 +59,7 @@
     </section>
 
     <section class="mt-4 mb-4">
-        <h2>Nuestro guías más populares</h2>
+        <h2 class="fs-2">Nuestro guías más populares</h2>
         <p>Sumérgete en la experiencia de viaje definitiva con nuestros guías más populares, quienes han ganado el
             corazón de viajeros de todo el mundo con su pasión, conocimiento y carisma. Con un profundo amor por su
             ciudad o región, estos guías excepcionales son expertos en revelar los tesoros ocultos y los secretos mejor
@@ -68,7 +68,7 @@
     </section>
 
     <section class="mt-4 mb-4">
-        <h2>Descubre más en el blog de Go local</h2>
+        <h2 class="fs-2">Descubre más en el blog de Go local</h2>
         <gl-card-post></gl-card-post>
     </section>
 </main>

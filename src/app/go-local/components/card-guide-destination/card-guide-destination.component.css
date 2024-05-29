@@ -27,7 +27,7 @@ img {
   align-items: baseline;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1024px) {
   .card {
     flex-direction: column;
   }
