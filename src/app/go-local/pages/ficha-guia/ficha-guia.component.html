@@ -1,7 +1,7 @@
 <div class="container my-0 ">
   <div class="row">
 
-    <p class="fw-bold fs-1">{{guia.usuario.nombre}}</p>
+    <p class="fw-bold fs-1">{{guia.usuario.nombre}} {{guia.usuario.apellidos}}</p>
     <div class=" orden d-flex">
       <div class=" sobreMi">
         <shared-sobre-mi [sobreMi]="guia.usuario.sobreMi" [itinerario]="itinerario"></shared-sobre-mi>
@@ -15,10 +15,11 @@
 
   </div>
 
-  <div class="opinion">
-    <h2 class="fw-bold fs-1">Lo que nuestros viajeros opinan de Andrea</h2>
+  <div class="opinion mt-5">
+    <p class="fw-bold fs-4">LO QUE OPINAN DE {{guia.usuario.nombre | uppercase}} {{guia.usuario.apellidos | uppercase}}
+    </p>
   </div>
-  <div class="opinion-container">
+  <div class="opinion-container mt-5">
     <shared-opinion *ngFor="let rev of reviews" [reviews]="rev" class="opinion-cards"></shared-opinion>
   </div>
 

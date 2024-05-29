@@ -12,66 +12,66 @@
         <img src=".\assets\img\blog\blog-article-1.svg" class="img-fluid mt-3 mb-3" />
       </div>
       <div id="top-footer" class="d-flex justify-content-start">
-        <p>Etiqueta</p>
+        <p>LEER MÁS</p>
         <p>{{ firstContainer.minutosLectura}} minutos</p>
       </div>
     </a>
   </div>
 
 
-<div id="mid" class="row">
-  <div *ngFor="let entry of secondContainer" id="mid-article-1" class="col custom-mid blog-article">
-    <a [routerLink]="['/articulo', entry.idPost]" class="link">
-      <div id="mid-img-1" class="d-flex justify-content-center align-items-center">
-        <img src=".\assets\img\blog\blog-article-2.svg" class="img-fluid mt-1" />
-      </div>
-      <div class="mid-text">
-        <h3>{{ entry.titulo }}</h3>
-        <p>{{ entry.parrafo1 }}</p>
-        <p>{{ entry.contenido1 }}</p>
-      </div>
-      <div id="mid-footer" class="d-flex justify-content-start">
-        <p>Etiqueta</p>
-        <p>{{ entry.minutosLectura}} minutos</p>
-      </div>
-    </a>
+  <div id="mid" class="row">
+    <div *ngFor="let entry of secondContainer" id="mid-article-1" class="col custom-mid blog-article">
+      <a [routerLink]="['/articulo', entry.idPost]" class="link">
+        <div id="mid-img-1" class="d-flex justify-content-center align-items-center">
+          <img src=".\assets\img\blog\blog-article-2.svg" class="img-fluid mt-1" />
+        </div>
+        <div class="mid-text">
+          <h3>{{ entry.titulo }}</h3>
+          <p>{{ entry.parrafo1 }}</p>
+          <p>{{ entry.contenido1 }}</p>
+        </div>
+        <div id="mid-footer" class="d-flex justify-content-start">
+          <p>LEER MÁS</p>
+          <p>{{ entry.minutosLectura}} minutos</p>
+        </div>
+      </a>
+    </div>
   </div>
-</div>
 
-<div id="bottom" class="row">
-  <div *ngFor="let entry of thirdContainer" id="bottom-article-1" class="col custom-bottom blog-article">
-    <a [routerLink]="['/articulo', entry.idPost]" class="link">
-      <div id="bottom-img-1" class="d-flex justify-content-center align-items-center">
-        <img src=".\assets\img\blog\blog-article-4.svg" class="img-fluid mt-3" />
-      </div>
-      <div class="bottom-text">
-        <h4>{{ entry.titulo }}</h4>
-        <p>{{ entry.parrafo1 }}</p>
-        <p>{{ entry.contenido1 }}</p>
-      </div>
-      <div id="bottom-footer" class="d-flex justify-content-start">
-        <p>Etiqueta</p>
-        <p>{{ entry.minutosLectura }} minutos</p>
-      </div>
-    </a>
+  <div id="bottom" class="row">
+    <div *ngFor="let entry of thirdContainer" id="bottom-article-1" class="col custom-bottom blog-article">
+      <a [routerLink]="['/articulo', entry.idPost]" class="link">
+        <div id="bottom-img-1" class="d-flex justify-content-center align-items-center">
+          <img src=".\assets\img\blog\blog-article-4.svg" class="img-fluid mt-3" />
+        </div>
+        <div class="bottom-text">
+          <h4>{{ entry.titulo }}</h4>
+          <p>{{ entry.parrafo1 }}</p>
+          <p>{{ entry.contenido1 }}</p>
+        </div>
+        <div id="bottom-footer" class="d-flex justify-content-start">
+          <p>LEER MÁS</p>
+          <p>{{ entry.minutosLectura }} minutos</p>
+        </div>
+      </a>
+    </div>
   </div>
-</div>
 </div>
 
 <nav id="pagination-container">
-<ul class="pagination justify-content-center">
-  <li class="page-item" [class.disabled]="currentPage === 0">
-    <a class="page-link arrow" (click)="prevPage()">
-      <img src="./assets/img/pagination/left-arrow.svg" class="arrow-img" />
-    </a>
-  </li>
-  <li *ngFor="let page of getPagesArray()" class="page-item page-number" [class.active]="page === currentPage">
-    <a class="page-link" (click)="setPage(page)">{{ page + 1 }}</a>
-  </li>
-  <li class="page-item" [class.disabled]="currentPage === totalPages - 1">
-    <a class="page-link arrow" (click)="nextPage()">
-      <img src="./assets/img/pagination/right-arrow.svg" class="arrow-img" />
-    </a>
-  </li>
-</ul>
+  <ul class="pagination justify-content-center">
+    <li class="page-item" [class.disabled]="currentPage === 0">
+      <a class="page-link arrow" (click)="prevPage()">
+        <img src="./assets/img/pagination/left-arrow.svg" class="arrow-img" />
+      </a>
+    </li>
+    <li *ngFor="let page of getPagesArray()" class="page-item page-number" [class.active]="page === currentPage">
+      <a class="page-link" (click)="setPage(page)">{{ page + 1 }}</a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage === totalPages - 1">
+      <a class="page-link arrow" (click)="nextPage()">
+        <img src="./assets/img/pagination/right-arrow.svg" class="arrow-img" />
+      </a>
+    </li>
+  </ul>
 </nav>
