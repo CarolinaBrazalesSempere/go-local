@@ -1,0 +1,5 @@
+@media (max-width: 576px) {
+  .posibilidades {
+    flex-direction: column;
+  }
+}

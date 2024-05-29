@@ -24,6 +24,15 @@ a.navbar-brand {
   cursor: pointer;
 }
 
-.login-container > svg {
+.login-container > svg,
+.navbar-session > svg {
   width: 24px;
+}
+
+.dropdown-item:active {
+  background-color: rgb(209, 209, 209) !important;
+}
+
+.pointer {
+  cursor: pointer;
 }

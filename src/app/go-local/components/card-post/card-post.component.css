@@ -1,9 +1,7 @@
 #card-container {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto; /* Añade desplazamiento horizontal si es necesario */
-
-
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto; /* Añade desplazamiento horizontal si es necesario */
 }
 
 .link-read-more {
@@ -29,5 +27,11 @@
 @media (max-width: 576px) {
   .card {
     width: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  #card-container {
+    flex-wrap: wrap;
   }
 }

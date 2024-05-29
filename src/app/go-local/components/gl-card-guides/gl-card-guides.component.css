@@ -27,3 +27,9 @@
     width: 100%;
   }
 }
+
+@media (max-width: 1024px) {
+  .card-container {
+    flex-wrap: wrap;
+  }
+}

@@ -1,64 +1,9 @@
-<!-- <div class="banner-articulo">
-  <img src="assets/img/banner-articulo.svg" alt="" class="hero-banner mt-5-custom">
-  <h5 class="hero-text-costumbres mt-4 fw-bold">COSTUMBRES</h5>
-  <p class="hero-text custom-font-size">¿Qué es el esmorzaret?</p>
-  <p class="hero-text-text fs-2">Te contamos esta tradición culinaria típica de la Comunidad Valenciana tan contundente
-    que se suele disfrutar en la
-    mañana, generalmente los fines de semana.</p>
-</div>
-<div class="container my-5 ">
-  <div class="articulo mt-articulo">
-    <p class="fs-2  fw-bold ">Una de las tradiciones culinarias más emblemáticas de la Comunidad Valenciana </p>
-    <p class="my-4">El esmorzaret. Este plato, que se ha convertido en un verdadero emblema de la región, no solo satisface el
-      apetito, sino que también celebra la riqueza de los ingredientes locales y la calidez de las reuniones familiares
-      y de amigos. Deleitándose en su contundencia, los valencianos han convertido el esmorzaret en una experiencia que
-      va más allá de la simple alimentación, convirtiéndola en un momento especial que se vive con intensidad durante
-      las mañanas, especialmente los fines de semana.
-    </p>
-    <p class="fs-2 fw-bold">El esmorzaret es mucho más que una comida</p>
-    <p class="my-4">Es un evento social arraigado en la cultura valenciana. Desde sus orígenes humildes hasta su lugar destacado en
-      la mesa valenciana, este plato refleja la identidad culinaria de la región. Con una combinación de sabores
-      auténticos, que van desde los embutidos locales hasta los panes recién horneados, y acompañado por el aroma
-      tentador del café recién hecho, el esmorzaret se convierte en una experiencia multisensorial que deleita tanto el
-      paladar como el alma. </p>
-    <p class="fs-2 fw-bold">Los productos típicos del esmorzaret</p>
-    <p class="my-4">Desde las tortas de aceite con tomate y aceite de oliva hasta los quesos artesanales, cada ingrediente utilizado
-      en este festín matutino es cuidadosamente seleccionado para garantizar un sabor excepcional y una experiencia
-      gastronómica inigualable. Además, el esmorzaret no solo se trata de alimentar el cuerpo, sino también el espíritu,
-      ya que proporciona un espacio para la conversación animada, la risa compartida y la conexión humana en un mundo
-      donde el tiempo parece avanzar cada vez más rápido. En resumen, el esmorzaret es mucho más que una comida; es un
-      tributo a la identidad, la tradición y la camaradería que hacen de la cultura valenciana algo verdaderamente
-      especial. ¡Te aseguramos que será una experiencia</p>
-    <p class="fs-2 fw-bold">Una de las tradiciones culinarias más emblemáticas de la Comunidad Valenciana </p>
-    <p class="my-4">El esmorzaret. Este plato, que se ha convertido en un verdadero emblema de la región, no solo satisface el
-      apetito, sino que también celebra la riqueza de los ingredientes locales y la calidez de las reuniones familiares
-      y de amigos. Deleitándose en su contundencia, los valencianos han convertido el esmorzaret en una experiencia que
-      va más allá de la simple alimentación, convirtiéndola en un momento especial que se vive con intensidad durante
-      las mañanas, especialmente los fines de semana.
-    </p>
-    <p class="fs-2 fw-bold">El esmorzaret es mucho más que una comida</p>
-    <p class="my-4">Es un evento social arraigado en la cultura valenciana. Desde sus orígenes humildes hasta su lugar destacado en
-      la mesa valenciana, este plato refleja la identidad culinaria de la región. Con una combinación de sabores
-      auténticos, que van desde los embutidos locales hasta los panes recién horneados, y acompañado por el aroma
-      tentador del café recién hecho, el esmorzaret se convierte en una experiencia multisensorial que deleita tanto el
-      paladar como el alma. </p>
-    <p class="fs-2 fw-bold">Los productos típicos del esmorzaret</p>
-    <p class="my-4">Desde las tortas de aceite con tomate y aceite de oliva  hasta los quesos artesanales, cada ingrediente utilizado en este festín  matutino es cuidadosamente seleccionado para garantizar un sabor  excepcional y una experiencia gastronómica inigualable. Además, el  esmorzaret no solo se trata de alimentar el cuerpo, sino también el  espíritu, ya que proporciona un espacio para la conversación animada, la  risa compartida y la conexión humana en un mundo donde el tiempo parece  avanzar cada vez más rápido. En resumen, el esmorzaret es mucho más que  una comida; es un tributo a la identidad, la tradición y la camaradería  que hacen de la cultura valenciana algo verdaderamente especial. ¡Te aseguramos que será una experienci </p>
-  </div>
-  <div class="relacionados">
-    <p class="fs-1 fw-bold mb-5">Artículos relacionados</p>
-    <div class="tarjeta">
-    </div>
-
-  </div>
-</div> -->
-
 <div *ngIf="article">
   <div class="banner-articulo">
     <img src="assets/img/banner-articulo.svg" alt="" class="hero-banner mt-5-custom">
-    <h5 class="hero-text-costumbres mt-4 fw-bold">COSTUMBRES</h5>
-    <p class="hero-text custom-font-size">{{ article.titulo }}</p>
-    <p class="hero-text-text fs-2">{{ article.descripcion }}</p>
+    <p class="hero-text-costumbres mt-4 fw-bold">COSTUMBRES</p>
+    <p class="hero-text fs-2 fw-bold">{{ article.titulo }}</p>
+    <p class="hero-text-text fs-3">{{ article.descripcion }}</p>
   </div>
   <div class="container my-5 ">
     <div class="articulo mt-articulo">

@@ -60,9 +60,8 @@ export class SearchBoxComponent {
             },
           });
         } else {
-          console.log('No se encontraron itinerarios.');
           this.errorMessage =
-            'Ocurrió un error al realizar la búsqueda. Por favor, inténtalo de nuevo más tarde.';
+            'Error en algún parámetro de búsqueda, ¡revisa bien y a viajar!';
         }
       } catch (error) {
         console.error('Error en la búsqueda:', error);
