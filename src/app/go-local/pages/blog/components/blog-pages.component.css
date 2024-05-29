@@ -4,7 +4,7 @@
 }
 
 #top {
-  background: #FFB39C;
+  background: #ffb39c;
   border-radius: 8px;
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -28,7 +28,9 @@
   margin-bottom: 3rem;
 }
 
-.top-text, .mid-text, .bottom-text {
+.top-text,
+.mid-text,
+.bottom-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,7 +38,7 @@
 
 .blog-article {
   border-radius: 8px;
-  background: #FFF;
+  background: #fff;
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -62,7 +64,7 @@
   line-height: 140%;
 }
 
- .mid-text > h3 {
+.mid-text > h3 {
   padding: 1rem;
   font-size: 24px;
   font-weight: 700;
@@ -92,7 +94,7 @@
 
 #mid-img-1 {
   border-radius: 8px 8px 0px 0px;
-  background: #FFCEA1;
+  background: #ffcea1;
 }
 
 #mid-img-2 {
@@ -102,23 +104,22 @@
 
 #bottom-img-1 {
   border-radius: 8px 8px 0px 0px;
-  background: #FFB099;
+  background: #ffb099;
 }
 
 #bottom-img-2 {
   border-radius: 8px 8px 0px 0px;
-  background: #FFD978;
+  background: #ffd978;
 }
 
 #bottom-img-3 {
   border-radius: 8px 8px 0px 0px;
-  background: #C3E4F6;
+  background: #c3e4f6;
 }
-
 
 #bottom-img-4 {
   border-radius: 8px 8px 0px 0px;
-  background: #FFD9C3;
+  background: #ffd9c3;
 }
 
 #pagination-container {
@@ -165,13 +166,16 @@
   width: 100%;
 }
 
-#mid-footer, #bottom-footer {
+#mid-footer,
+#bottom-footer {
   padding-left: 1rem;
 }
 
-#top-footer p, #mid-footer p, #bottom-footer p {
+#top-footer p,
+#mid-footer p,
+#bottom-footer p {
   padding-right: 1rem;
-  color: #3F3D56;
+  color: #3f3d56;
   font-size: 14px;
   font-weight: 700;
   line-height: 140%;
@@ -184,6 +188,10 @@
     padding-left: 2rem;
     padding-right: 2rem;
     margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto 0px 16px;
+    padding: 10px;
   }
 
   .col {
@@ -191,7 +199,8 @@
     margin-right: 1rem;
   }
 
-  #mid, #bottom {
+  #mid,
+  #bottom {
     margin-left: 1rem;
     margin-right: 1rem;
   }
@@ -203,19 +212,9 @@
     margin-right: 0.5rem;
   }
 
-  #mid, #bottom {
+  #mid,
+  #bottom {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
 }
-
-
-
-
-
-
-
-
-
-
-

@@ -51,6 +51,10 @@ const routes: Routes = [
     component: SignupComponent,
   },
   {
+    path: 'error',
+    component: ErrorComponent,
+  },
+  {
     path: '**',
     component: ErrorComponent,
   },

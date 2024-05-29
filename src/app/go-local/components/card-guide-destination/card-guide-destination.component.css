@@ -26,3 +26,17 @@ img {
   gap: 16px;
   align-items: baseline;
 }
+
+@media (max-width: 576px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .w-50 {
+    width: 100% !important;
+  }
+
+  .card-text {
+    width: 100%;
+  }
+}
