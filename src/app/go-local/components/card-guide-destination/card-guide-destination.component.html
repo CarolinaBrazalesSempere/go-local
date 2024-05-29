@@ -22,8 +22,7 @@
             <span>{{nombrePais}}</span>
           </div>
           <p><strong>Idiomas:</strong> {{guia.guia.idioma}}</p>
-
-          <gl-book-guide-btn [routerLink]="['/ficha-guia', guia.guia.idGuia]"></gl-book-guide-btn>
+          <button [routerLink]="['/ficha-guia', guia.guia.idGuia]" class="btn-medium align-self">Reservar</button>
         </div>
       </div>
       <div class="card-text">
