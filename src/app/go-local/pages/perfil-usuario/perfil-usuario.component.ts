@@ -6,6 +6,7 @@ import { Itinerario } from '../../interfaces/itinerario';
 import { Observable, catchError, map, of } from 'rxjs';
 import { RolesService } from '../../services/roles.service';
 
+
 @Component({
   selector: 'app-perfil-usuario',
   templateUrl: './perfil-usuario.component.html',

@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { BlogPageComponent } from './pages/blog/components/blog-pages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './pages/signup/signup.component';
+import { FichaReservaComponent } from './components/ficha-reserva/ficha-reserva.component';
+import { CancelModalComponent } from './components/ficha-reserva/modules/cancel-modal/cancel-modal.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     ArticuloComponent,
     BlogPageComponent,
     SignupComponent,
+    FichaReservaComponent,
+    CancelModalComponent,
   ],
 
   imports: [

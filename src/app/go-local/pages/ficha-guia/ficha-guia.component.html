@@ -8,12 +8,13 @@
       </div>
       <div class="col-md-6">
         <div class="ficha-guia">
-          <shared-tarjeta-guia></shared-tarjeta-guia>
+          <shared-tarjeta-guia *ngIf="idGuia" [idGuia]="idGuia"></shared-tarjeta-guia>
         </div>
       </div>
     </div>
 
   </div>
+
 
   <div class="opinion mt-5">
     <p class="fw-bold fs-4">LO QUE OPINAN DE {{guia.usuario.nombre | uppercase}} {{guia.usuario.apellidos | uppercase}}

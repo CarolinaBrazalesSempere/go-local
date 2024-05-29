@@ -10,6 +10,7 @@ import { Guia } from './go-local/interfaces/Guia';
 import { Reseña } from './go-local/interfaces/Reseña';
 import { Ciudad } from './go-local/interfaces/ciudad';
 import { map } from 'rxjs/operators';
+import { Reserva } from './go-local/interfaces/reserva';
 
 
 @Injectable({
@@ -71,6 +72,14 @@ export class ApiService {
     return this.http.get<Ciudad>(`${this.baseUrl}/guia/ciudad/${idGuia}`);
   }
 
-  
+
+  getReservasByUserId(userId: number): Observable<Reserva[]> {
+    return this.http.get<Reserva[]>(`${this.baseUrl}/reserva/buscar/${userId}`);
+  }
+
+  deleteReserva(idReserva: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/reserva/borrar/${idReserva}`);
+  }
+
 
 }

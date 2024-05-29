@@ -191,4 +191,10 @@
     <p class="mt-5">Cancelación gratuita durante 48h</p>
     <p class="mb-5">Máximo 2 personas por reserva</p>
   </div>
+  <div>
+    <gl-ficha-reserva
+    [idGuia]="loggedInUser?.idUsuario ?? 0"
+    [idCliente]="loggedInUser?.idUsuario ?? 0">
+  </gl-ficha-reserva>
+  </div>
 </div>
