@@ -72,6 +72,7 @@ export class ApiService {
     return this.http.get<Ciudad>(`${this.baseUrl}/guia/ciudad/${idGuia}`);
   }
 
+
   getReservasByUserId(userId: number): Observable<Reserva[]> {
     return this.http.get<Reserva[]>(`${this.baseUrl}/reserva/buscar/${userId}`);
   }
@@ -79,5 +80,6 @@ export class ApiService {
   deleteReserva(idReserva: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/reserva/borrar/${idReserva}`);
   }
+
 
 }

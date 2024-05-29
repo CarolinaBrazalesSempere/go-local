@@ -13,16 +13,15 @@ export interface Usuario {
   contrasena: string;
   sobreMi: string;
   username: string;
-
 }
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class authService {
+export class AuthService {
   private loginUrl = 'http://localhost:8083/login';
-  private loggedInUserSubject: BehaviorSubject<Usuario | null> = new BehaviorSubject<Usuario | null>(null);
+  private loggedInUserSubject: BehaviorSubject<Usuario | null> =
+    new BehaviorSubject<Usuario | null>(null);
 
   constructor(private http: HttpClient, private router: Router) {
     const userData = localStorage.getItem('userData');
@@ -48,5 +47,10 @@ export class authService {
     localStorage.removeItem('userData');
     this.loggedInUserSubject.next(null);
     this.router.navigate(['/login']);
+  }
+
+  updateLoggedInUser(user: Usuario): void {
+    localStorage.setItem('userData', JSON.stringify(user));
+    this.loggedInUserSubject.next(user);
   }
 }

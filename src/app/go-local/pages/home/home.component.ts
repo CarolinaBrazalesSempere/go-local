@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { authService, Usuario } from '../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
+import { Usuario } from '../../interfaces/Usuario';
+
 
 @Component({
   selector: 'gl-home-home-page',
@@ -11,7 +13,7 @@ export class HomeComponent {
   isCollapsed: boolean = true;
   loggedInUser: Usuario | null = null; // Cambiar a User
 
-  constructor(private authService: authService){}
+  constructor(private authService: AuthService) {}
 
   rotateChevron() {
     this.isRotated = !this.isRotated;
@@ -19,9 +21,9 @@ export class HomeComponent {
   }
 
   ngOnInit(): void {
-    this.authService.getLoggedInUser()
-      .subscribe((user: Usuario | null) => { // Cambiar a User
-        this.loggedInUser = user;
-      });
+    this.authService.getLoggedInUser().subscribe((user: Usuario | null) => {
+      // Cambiar a User
+      this.loggedInUser = user;
+    });
   }
 }
