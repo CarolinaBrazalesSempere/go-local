@@ -125,65 +125,65 @@
   <p class="fw-bold fs-4">¿QUÉ INCLUYE ESTA RESERVA CON TU GUÍA?</p>
   <div class="posibilidades my-5 mx-4 row row-cols-2 w-75">
     <ng-container *ngIf="itinerario">
-    <ng-container *ngIf="itinerario.monte">
-      <div class="col-6 ml-5 mb-4">
-        <a class="text-decoration-none">Aventuras en la Naturaleza</a>
-      </div>
-    </ng-container>
+      <ng-container *ngIf="itinerario.monte">
+        <div class="col-6 ml-5 mb-4">
+          <a class="text-decoration-none">Aventuras en la Naturaleza</a>
+        </div>
+      </ng-container>
 
-    <ng-container *ngIf="itinerario.playa">
-      <div class="col-6">
-        <a class="text-decoration-none">Explorando Costas y Playas</a>
-      </div>
-    </ng-container>
+      <ng-container *ngIf="itinerario.playa">
+        <div class="col-6">
+          <a class="text-decoration-none">Explorando Costas y Playas</a>
+        </div>
+      </ng-container>
 
-    <ng-container *ngIf="itinerario.cultura">
-      <div class="col-6 mb-4">
-        <a class="text-decoration-none">Inmersión Cultural</a>
-      </div>
-    </ng-container>
+      <ng-container *ngIf="itinerario.cultura">
+        <div class="col-6 mb-4">
+          <a class="text-decoration-none">Inmersión Cultural</a>
+        </div>
+      </ng-container>
 
-    <ng-container *ngIf="itinerario.gastronomia">
-      <div class="col-6 mb-4">
-        <a class="text-decoration-none">Gastronomía</a>
-      </div>
-    </ng-container>
+      <ng-container *ngIf="itinerario.gastronomia">
+        <div class="col-6 mb-4">
+          <a class="text-decoration-none">Gastronomía</a>
+        </div>
+      </ng-container>
 
-    <ng-container *ngIf="itinerario.enologico">
-      <div class="col-6">
-        <a class="text-decoration-none">Viaje del Vino</a>
-      </div>
-    </ng-container>
+      <ng-container *ngIf="itinerario.enologico">
+        <div class="col-6">
+          <a class="text-decoration-none">Viaje del Vino</a>
+        </div>
+      </ng-container>
 
-    <ng-container *ngIf="itinerario.ecologico">
-      <div class="col-6 mb-4">
-        <a class="text-decoration-none">Turismo Ecológico</a>
-      </div>
-    </ng-container>
+      <ng-container *ngIf="itinerario.ecologico">
+        <div class="col-6 mb-4">
+          <a class="text-decoration-none">Turismo Ecológico</a>
+        </div>
+      </ng-container>
 
-    <ng-container *ngIf="itinerario.nocturno">
-      <div class="col-6 mb-4">
-        <a class="text-decoration-none">Noches de Diversión</a>
-      </div>
-    </ng-container>
+      <ng-container *ngIf="itinerario.nocturno">
+        <div class="col-6 mb-4">
+          <a class="text-decoration-none">Noches de Diversión</a>
+        </div>
+      </ng-container>
 
-    <ng-container *ngIf="itinerario.relajacion">
-      <div class="col-6 mb-4">
-        <a class="text-decoration-none">Relax y Bienestar</a>
-      </div>
-    </ng-container>
+      <ng-container *ngIf="itinerario.relajacion">
+        <div class="col-6 mb-4">
+          <a class="text-decoration-none">Relax y Bienestar</a>
+        </div>
+      </ng-container>
 
-    <ng-container *ngIf="itinerario.rural">
-      <div class="col-6 mb-4">
-        <a class="text-decoration-none">Escapada Rural</a>
-      </div>
-    </ng-container>
+      <ng-container *ngIf="itinerario.rural">
+        <div class="col-6 mb-4">
+          <a class="text-decoration-none">Escapada Rural</a>
+        </div>
+      </ng-container>
 
-    <ng-container *ngIf="itinerario.local">
-      <div class="col-6 mb-4">
-        <a class="text-decoration-none">Descubriendo lo local</a>
-      </div>
-    </ng-container>
+      <ng-container *ngIf="itinerario.local">
+        <div class="col-6 mb-4">
+          <a class="text-decoration-none">Descubriendo lo local</a>
+        </div>
+      </ng-container>
     </ng-container>
   </div>
   <hr>
@@ -192,9 +192,7 @@
     <p class="mb-5">Máximo 2 personas por reserva</p>
   </div>
   <div>
-    <gl-ficha-reserva
-    [idGuia]="loggedInUser?.idUsuario ?? 0"
-    [idCliente]="loggedInUser?.idUsuario ?? 0">
-  </gl-ficha-reserva>
+    <gl-ficha-reserva [idGuia]="loggedInUser?.idUsuario ?? 0" [idCliente]="loggedInUser?.idUsuario ?? 0">
+    </gl-ficha-reserva>
   </div>
 </div>

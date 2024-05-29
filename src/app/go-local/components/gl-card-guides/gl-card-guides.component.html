@@ -1,5 +1,4 @@
 <section class="d-flex card-container">
-
   <div *ngFor="let guide of displayedGuides" class="card">
     <img src="assets/img/img-placeh.png" class="card-img-top" alt="foto de una persona">
     <div class="card-body">
@@ -19,5 +18,4 @@
       <button [routerLink]="['/ficha-guia', guide.idGuia]" class="btn-medium align-self">Reservar</button>
     </div>
   </div>
-
 </section>
