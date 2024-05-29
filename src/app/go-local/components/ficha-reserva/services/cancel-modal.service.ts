@@ -6,12 +6,11 @@ import { Subject } from 'rxjs';
 })
 export class CancelModalService {
 
-  private showModalSource = new Subject<void>();
+  private showModalSource = new Subject<number>();
   showModal$ = this.showModalSource.asObservable();
 
-  constructor() { }
-
-  showModal() {
-    this.showModalSource.next();
+  showModal(idReserva: number) {
+    this.showModalSource.next(idReserva);
   }
+
 }

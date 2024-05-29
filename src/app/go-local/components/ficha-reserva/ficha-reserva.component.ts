@@ -58,7 +58,7 @@ export class FichaReservaComponent implements OnInit {
     });
   }
 
-  openModal() {
-    this.cancelModalService.showModal();
+  openModal(idReserva: number) {
+    this.cancelModalService.showModal(idReserva);
   }
 }
