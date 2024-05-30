@@ -10,7 +10,7 @@ import { HomeComponent } from './go-local/pages/home/home.component';
 import { LoginComponent } from './go-local/pages/login/login.component';
 import { PerfilUsuarioComponent } from './go-local/pages/perfil-usuario/components/perfil-usuario.component';
 import { SearchByDestinationComponent } from './go-local/pages/search-by-destination/search-by-destination.component';
-import { SignupComponent } from './go-local/pages/signup/signup.component';
+import { SignupComponent } from './go-local/pages/signup/components/signup.component';
 
 const routes: Routes = [
   {

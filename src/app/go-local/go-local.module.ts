@@ -15,7 +15,7 @@ import { LoginComponent } from './pages/login/login.component';
 
 import { ArticuloComponent } from './pages/articulo/articulo.component';
 import { BlogPageComponent } from './pages/blog/components/blog-pages.component';
-import { SignupComponent } from './pages/signup/signup.component';
+import { SignupComponent } from './pages/signup/components/signup.component';
 
 import { BookGuideBtnComponent } from './components/book-guide-btn/book-guide-btn.component';
 import { CardGuideDestinationComponent } from './components/card-guide-destination/card-guide-destination.component';
