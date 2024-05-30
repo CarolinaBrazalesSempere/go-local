@@ -46,11 +46,9 @@ export class NavBarComponent {
 
     return this.rolesService.getRolesByUserId(this.loggedInUser.idUsuario).pipe(
       map((roles) => {
-        console.log('Roles del usuario:', roles);
         return roles.includes('ROL_GUIA');
       }),
       catchError((error) => {
-        console.error('Error obteniendo roles:', error);
         return of(false);
       })
     );
