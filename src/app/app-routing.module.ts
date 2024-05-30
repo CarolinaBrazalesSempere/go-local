@@ -11,7 +11,7 @@ import { LoginComponent } from './go-local/pages/login/login.component';
 import { PerfilUsuarioComponent } from './go-local/pages/perfil-usuario/components/perfil-usuario.component';
 import { SearchByDestinationComponent } from './go-local/pages/search-by-destination/search-by-destination.component';
 import { SignupComponent } from './go-local/pages/signup/components/signup.component';
-
+import { authGuard } from './go-local/auth.guard';
 
 const routes: Routes = [
   {
@@ -30,6 +30,7 @@ const routes: Routes = [
   {
     path: 'destinations',
     component: SearchByDestinationComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'articulo/:idPost',
@@ -38,6 +39,7 @@ const routes: Routes = [
   {
     path: 'ficha-guia/:idGuia',
     component: FichaGuiaComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'login',
