@@ -1,11 +1,12 @@
-import { catchError, map } from 'rxjs/operators';
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
-import { AuthService, Usuario } from '../../services/auth.service';
-import { Itinerario } from '../../interfaces/itinerario';
-import { RolesService } from '../../services/roles.service';
-import { UserProfileService } from './user-profile.service';
+import { Usuario } from 'src/app/go-local/interfaces/Usuario';
+import { Itinerario } from 'src/app/go-local/interfaces/itinerario';
+import { AuthService } from 'src/app/go-local/services/auth.service';
+import { RolesService } from 'src/app/go-local/services/roles.service';
+import { UserProfileService } from '../services/user-profile.service';
 
 
 @Component({

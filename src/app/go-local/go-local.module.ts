@@ -12,7 +12,7 @@ import { SearchByDestinationComponent } from './pages/search-by-destination/sear
 import { ErrorComponent } from './pages/error/error.component';
 import { FichaGuiaComponent } from './pages/ficha-guia/ficha-guia.component';
 import { LoginComponent } from './pages/login/login.component';
-import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
+
 import { ArticuloComponent } from './pages/articulo/articulo.component';
 import { BlogPageComponent } from './pages/blog/components/blog-pages.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -23,6 +23,8 @@ import { CardPostComponent } from './components/card-post/card-post.component';
 import { GlCardGuidesComponent } from './components/gl-card-guides/gl-card-guides.component';
 import { ItinerarioListComponent } from './components/itinerario-list/itinerario-list.component';
 import { FichaReservaComponent } from './components/ficha-reserva/ficha-reserva.component';
+import { PerfilUsuarioComponent } from './pages/perfil-usuario/components/perfil-usuario.component';
+
 
 
 @NgModule({
@@ -39,9 +41,9 @@ import { FichaReservaComponent } from './components/ficha-reserva/ficha-reserva.
     HomeComponent,
     ItinerarioListComponent,
     LoginComponent,
-    PerfilUsuarioComponent,
     SearchByDestinationComponent,
     SignupComponent,
+    PerfilUsuarioComponent
   ],
 
   imports: [

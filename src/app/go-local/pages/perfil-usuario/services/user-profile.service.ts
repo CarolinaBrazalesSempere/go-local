@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { Itinerario } from '../../interfaces/itinerario';
-import { Usuario } from '../../interfaces/Usuario';
+import { Itinerario } from 'src/app/go-local/interfaces/itinerario';
+import { Usuario } from 'src/app/go-local/interfaces/Usuario';
 
 
 @Injectable({
