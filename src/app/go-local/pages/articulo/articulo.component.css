@@ -16,15 +16,15 @@
   position: relative;
 }
 
-.mt-5-custom{
+.mt-5-custom {
   margin-top: 390px;
 }
 
-.hero-text{
+.hero-text {
   margin-top: 96px;
 }
 
-.hero-text-costumbres{
+.hero-text-costumbres {
   position: absolute;
   top: 16%;
   left: 50%;
@@ -33,12 +33,12 @@
   text-align: center;
 }
 
-.custom-font-size{
+.custom-font-size {
   font-size: 48px;
   font-weight: bold;
 }
 
-.hero-text-text{
+.hero-text-text {
   position: absolute;
   top: 16%;
   left: 50%;
@@ -49,16 +49,15 @@
   width: 70%;
 }
 
-.banner-articulo{
-  background-color: #FFD978;
+.banner-articulo {
+  background-color: #ffd978;
 }
 
-.mt-articulo{
+.mt-articulo {
   margin-top: 100px;
   margin-bottom: 200px;
 }
 
-.tarjeta{
+.tarjeta {
   width: 100%;
 }
-
