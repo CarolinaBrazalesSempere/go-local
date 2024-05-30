@@ -1,15 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { ApiService } from 'src/app/api.service';
-import { Guia } from 'src/app/go-local/interfaces/Guia';
-import { Reseña } from 'src/app/go-local/interfaces/Reseña';
 import { Ciudad } from 'src/app/go-local/interfaces/ciudad';
+import { Guia } from 'src/app/go-local/interfaces/Guia';
 import { Itinerario } from 'src/app/go-local/interfaces/itinerario';
+import { Reseña } from 'src/app/go-local/interfaces/Reseña';
 
 
 @Component({
   selector: 'shared-tarjeta-guia',
   templateUrl: './tarjeta-guia.component.html',
-  styleUrls: ['./tarjeta-guia.component.css']
+  styleUrls: ['./tarjeta-guia.component.css'],
 })
 export class TarjetaGuiaComponent implements OnInit {
   @Input() idGuia!: number;
@@ -38,8 +39,10 @@ export class TarjetaGuiaComponent implements OnInit {
       this.reviews = data;
     });
 
-    this.apiService.getMediaPuntuacionByGuiaId(this.idGuia).subscribe((data) => {
-      this.averageReview = data;
-    });
+    this.apiService
+      .getMediaPuntuacionByGuiaId(this.idGuia)
+      .subscribe((data) => {
+        this.averageReview = data;
+      });
   }
 }
