@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Usuario } from '../../interfaces/Usuario';
 import { Observable } from 'rxjs';
+
 import { Itinerario } from '../../interfaces/itinerario';
+import { Usuario } from '../../interfaces/Usuario';
+
 
 @Injectable({
   providedIn: 'root',
@@ -24,6 +26,8 @@ export class UserProfileService {
   }
 
   getItinerarioByIdUsuario(idUsuario: number): Observable<Itinerario> {
-    return this.http.get<Itinerario>(`${this.apiUrl}/itinerario/byUsuario/${idUsuario}`);
+    return this.http.get<Itinerario>(
+      `${this.apiUrl}/itinerario/byUsuario/${idUsuario}`
+    );
   }
 }
