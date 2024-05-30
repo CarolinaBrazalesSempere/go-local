@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { OpinionComponent } from './components/opinion/opinion.component';
-import { SearchBoxComponent } from './components/search-box/components/search-box.component';
+import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 import { TarjetaGuiaComponent } from './components/tarjeta-guia/tarjeta-guia.component';
 

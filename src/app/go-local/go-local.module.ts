@@ -26,7 +26,6 @@ import { FichaReservaComponent } from './components/ficha-reserva/ficha-reserva.
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/components/perfil-usuario.component';
 
 
-
 @NgModule({
   declarations: [
     ArticuloComponent,

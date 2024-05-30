@@ -12,6 +12,7 @@ import { PerfilUsuarioComponent } from './go-local/pages/perfil-usuario/componen
 import { SearchByDestinationComponent } from './go-local/pages/search-by-destination/search-by-destination.component';
 import { SignupComponent } from './go-local/pages/signup/components/signup.component';
 
+
 const routes: Routes = [
   {
     path: '',
