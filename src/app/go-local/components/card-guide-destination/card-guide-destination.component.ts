@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { Itinerario } from '../../interfaces/itinerario';
 import { ApiService } from 'src/app/api.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'gl-card-guide-destination',
   templateUrl: './card-guide-destination.component.html',
   styleUrls: ['./card-guide-destination.component.css'],
 })
-export class CardGuideDestinationComponent implements OnInit{
+export class CardGuideDestinationComponent implements OnInit {
   itinerarios: Itinerario[] = [];
   nombreCiudad: string = '';
   nombrePais: string = '';
@@ -32,11 +33,12 @@ export class CardGuideDestinationComponent implements OnInit{
         .subscribe((data) => {
           this.guias = data;
           this.guias.forEach((itinerario) => {
-            this.apiService.getMediaPuntuacionByGuiaId(itinerario.guia.idGuia).subscribe((media) => {
-              this.averageReviews[itinerario.guia.idGuia] = media;
-            });
+            this.apiService
+              .getMediaPuntuacionByGuiaId(itinerario.guia.idGuia)
+              .subscribe((media) => {
+                this.averageReviews[itinerario.guia.idGuia] = media;
+              });
           });
-          console.log(this.guias);
         });
     });
   }
