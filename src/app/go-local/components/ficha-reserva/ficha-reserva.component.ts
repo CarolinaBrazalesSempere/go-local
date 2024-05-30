@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { ApiService } from 'src/app/api.service';
-import { Guia } from '../../interfaces/Guia';
-import { Reseña } from '../../interfaces/Reseña';
 import { Ciudad } from '../../interfaces/ciudad';
+import { Guia } from '../../interfaces/Guia';
 import { Itinerario } from '../../interfaces/itinerario';
+import { Reseña } from '../../interfaces/Reseña';
 import { Reserva } from '../../interfaces/reserva';
-import { CancelModalService } from './services/cancel-modal.service';
 
 @Component({
   selector: 'gl-ficha-reserva',
@@ -22,7 +22,7 @@ export class FichaReservaComponent implements OnInit {
   averageReview: number = 0;
   reservas: Reserva[] = [];
 
-  constructor(private apiService: ApiService, private cancelModalService: CancelModalService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.apiService.getGuiaById(this.idGuia).subscribe((data) => {
@@ -54,11 +54,9 @@ export class FichaReservaComponent implements OnInit {
 
   cancelarReserva(idReserva: number): void {
     this.apiService.deleteReserva(idReserva).subscribe(() => {
-      this.reservas = this.reservas.filter(reserva => reserva.idReserva !== idReserva);
+      this.reservas = this.reservas.filter(
+        (reserva) => reserva.idReserva !== idReserva
+      );
     });
-  }
-
-  openModal(idReserva: number) {
-    this.cancelModalService.showModal(idReserva);
   }
 }

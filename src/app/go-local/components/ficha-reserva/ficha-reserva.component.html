@@ -14,10 +14,6 @@
       <p class="mt-3">Precio: {{itinerario.precio}}€ día</p>
       <p class="mt-3">{{itinerario.fechaDisponible}}</p>
     </div>
-    <!-- <button class="btn-medium mt-3 mb-4" (click)="cancelarReserva(reserva.idReserva)">Cancelar</button> -->
-    <!-- <button class="btn-medium mt-3 mb-4">Cancelar</button> -->
-    <button type="button" class="btn-like-title" data-bs-toggle="modal" data-bs-target="#cancelModal" (click)="openModal(reserva.idReserva)">
-      Cancelar
-    </button>
+    <button class="btn-medium mt-3 mb-4" (click)="cancelarReserva(reserva.idReserva)">Cancelar</button>
   </div>
 </div>
