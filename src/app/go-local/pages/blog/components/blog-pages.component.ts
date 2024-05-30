@@ -1,17 +1,14 @@
-
 import { Component, OnInit } from '@angular/core';
 
-import { PostBlog } from 'src/app/go-local/interfaces/PostBlog';
 import { BlogService } from '../services/blog.service';
-
+import { PostBlog } from 'src/app/go-local/interfaces/PostBlog';
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog-pages.component.html',
-  styleUrls: ['./blog-pages.component.css']
+  styleUrls: ['./blog-pages.component.css'],
 })
 export class BlogPageComponent implements OnInit {
-
   blogEntries: PostBlog[] = [];
   displayedEntries: PostBlog[] = [];
   currentPage: number = 0;
@@ -21,7 +18,7 @@ export class BlogPageComponent implements OnInit {
   constructor(private blogService: BlogService) {}
 
   ngOnInit(): void {
-    this.blogService.getBlogEntries().subscribe(data => {
+    this.blogService.getBlogEntries().subscribe((data) => {
       this.blogEntries = data.sort((a, b) => b.idPost - a.idPost);
       this.totalPages = Math.ceil(this.blogEntries.length / this.pageSize);
       this.setPage(this.currentPage);
@@ -62,7 +59,4 @@ export class BlogPageComponent implements OnInit {
   get thirdContainer(): PostBlog[] {
     return this.displayedEntries.slice(3, 7);
   }
-
 }
-
-

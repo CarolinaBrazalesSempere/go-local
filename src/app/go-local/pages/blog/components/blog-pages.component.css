@@ -160,8 +160,6 @@
   color: #fff !important;
 }
 
-/* TODO: Falta ajustar correctamente los elementos del contenedor #top */
-
 #top-footer {
   width: 100%;
 }
@@ -180,8 +178,6 @@
   font-weight: 700;
   line-height: 140%;
 }
-
-/* TODO: Falta el resposive del contenedor #top */
 
 @media (max-width: 768px) {
   #top {

@@ -1,6 +1,5 @@
 <div class="container mt-3">
 
-
   <div *ngIf="firstContainer" id="top" class="row blog-article">
     <a [routerLink]="['/articulo', firstContainer.idPost]" class="link">
       <div class="col top-text">
@@ -17,7 +16,6 @@
       </div>
     </a>
   </div>
-
 
   <div id="mid" class="row">
     <div *ngFor="let entry of secondContainer" id="mid-article-1" class="col custom-mid blog-article">
@@ -56,6 +54,7 @@
       </a>
     </div>
   </div>
+
 </div>
 
 <nav id="pagination-container">
