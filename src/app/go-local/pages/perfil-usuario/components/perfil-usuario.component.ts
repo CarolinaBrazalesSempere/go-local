@@ -8,7 +8,6 @@ import { AuthService } from 'src/app/go-local/services/auth.service';
 import { RolesService } from 'src/app/go-local/services/roles.service';
 import { UserProfileService } from '../services/user-profile.service';
 
-
 @Component({
   selector: 'app-perfil-usuario',
   templateUrl: './perfil-usuario.component.html',
@@ -86,11 +85,11 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   loadItinerario(idGuia: number): void {
-    this.userProfile.getItinerarioByIdUsuario(idGuia).subscribe(
-      (itinerario: Itinerario) => {
+    this.userProfile
+      .getItinerarioByIdUsuario(idGuia)
+      .subscribe((itinerario: Itinerario) => {
         this.itinerario = itinerario;
-      }
-    );
+      });
   }
 
   onEdit(field: string, event: Event) {
@@ -98,7 +97,8 @@ export class PerfilUsuarioComponent implements OnInit {
     this.editingField[field] = !this.editingField[field];
   }
 
-  onSubmit() {
+  onSubmit(event: Event) {
+    event.preventDefault();
     if (this.loggedInUser && this.loggedInUser.idUsuario) {
       const observer = {
         next: (response: Usuario) => {
