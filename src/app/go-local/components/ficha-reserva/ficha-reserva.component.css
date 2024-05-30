@@ -39,10 +39,10 @@
   width: 50%;
 }
 
-.card {
+.card-container {
   display: flex;
-  position: relative;
-  margin-left: auto;
+  flex-wrap: wrap;
+  gap: 32px;
 }
 
 .w-custom {
