@@ -30,7 +30,6 @@ hr {
 }
 .opinion-cards {
   width: 48%;
-  margin-right: 20px;
 }
 
 @media (max-width: 967px) {
@@ -47,5 +46,11 @@ hr {
 
   .opinion-cards {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mt {
+    margin-top: 32px;
   }
 }

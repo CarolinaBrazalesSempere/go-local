@@ -54,7 +54,7 @@
           amor
           por tu ciudad en una emocionante aventura como guía local.</p>
       </div>
-      <button class="btn-medium" routerLink="/signup">Unirme</button>
+      <button *ngIf="!isLogged()" class="btn-medium" routerLink="/signup">Unirme</button>
     </div>
   </section>
 

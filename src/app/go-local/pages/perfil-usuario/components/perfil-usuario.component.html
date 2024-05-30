@@ -1,7 +1,7 @@
 <div class="container my-5-custom">
   <div class="informacion-foto d-flex">
     <div class="informacion w-100">
-      <p class="fw-bold fs-1">Información personal</p>
+      <p class="fw-bold fs-2">Información personal</p>
       <div class="form-foto d-flex">
         <div class="foto text-center order-2">
           <img class="imagen" src="assets/img/perfil.svg" alt="">
@@ -17,7 +17,6 @@
                 <button class="btn-small mt-0-custom col-3" (click)="onEdit('nombre', $event)">Editar</button>
               </div>
             </div>
-            <label for="nombre"></label>
             <input id="nombre" type="text" [(ngModel)]="user.nombre" [attr.placeholder]="loggedInUser?.nombre"
               name="nombre" class="custom-border-bottom w-100" [disabled]="!editingField['nombre']">
           </div>
@@ -29,7 +28,6 @@
                 <button class="btn-small mt-0-custom col-3" (click)="onEdit('apellidos', $event)">Editar</button>
               </div>
             </div>
-            <label for="apellidos"></label>
             <input id="apellidos" type="text" [(ngModel)]="user.apellidos" name="apellidos"
               [attr.placeholder]="loggedInUser?.apellidos" class="custom-border-bottom w-100"
               [disabled]="!editingField['apellidos']">
@@ -42,7 +40,6 @@
                 <button class="btn-small mt-0-custom col-3" (click)="onEdit('email', $event)">Editar</button>
               </div>
             </div>
-            <label for="email"></label>
             <input id="email" type="text" [(ngModel)]="user.email" name="email" [attr.placeholder]="loggedInUser?.email"
               class="custom-border-bottom w-100" [disabled]="!editingField['email']">
           </div>
@@ -66,7 +63,6 @@
                 <button class="btn-small mt-0-custom col-3" (click)="onEdit('telefono', $event)">Editar</button>
               </div>
             </div>
-            <label for="telefono"></label>
             <input id="telefono" type="text" [(ngModel)]="user.telefono" name="telefono"
               [attr.placeholder]="loggedInUser?.telefono" class="custom-border-bottom w-100"
               [disabled]="!editingField['telefono']">
@@ -79,7 +75,6 @@
                 <button class="btn-small mt-0-custom col-3" (click)="onEdit('username', $event)">Editar</button>
               </div>
             </div>
-            <label for="username"></label>
             <input id="username" type="text" [(ngModel)]="user.username" name="username"
               [attr.placeholder]="loggedInUser?.username" class="custom-border-bottom w-100"
               [disabled]="!editingField['username']">
@@ -91,20 +86,18 @@
                 <button class="btn-small mt-0-custom col-3" (click)="onEdit('contrasena', $event)">Editar</button>
               </div>
             </div>
-            <label for="contrasena"></label>
             <input id="contrasena" type="password" [(ngModel)]="user.contrasena" name="contrasena"
               class="custom-border-bottom w-100" [disabled]="!editingField['contrasena']">
           </div>
-          <div class="contrasena row">
+          <div class=" row">
             <div class="d-flex">
               <p class="fw-bold mt-5 col-3 mt-0-custom">Sobre mí</p>
-              <div class="boton mt-5" style="margin-left: auto;">
-                <button class="btn-small mt-0-custom col-3" (click)="onEdit('sobreMi', $event)">Editar</button>
-              </div>
             </div>
-            <label for="sobreMi"></label>
-            <input id="sobreMi" type="text" [(ngModel)]="user.sobreMi" name="sobreMi" class="custom-border-bottom w-100"
-              [disabled]="!editingField['sobreMi']">
+            <textarea id="sobreMi" rows="6" type="text" [(ngModel)]="user.sobreMi" name="sobreMi" class="sobremi w-100"
+              [disabled]="!editingField['sobreMi']"></textarea>
+            <div class="boton" style="margin-left: auto;">
+              <a class=" mt-0-custom col-3" (click)="onEdit('sobreMi', $event)">Editar</a>
+            </div>
           </div>
           <div class="boton mt-5" style="margin-left: auto;">
             <button type="submit" class="btn-medium mt-0-custom col-3">Guardar</button>
@@ -122,7 +115,7 @@
 </div>
 
 <div class="container mb-5 incluye" *ngIf="esGuia">
-  <p class="fw-bold fs-4">¿QUÉ INCLUYE ESTA RESERVA CON TU GUÍA?</p>
+  <p class="fw-bold fs-4">¿QUÉ INCLUYE TU RESERVA COMO GUÍA?</p>
   <div class="posibilidades my-5 mx-4 row row-cols-2 w-75">
     <ng-container *ngIf="itinerario.monte">
       <div class="col-md-6 col-12 ml-5 mb-4">
@@ -158,9 +151,11 @@
 
     <ng-container *ngIf="itinerario.gastronomia">
       <div class="col-6 col-md-6 col-12 mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 18 28" fill="none" >
-          <path d="M1 0C1.26522 0 1.51957 0.105357 1.70711 0.292893C1.89464 0.48043 2 0.734784 2 1V7C1.99967 7.62065 2.19186 8.22613 2.55006 8.73298C2.90826 9.23984 3.41484 9.62312 4 9.83V1C4 0.734784 4.10536 0.48043 4.29289 0.292893C4.48043 0.105357 4.73478 0 5 0C5.26522 0 5.51957 0.105357 5.70711 0.292893C5.89464 0.48043 6 0.734784 6 1V9.83C6.58516 9.62312 7.09174 9.23984 7.44994 8.73298C7.80814 8.22613 8.00033 7.62065 8 7V1C8 0.734784 8.10536 0.48043 8.29289 0.292893C8.48043 0.105357 8.73478 0 9 0C9.26522 0 9.51957 0.105357 9.70711 0.292893C9.89464 0.48043 10 0.734784 10 1V7C10.0002 8.15265 9.60222 9.26999 8.87331 10.1629C8.1444 11.0558 7.12936 11.6695 6 11.9V27C6 27.2652 5.89464 27.5196 5.70711 27.7071C5.51957 27.8946 5.26522 28 5 28C4.73478 28 4.48043 27.8946 4.29289 27.7071C4.10536 27.5196 4 27.2652 4 27V11.9C2.87064 11.6695 1.8556 11.0558 1.12669 10.1629C0.397783 9.26999 -0.000235151 8.15265 1.04228e-07 7V1C1.04228e-07 0.734784 0.105357 0.48043 0.292893 0.292893C0.48043 0.105357 0.734784 0 1 0ZM14.958 2.958C15.276 2.638 15.634 2.392 16 2.23V12H14V5C14 4.326 14.348 3.566 14.958 2.958ZM16 14V27C16 27.2652 16.1054 27.5196 16.2929 27.7071C16.4804 27.8946 16.7348 28 17 28C17.2652 28 17.5196 27.8946 17.7071 27.7071C17.8946 27.5196 18 27.2652 18 27V1C18 0.734784 17.8946 0.48043 17.7071 0.292893C17.5196 0.105357 17.2652 0 17 0C15.674 0 14.434 0.652 13.542 1.542C12.652 2.434 12 3.674 12 5V13C12 13.2652 12.1054 13.5196 12.2929 13.7071C12.4804 13.8946 12.7348 14 13 14H16Z" fill="#F24E1E"/>
-          </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 18 28" fill="none">
+          <path
+            d="M1 0C1.26522 0 1.51957 0.105357 1.70711 0.292893C1.89464 0.48043 2 0.734784 2 1V7C1.99967 7.62065 2.19186 8.22613 2.55006 8.73298C2.90826 9.23984 3.41484 9.62312 4 9.83V1C4 0.734784 4.10536 0.48043 4.29289 0.292893C4.48043 0.105357 4.73478 0 5 0C5.26522 0 5.51957 0.105357 5.70711 0.292893C5.89464 0.48043 6 0.734784 6 1V9.83C6.58516 9.62312 7.09174 9.23984 7.44994 8.73298C7.80814 8.22613 8.00033 7.62065 8 7V1C8 0.734784 8.10536 0.48043 8.29289 0.292893C8.48043 0.105357 8.73478 0 9 0C9.26522 0 9.51957 0.105357 9.70711 0.292893C9.89464 0.48043 10 0.734784 10 1V7C10.0002 8.15265 9.60222 9.26999 8.87331 10.1629C8.1444 11.0558 7.12936 11.6695 6 11.9V27C6 27.2652 5.89464 27.5196 5.70711 27.7071C5.51957 27.8946 5.26522 28 5 28C4.73478 28 4.48043 27.8946 4.29289 27.7071C4.10536 27.5196 4 27.2652 4 27V11.9C2.87064 11.6695 1.8556 11.0558 1.12669 10.1629C0.397783 9.26999 -0.000235151 8.15265 1.04228e-07 7V1C1.04228e-07 0.734784 0.105357 0.48043 0.292893 0.292893C0.48043 0.105357 0.734784 0 1 0ZM14.958 2.958C15.276 2.638 15.634 2.392 16 2.23V12H14V5C14 4.326 14.348 3.566 14.958 2.958ZM16 14V27C16 27.2652 16.1054 27.5196 16.2929 27.7071C16.4804 27.8946 16.7348 28 17 28C17.2652 28 17.5196 27.8946 17.7071 27.7071C17.8946 27.5196 18 27.2652 18 27V1C18 0.734784 17.8946 0.48043 17.7071 0.292893C17.5196 0.105357 17.2652 0 17 0C15.674 0 14.434 0.652 13.542 1.542C12.652 2.434 12 3.674 12 5V13C12 13.2652 12.1054 13.5196 12.2929 13.7071C12.4804 13.8946 12.7348 14 13 14H16Z"
+            fill="#F24E1E" />
+        </svg>
         <a class="text-decoration-none ps-2">Bares y restaurantes</a>
       </div>
     </ng-container>

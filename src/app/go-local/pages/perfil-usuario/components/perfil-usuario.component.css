@@ -3,6 +3,19 @@
   margin-bottom: 72px;
 }
 
+input {
+  background-color: white;
+}
+
+input:focus-visible {
+  outline: none;
+  border-bottom: 1px solid #f24e1e;
+}
+textarea:focus-visible {
+  outline: none;
+  border: 1px solid #f24e1e;
+}
+
 .custom-border-bottom {
   border-bottom: 1px solid #ccc;
   border-top: 0px;
@@ -22,7 +35,23 @@
   width: 60%;
 }
 
+.sobremi {
+  border-style: dashed;
+  border-color: grey;
+  border-radius: 8px;
+  border-width: thin;
+  background-color: white;
+}
+
+textarea {
+  resize: none;
+  padding: 16px;
+}
+
 @media (max-width: 967px) {
+  .formulario {
+    width: 100%;
+  }
   .form-foto {
     display: grid !important;
   }
