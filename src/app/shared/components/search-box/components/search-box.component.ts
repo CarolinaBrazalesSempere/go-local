@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/api.service'; // Asegúrate de que la ruta sea correcta
-import { firstValueFrom } from 'rxjs';
+
+import { ApiService } from 'src/app/api.service';
+
 
 @Component({
   selector: 'shared-search-box',
