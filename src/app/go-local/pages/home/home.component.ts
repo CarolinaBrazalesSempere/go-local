@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { AuthService } from '../../services/auth.service';
 import { Usuario } from '../../interfaces/Usuario';
 
@@ -11,7 +12,7 @@ import { Usuario } from '../../interfaces/Usuario';
 export class HomeComponent {
   isRotated: boolean = false;
   isCollapsed: boolean = true;
-  loggedInUser: Usuario | null = null; // Cambiar a User
+  loggedInUser: Usuario | null = null;
 
   constructor(private authService: AuthService) {}
 
@@ -22,7 +23,6 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.authService.getLoggedInUser().subscribe((user: Usuario | null) => {
-      // Cambiar a User
       this.loggedInUser = user;
     });
   }
