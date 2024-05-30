@@ -17,7 +17,6 @@ import { ArticuloComponent } from './pages/articulo/articulo.component';
 import { BlogPageComponent } from './pages/blog/components/blog-pages.component';
 import { SignupComponent } from './pages/signup/components/signup.component';
 
-import { BookGuideBtnComponent } from './components/book-guide-btn/book-guide-btn.component';
 import { CardGuideDestinationComponent } from './components/card-guide-destination/card-guide-destination.component';
 import { CardPostComponent } from './components/card-post/card-post.component';
 import { GlCardGuidesComponent } from './components/gl-card-guides/gl-card-guides.component';
@@ -30,7 +29,6 @@ import { PerfilUsuarioComponent } from './pages/perfil-usuario/components/perfil
   declarations: [
     ArticuloComponent,
     BlogPageComponent,
-    BookGuideBtnComponent,
     CardGuideDestinationComponent,
     CardPostComponent,
     ErrorComponent,
