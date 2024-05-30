@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Guia } from '../../interfaces/Guia';
 import { ActivatedRoute } from '@angular/router';
+
+import { Guia } from '../../interfaces/Guia';
+import { Reseña } from '../../interfaces/Reseña';
 import { ApiService } from 'src/app/api.service';
 import { Itinerario } from '../../interfaces/itinerario';
-import { Reseña } from '../../interfaces/Reseña';
+
 
 @Component({
   selector: 'app-ficha-guia',
@@ -25,14 +27,15 @@ export class FichaGuiaComponent implements OnInit {
         this.guia = data;
         console.log(this.guia);
 
-        this.apiService.getItinerarioByIdGuia(this.idGuia).subscribe((itinerario) => {
-          this.itinerario = itinerario;
-        });
+        this.apiService
+          .getItinerarioByIdGuia(this.idGuia)
+          .subscribe((itinerario) => {
+            this.itinerario = itinerario;
+          });
       });
       this.apiService.getReseñasByGuiaId(this.idGuia).subscribe((data) => {
         this.reviews = data;
       });
     });
   }
-
 }
