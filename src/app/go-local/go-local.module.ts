@@ -11,7 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SearchByDestinationComponent } from './pages/search-by-destination/search-by-destination.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { FichaGuiaComponent } from './pages/ficha-guia/ficha-guia.component';
-import { LoginComponent } from './pages/login/components/login.component';
+import { LoginComponent } from './pages/login/login.component';
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
 import { ArticuloComponent } from './pages/articulo/articulo.component';
 import { BlogPageComponent } from './pages/blog/components/blog-pages.component';
