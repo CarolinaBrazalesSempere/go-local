@@ -20,7 +20,6 @@ import { SignupComponent } from './pages/signup/components/signup.component';
 import { CardGuideDestinationComponent } from './components/card-guide-destination/card-guide-destination.component';
 import { CardPostComponent } from './components/card-post/card-post.component';
 import { GlCardGuidesComponent } from './components/gl-card-guides/gl-card-guides.component';
-import { ItinerarioListComponent } from './components/itinerario-list/itinerario-list.component';
 import { FichaReservaComponent } from './components/ficha-reserva/ficha-reserva.component';
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/components/perfil-usuario.component';
 
@@ -36,7 +35,6 @@ import { PerfilUsuarioComponent } from './pages/perfil-usuario/components/perfil
     FichaReservaComponent,
     GlCardGuidesComponent,
     HomeComponent,
-    ItinerarioListComponent,
     LoginComponent,
     SearchByDestinationComponent,
     SignupComponent,
