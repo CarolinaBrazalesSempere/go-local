@@ -1,4 +1,9 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { BlogService } from '../../pages/blog/services/blog.service';
 import { PostBlog } from '../../interfaces/PostBlog';
 
@@ -7,51 +12,30 @@ import { PostBlog } from '../../interfaces/PostBlog';
   templateUrl: './card-post.component.html',
   styleUrls: ['./card-post.component.css'],
 })
-export class CardPostComponent implements OnInit{
-
+export class CardPostComponent implements OnInit {
   @Input() excludedId!: number;
   blogEntries: PostBlog[] = [];
   displayedEntries: PostBlog[] = [];
 
   constructor(private blogService: BlogService) {}
 
-  // ngOnInit(): void {
-  //   this.blogService.getBlogEntries().subscribe(data => {
-  //     this.blogEntries = data.sort((a, b) => b.idPost - a.idPost).slice(0, 4);
-  //     this.displayedEntries = this.blogEntries;
-  //   });
-  // }
-
-//   ngOnInit(): void {
-//     this.blogService.getBlogEntries().subscribe(data => {
-//       this.blogEntries = data
-//         .filter(entry => entry.idPost !== this.excludedId)
-//         .sort((a, b) => b.idPost - a.idPost)
-//         .slice(0, 4);
-//       this.displayedEntries = this.blogEntries;
-//     });
-//   }
-// }
-
-ngOnInit(): void {
-  this.fetchBlogEntries();
-}
-
-ngOnChanges(changes: SimpleChanges): void {
-  if (changes['excludedId']) {
+  ngOnInit(): void {
     this.fetchBlogEntries();
   }
-}
 
-private fetchBlogEntries(): void {
-  this.blogService.getBlogEntries().subscribe(data => {
-    this.blogEntries = data
-      .filter(entry => entry.idPost !== this.excludedId)
-      .sort((a, b) => b.idPost - a.idPost)
-      .slice(0, 4);
-    this.displayedEntries = this.blogEntries;
-  });
-}
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['excludedId']) {
+      this.fetchBlogEntries();
+    }
+  }
 
+  private fetchBlogEntries(): void {
+    this.blogService.getBlogEntries().subscribe((data) => {
+      this.blogEntries = data
+        .filter((entry) => entry.idPost !== this.excludedId)
+        .sort((a, b) => b.idPost - a.idPost)
+        .slice(0, 4);
+      this.displayedEntries = this.blogEntries;
+    });
+  }
 }
-
