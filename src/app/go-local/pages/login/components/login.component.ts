@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/go-local/interfaces/Usuario';
+
 import { AuthService } from 'src/app/go-local/services/auth.service';
+import { Usuario } from 'src/app/go-local/interfaces/Usuario';
+
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,7 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {
     this.authService.getLoggedInUser().subscribe((user) => {
       if (user) {
-        this.router.navigate(['/']); // Redirecciona si el usuario está autenticado
+        this.router.navigate(['/']);
       }
     });
   }
@@ -25,10 +27,9 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).subscribe(
       (user: Usuario) => {
         if (user) {
-          this.authService.setLoggedInUser(user); // Almacena los detalles del usuario en el servicio de autenticación
-          this.router.navigate(['/']); // Redirecciona al inicio después del inicio de sesión exitoso
+          this.authService.setLoggedInUser(user);
+          this.router.navigate(['/']);
         } else {
-          // Manejar el caso en que no se reciban datos de usuario
           this.errorMessage = 'No se han recibido datos de usuario.';
         }
       },
@@ -48,7 +49,7 @@ export class LoginComponent {
   }
 
   logout() {
-    this.authService.logout(); // Maneja el cierre de sesión
-    this.router.navigate(['/login']); // Redirecciona al usuario a la página de inicio de sesión
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }
