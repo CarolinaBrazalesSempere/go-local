@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 export interface Usuario {
   idUsuario: number;
   dni: string;
@@ -53,5 +52,9 @@ export class AuthService {
   updateLoggedInUser(user: Usuario): void {
     localStorage.setItem('userData', JSON.stringify(user));
     this.loggedInUserSubject.next(user);
+  }
+
+  isLoggedIn(): boolean {
+    return this.loggedInUserSubject.value !== null;
   }
 }
