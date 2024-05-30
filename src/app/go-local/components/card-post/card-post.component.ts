@@ -4,8 +4,10 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+
 import { BlogService } from '../../pages/blog/services/blog.service';
 import { PostBlog } from '../../interfaces/PostBlog';
+
 
 @Component({
   selector: 'gl-card-post',

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Itinerario } from '../../interfaces/itinerario';
 import { ApiService } from 'src/app/api.service';
 
+
 @Component({
   selector: 'gl-card-guide-destination',
   templateUrl: './card-guide-destination.component.html',

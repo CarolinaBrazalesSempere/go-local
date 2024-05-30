@@ -7,6 +7,7 @@ import { Itinerario } from '../../interfaces/itinerario';
 import { Reseña } from '../../interfaces/Reseña';
 import { Reserva } from '../../interfaces/reserva';
 
+
 @Component({
   selector: 'gl-ficha-reserva',
   templateUrl: './ficha-reserva.component.html',

@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { FaqsModalService } from '../../services/faqs-modal.service';
 
+
 @Component({
   selector: 'app-faqs-modal',
   templateUrl: './faqs-modal.component.html',

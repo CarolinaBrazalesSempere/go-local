@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../services/blog.service';
 import { PostBlog } from 'src/app/go-local/interfaces/PostBlog';
 
+
 @Component({
   selector: 'app-blog',
   templateUrl: './blog-pages.component.html',

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { FaqsModalService } from '../../services/faqs-modal.service';
 
+
 @Component({
   selector: 'app-faqs-page',
   templateUrl: './faqs-page.component.html',

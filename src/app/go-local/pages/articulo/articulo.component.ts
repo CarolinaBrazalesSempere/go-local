@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../blog/services/blog.service';
 import { PostBlog } from '../../interfaces/PostBlog';
 
+
 @Component({
   selector: 'app-articulo',
   templateUrl: './articulo.component.html',
