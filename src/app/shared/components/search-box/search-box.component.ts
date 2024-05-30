@@ -68,8 +68,6 @@ export class SearchBoxComponent {
       } catch (error) {
         console.error('Error en la búsqueda:', error);
       }
-    } else {
-      console.log('Formulario inválido');
     }
   }
 }

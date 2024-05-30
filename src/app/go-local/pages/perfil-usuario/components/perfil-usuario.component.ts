@@ -77,11 +77,9 @@ export class PerfilUsuarioComponent implements OnInit {
 
     return this.rolesService.getRolesByUserId(this.loggedInUser.idUsuario).pipe(
       map((roles) => {
-        console.log('Roles del usuario:', roles);
         return roles.includes('ROL_GUIA');
       }),
-      catchError((error) => {
-        console.error('Error obteniendo roles:', error);
+      catchError(() => {
         return of(false);
       })
     );
@@ -91,10 +89,6 @@ export class PerfilUsuarioComponent implements OnInit {
     this.userProfile.getItinerarioByIdUsuario(idGuia).subscribe(
       (itinerario: Itinerario) => {
         this.itinerario = itinerario;
-        console.log(this.userProfile.getItinerarioByIdUsuario(idGuia));
-      },
-      (error) => {
-        console.error('Error obteniendo itinerario:', error);
       }
     );
   }

@@ -25,8 +25,6 @@ export class FichaGuiaComponent implements OnInit {
       this.idGuia = +params['idGuia'];
       this.apiService.getGuiaById(this.idGuia).subscribe((data) => {
         this.guia = data;
-        console.log(this.guia);
-
         this.apiService
           .getItinerarioByIdGuia(this.idGuia)
           .subscribe((itinerario) => {
