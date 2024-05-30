@@ -21,20 +21,17 @@
 }
 
 .accordion-button {
-
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: 140%;
 }
 
-/* Cambia el color del encabezado cuando está activo */
 .accordion-button:not(.collapsed) {
   background: rgba(242, 78, 30, 0.11);
   color: #3f3d56;
 }
 
-/* Elimina los bordes en los elementos activos*/
 .accordion-button:focus {
   box-shadow: none;
   outline: none;
