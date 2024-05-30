@@ -1,7 +1,7 @@
 #card-container {
   display: flex;
   flex-direction: row;
-  overflow-x: auto; /* Añade desplazamiento horizontal si es necesario */
+  overflow-x: auto;
 }
 
 .link-read-more {
