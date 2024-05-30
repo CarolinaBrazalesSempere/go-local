@@ -1,10 +1,11 @@
+import { catchError, map } from 'rxjs/operators';
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
 import { AuthService, Usuario } from '../../services/auth.service';
-import { UserProfileService } from './user-profile.service';
-import { ApiService } from 'src/app/api.service';
 import { Itinerario } from '../../interfaces/itinerario';
-import { Observable, catchError, map, of } from 'rxjs';
 import { RolesService } from '../../services/roles.service';
+import { UserProfileService } from './user-profile.service';
 
 
 @Component({
@@ -42,12 +43,10 @@ export class PerfilUsuarioComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private userProfile: UserProfileService,
-    private apiService: ApiService,
-    private rolesService: RolesService,
+    private rolesService: RolesService
   ) {}
 
   ngOnInit(): void {
-    // Obtener el usuario loggeado
     this.authService.getLoggedInUser().subscribe((user) => {
       this.loggedInUser = user;
       if (this.loggedInUser) {
@@ -63,7 +62,7 @@ export class PerfilUsuarioComponent implements OnInit {
     }
 
     this.isRolGuia().subscribe((isGuia) => {
-      this.esGuia = isGuia; // Actualiza la propiedad esGuia
+      this.esGuia = isGuia;
       if (this.esGuia) {
         this.loadItinerario(this.loggedInUser!.idUsuario);
       }
@@ -91,7 +90,7 @@ export class PerfilUsuarioComponent implements OnInit {
     this.userProfile.getItinerarioByIdUsuario(idGuia).subscribe(
       (itinerario: Itinerario) => {
         this.itinerario = itinerario;
-        console.log(this.userProfile.getItinerarioByIdUsuario(idGuia))
+        console.log(this.userProfile.getItinerarioByIdUsuario(idGuia));
       },
       (error) => {
         console.error('Error obteniendo itinerario:', error);
@@ -108,7 +107,6 @@ export class PerfilUsuarioComponent implements OnInit {
     if (this.loggedInUser && this.loggedInUser.idUsuario) {
       const observer = {
         next: (response: Usuario) => {
-          // Actualizar el localStorage y el usuario loggeado
           this.authService.updateLoggedInUser(response);
           this.loggedInUser = response;
           this.user = { ...response };
@@ -118,7 +116,6 @@ export class PerfilUsuarioComponent implements OnInit {
           console.error('Error: ', error);
         },
       };
-      // Asignar el id del usuario loggeado al usuario a actualizar
       this.user.idUsuario = this.loggedInUser.idUsuario;
       this.userProfile.onUpdate(this.user).subscribe(observer);
     } else {

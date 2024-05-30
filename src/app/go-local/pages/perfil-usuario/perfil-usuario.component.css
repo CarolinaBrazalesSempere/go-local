@@ -1,4 +1,4 @@
-.my-5-custom{
+.my-5-custom {
   margin-top: 72px;
   margin-bottom: 72px;
 }
@@ -10,15 +10,15 @@
   border-right: 0px;
 }
 
-.foto{
+.foto {
   margin-left: auto;
 }
 
-.boton{
+.boton {
   margin-top: -25px;
 }
 
-.formulario{
+.formulario {
   width: 60%;
 }
 
@@ -31,10 +31,9 @@
     order: initial !important;
   }
 
-  .form-foto .foto{
+  .form-foto .foto {
     margin: 0 auto;
     margin-top: 62px;
     margin-bottom: 62px;
   }
 }
-
