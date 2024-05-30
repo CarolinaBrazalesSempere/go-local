@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+
 import { Reseña } from 'src/app/go-local/interfaces/Reseña';
+
 
 @Component({
   selector: 'shared-opinion',
