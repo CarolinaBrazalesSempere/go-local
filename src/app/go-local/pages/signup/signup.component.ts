@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { SignupService } from './signup.service';
 import { UserSignUp } from '../../interfaces/UserSignUp';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-signup',
@@ -20,7 +22,6 @@ export class SignupComponent {
     contrasena: '',
   };
 
-  //Controlar el error mostrando un mensaje distinto con un objeto de errores
   errorMessages: { [key: string]: string } = {};
 
   constructor(private signUp: SignupService, private router: Router) {}
