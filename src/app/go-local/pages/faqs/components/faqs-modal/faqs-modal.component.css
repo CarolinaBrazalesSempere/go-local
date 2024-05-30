@@ -11,7 +11,6 @@
   font-size: 48px;
   font-weight: 700;
   line-height: 140%;
-
 }
 
 .close-button {
@@ -28,21 +27,21 @@
 }
 
 #name {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   border: none;
   border-radius: 8px;
   text-align: center;
 }
 
 #address {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   border: none;
   border-radius: 8px;
   text-align: center;
 }
 
 #message {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   border: none;
   border-radius: 8px;
 }
@@ -53,18 +52,18 @@
 }
 
 .form-check-input[type="checkbox"]:checked {
-  background-color: #F24E1E;
+  background-color: #f24e1e;
 }
 
 #terms-link {
-  color: #F24E1E;
+  color: #f24e1e;
 }
 
 #contact-button {
-  background-color: #F24E1E;
+  background-color: #f24e1e;
   border: none;
   border-radius: 8px;
-  color: #FCFCFC;
+  color: #fcfcfc;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -90,7 +89,6 @@
   #contact-button {
     width: 100%;
   }
-
 }
 
 @media (max-width: 576px) {

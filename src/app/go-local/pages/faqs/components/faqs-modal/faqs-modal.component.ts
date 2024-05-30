@@ -1,17 +1,16 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FaqsModalService } from '../../services/faqs-modal.service';
 
+import { FaqsModalService } from '../../services/faqs-modal.service';
 
 @Component({
   selector: 'app-faqs-modal',
   templateUrl: './faqs-modal.component.html',
-  styleUrls: ['./faqs-modal.component.css']
+  styleUrls: ['./faqs-modal.component.css'],
 })
 export class FaqsModalComponent implements OnInit {
   @ViewChild('faqsModal') modalElement!: ElementRef;
 
-  constructor(private faqsModalService: FaqsModalService) { }
-
+  constructor(private faqsModalService: FaqsModalService) {}
 
   ngOnInit() {
     this.faqsModalService.showModal$.subscribe(() => {
@@ -20,5 +19,4 @@ export class FaqsModalComponent implements OnInit {
       }
     });
   }
-
 }
