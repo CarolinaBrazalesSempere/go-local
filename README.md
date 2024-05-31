@@ -50,6 +50,8 @@ Para poblar de datos la base de datos ejecuta el script `datos_golocal.sql`.
 
 Asegúrate de que el servidor de la base de datos está en ejecución y ten cuenta que puede que sea necesario añadir la conexión a la base de datos en el JPA del proyecto del back-end.
 
+La estructura de la base de datos se puede consultar en el archivo `model_golocal.mwb`.
+
 ## Inicialización del proyecto
 
 ## Front-end
