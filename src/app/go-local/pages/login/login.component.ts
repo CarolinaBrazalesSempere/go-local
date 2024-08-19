@@ -38,8 +38,10 @@ export class LoginComponent {
           const errorBody = error.error;
           if (errorBody === 'Usuario incorrecto') {
             this.errorMessage = 'Usuario incorrecto';
-          } else {
+          } else if (errorBody === 'Contraseña incorrecta') {
             this.errorMessage = 'Contraseña incorrecta';
+          } else {
+            this.errorMessage = 'Error de autenticación.';
           }
         } else {
           this.errorMessage = 'Error en el servidor.';
@@ -47,6 +49,7 @@ export class LoginComponent {
       }
     );
   }
+
 
   logout() {
     this.authService.logout();

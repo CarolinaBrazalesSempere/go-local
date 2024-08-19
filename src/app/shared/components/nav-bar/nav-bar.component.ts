@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable, catchError, map, of } from 'rxjs';
 
 import { AuthService } from 'src/app/go-local/services/auth.service';
-import { RolesService } from 'src/app/go-local/services/roles.service';
+import { RolesService } from 'src/app/go-local/Services/roles.service';
 import { Usuario } from 'src/app/go-local/interfaces/Usuario';
 
 

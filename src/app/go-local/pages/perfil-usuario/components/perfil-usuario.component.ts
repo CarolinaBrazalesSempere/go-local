@@ -5,8 +5,8 @@ import { catchError, map } from 'rxjs/operators';
 import { Usuario } from 'src/app/go-local/interfaces/Usuario';
 import { Itinerario } from 'src/app/go-local/interfaces/itinerario';
 import { AuthService } from 'src/app/go-local/services/auth.service';
-import { RolesService } from 'src/app/go-local/services/roles.service';
 import { UserProfileService } from '../services/user-profile.service';
+import { RolesService } from 'src/app/go-local/Services/roles.service';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -106,6 +106,13 @@ export class PerfilUsuarioComponent implements OnInit {
           this.loggedInUser = response;
           this.user = { ...response };
           this.updateSuccessMessage = 'Perfil actualizado con éxito';
+          //Hacemos que si los inputs tienen su propio valor se desactive el poder escribir y se ponga como esta por defecto
+          //Desabled
+          for (const key in this.editingField) {
+          if (this.editingField.hasOwnProperty(key)) {
+            this.editingField[key] = false;
+          }
+        }
         },
         error: (error: any) => {
           console.error('Error: ', error);
