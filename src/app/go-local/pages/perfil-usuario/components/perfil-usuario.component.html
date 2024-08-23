@@ -109,6 +109,10 @@
         {{ updateSuccessMessage }}
         <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
+      <div *ngIf="cancelSuccessMessage" class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+        {{ cancelSuccessMessage }}
+        <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
 
     </div>
   </div>

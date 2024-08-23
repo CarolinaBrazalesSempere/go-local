@@ -6,6 +6,7 @@ import { Guia } from '../../interfaces/Guia';
 import { Itinerario } from '../../interfaces/itinerario';
 import { Reseña } from '../../interfaces/Reseña';
 import { Reserva } from '../../interfaces/reserva';
+import { ReservaService } from '../../pages/perfil-usuario/services/reserva.service';
 
 
 @Component({
@@ -22,8 +23,12 @@ export class FichaReservaComponent implements OnInit {
   ciudad!: Ciudad;
   averageReview: number = 0;
   reservas: Reserva[] = [];
+  cancelSuccessMessage : string | null = null;
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private reservaService: ReservaService
+  ) {}
 
   ngOnInit(): void {
     this.apiService.getGuiaById(this.idGuia).subscribe((data) => {
@@ -54,10 +59,17 @@ export class FichaReservaComponent implements OnInit {
   }
 
   cancelarReserva(idReserva: number): void {
-    this.apiService.deleteReserva(idReserva).subscribe(() => {
-      this.reservas = this.reservas.filter(
-        (reserva) => reserva.idReserva !== idReserva
-      );
-    });
+    this.apiService.deleteReserva(idReserva).subscribe(
+      () => {
+        this.reservas = this.reservas.filter(
+          (reserva) => reserva.idReserva !== idReserva
+        );
+        this.reservaService.setCancelMessage('Reserva cancelada con éxito');
+      },
+      (error) => {
+        console.error('Error al cancelar la reserva: ', error);
+        this.reservaService.setCancelMessage('Error al cancelar la reserva');
+      }
+    );
   }
 }

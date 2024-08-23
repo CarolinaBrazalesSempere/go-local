@@ -7,6 +7,7 @@ import { Itinerario } from 'src/app/go-local/interfaces/itinerario';
 import { AuthService } from 'src/app/go-local/services/auth.service';
 import { UserProfileService } from '../services/user-profile.service';
 import { RolesService } from 'src/app/go-local/Services/roles.service';
+import { ReservaService } from '../services/reserva.service';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -36,6 +37,7 @@ export class PerfilUsuarioComponent implements OnInit {
     contrasena: false,
   };
   updateSuccessMessage: string | null = null;
+  cancelSuccessMessage: string | null = null;
   esGuia: boolean = false;
   @Input()
   itinerario!: Itinerario;
@@ -43,7 +45,8 @@ export class PerfilUsuarioComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private userProfile: UserProfileService,
-    private rolesService: RolesService
+    private rolesService: RolesService,
+    private reservaService: ReservaService
   ) {}
 
   ngOnInit(): void {
@@ -52,6 +55,15 @@ export class PerfilUsuarioComponent implements OnInit {
       if (this.loggedInUser) {
         this.user = { ...this.loggedInUser };
         this.checkIfUserIsGuia();
+      }
+    });
+    //Para poder poner el mensaje de reserva cancelada en el perfil de usuario
+    this.reservaService.cancelMessage$.subscribe((message) => {
+      if (message) {
+        this.cancelSuccessMessage = message;
+        setTimeout(() => {
+          this.cancelSuccessMessage = '';
+        }, 3000);
       }
     });
   }
@@ -124,4 +136,5 @@ export class PerfilUsuarioComponent implements OnInit {
       console.error('No hay usuario loggeado');
     }
   }
+
 }
