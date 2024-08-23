@@ -109,11 +109,6 @@
         {{ updateSuccessMessage }}
         <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
-      <div *ngIf="cancelSuccessMessage" class="alert alert-success alert-dismissible fade show mt-3" role="alert">
-        {{ cancelSuccessMessage }}
-        <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-
     </div>
   </div>
 </div>
@@ -257,6 +252,10 @@
   <div class="reservas mb-5 mt-5">
     <gl-ficha-reserva [idGuia]="loggedInUser?.idUsuario ?? 0" [idCliente]="loggedInUser?.idUsuario ?? 0">
     </gl-ficha-reserva>
+  </div>
+  <div *ngIf="cancelSuccessMessage" class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+    {{ cancelSuccessMessage }}
+    <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 
 </div>
