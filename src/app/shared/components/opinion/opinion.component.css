@@ -7,7 +7,7 @@
 }
 
 .mr-4 {
-  margin-right: 60px !important;
+  margin-right: 100% !important;
 }
 
 .rounded-box {
@@ -43,9 +43,14 @@
 .opinion-container {
   display: flex;
   align-items: center;
-  gap: 8px;
+
 }
 
 .card {
   padding: 8px;
+}
+
+.ml-50{
+  margin-left: 80px;
+
 }

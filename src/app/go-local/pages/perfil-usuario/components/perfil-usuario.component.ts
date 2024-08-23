@@ -5,8 +5,12 @@ import { catchError, map } from 'rxjs/operators';
 import { Usuario } from 'src/app/go-local/interfaces/Usuario';
 import { Itinerario } from 'src/app/go-local/interfaces/itinerario';
 import { AuthService } from 'src/app/go-local/services/auth.service';
-import { RolesService } from 'src/app/go-local/services/roles.service';
 import { UserProfileService } from '../services/user-profile.service';
+import { RolesService } from 'src/app/go-local/Services/roles.service';
+import { ReservaService } from '../services/reserva.service';
+import { ApiService } from 'src/app/api.service';
+import { Reserva } from 'src/app/go-local/interfaces/reserva';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -36,14 +40,19 @@ export class PerfilUsuarioComponent implements OnInit {
     contrasena: false,
   };
   updateSuccessMessage: string | null = null;
+  cancelSuccessMessage: string | null = null;
   esGuia: boolean = false;
   @Input()
   itinerario!: Itinerario;
+  reservas: Reserva[] = [];
 
   constructor(
     private authService: AuthService,
     private userProfile: UserProfileService,
-    private rolesService: RolesService
+    private rolesService: RolesService,
+    private reservaService: ReservaService,
+    private apiService: ApiService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -54,6 +63,18 @@ export class PerfilUsuarioComponent implements OnInit {
         this.checkIfUserIsGuia();
       }
     });
+    //Para poder poner el mensaje de reserva cancelada en el perfil de usuario
+    this.reservaService.cancelMessage$.subscribe((message) => {
+      if (message) {
+        this.cancelSuccessMessage = message;
+        setTimeout(() => {
+          this.cancelSuccessMessage = '';
+        }, 3000);
+      }
+    });
+
+    this.loadReservas();
+
   }
 
   checkIfUserIsGuia(): void {
@@ -92,6 +113,12 @@ export class PerfilUsuarioComponent implements OnInit {
       });
   }
 
+  loadReservas(){
+    this.apiService.getAllReservas().subscribe((data) => {
+      this.reservas = data;
+    });
+  }
+
   onEdit(field: string, event: Event) {
     event.preventDefault();
     this.editingField[field] = !this.editingField[field];
@@ -106,6 +133,13 @@ export class PerfilUsuarioComponent implements OnInit {
           this.loggedInUser = response;
           this.user = { ...response };
           this.updateSuccessMessage = 'Perfil actualizado con éxito';
+          //Hacemos que si los inputs tienen su propio valor se desactive el poder escribir y se ponga como esta por defecto
+          //Desabled
+          for (const key in this.editingField) {
+          if (this.editingField.hasOwnProperty(key)) {
+            this.editingField[key] = false;
+          }
+        }
         },
         error: (error: any) => {
           console.error('Error: ', error);
@@ -116,5 +150,11 @@ export class PerfilUsuarioComponent implements OnInit {
     } else {
       console.error('No hay usuario loggeado');
     }
+  }
+
+  navigateToHome(): void {
+    this.router.navigate(['/']).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 }

@@ -48,6 +48,15 @@ textarea {
   padding: 16px;
 }
 
+.no-reservas-message{
+  margin-top: -50px;
+  margin-bottom: 50px;
+}
+
+.btn-home{
+
+}
+
 @media (max-width: 967px) {
   .formulario {
     width: 100%;
