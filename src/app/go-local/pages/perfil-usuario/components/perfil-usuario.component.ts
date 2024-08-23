@@ -8,6 +8,9 @@ import { AuthService } from 'src/app/go-local/services/auth.service';
 import { UserProfileService } from '../services/user-profile.service';
 import { RolesService } from 'src/app/go-local/Services/roles.service';
 import { ReservaService } from '../services/reserva.service';
+import { ApiService } from 'src/app/api.service';
+import { Reserva } from 'src/app/go-local/interfaces/reserva';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -41,12 +44,15 @@ export class PerfilUsuarioComponent implements OnInit {
   esGuia: boolean = false;
   @Input()
   itinerario!: Itinerario;
+  reservas: Reserva[] = [];
 
   constructor(
     private authService: AuthService,
     private userProfile: UserProfileService,
     private rolesService: RolesService,
-    private reservaService: ReservaService
+    private reservaService: ReservaService,
+    private apiService: ApiService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -66,6 +72,9 @@ export class PerfilUsuarioComponent implements OnInit {
         }, 3000);
       }
     });
+
+    this.loadReservas();
+
   }
 
   checkIfUserIsGuia(): void {
@@ -104,6 +113,12 @@ export class PerfilUsuarioComponent implements OnInit {
       });
   }
 
+  loadReservas(){
+    this.apiService.getAllReservas().subscribe((data) => {
+      this.reservas = data;
+    });
+  }
+
   onEdit(field: string, event: Event) {
     event.preventDefault();
     this.editingField[field] = !this.editingField[field];
@@ -137,4 +152,9 @@ export class PerfilUsuarioComponent implements OnInit {
     }
   }
 
+  navigateToHome(): void {
+    this.router.navigate(['/']).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 }

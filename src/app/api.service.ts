@@ -8,6 +8,7 @@ import { Guia } from './go-local/interfaces/Guia';
 import { Itinerario } from './go-local/interfaces/itinerario';
 import { Reseña } from './go-local/interfaces/Reseña';
 import { Reserva } from './go-local/interfaces/reserva';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -16,7 +17,9 @@ import { Reserva } from './go-local/interfaces/reserva';
 export class ApiService {
   private baseUrl = 'http://localhost:8083';
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) {}
 
   buscarItinerariosPorCiudadPaisYFecha(
     nombreCiudad: string,
@@ -70,6 +73,10 @@ export class ApiService {
     return this.http.get<Ciudad>(`${this.baseUrl}/guia/ciudad/${idGuia}`);
   }
 
+  getAllReservas() : Observable<Reserva[]>{
+    return this.http.get<Reserva[]>(`${this.baseUrl}//reserva/todos`)
+  }
+
   getReservasByUserId(userId: number): Observable<Reserva[]> {
     return this.http.get<Reserva[]>(`${this.baseUrl}/reserva/buscar/${userId}`);
   }
@@ -79,4 +86,5 @@ export class ApiService {
       `${this.baseUrl}/reserva/borrar/${idReserva}`
     );
   }
+
 }

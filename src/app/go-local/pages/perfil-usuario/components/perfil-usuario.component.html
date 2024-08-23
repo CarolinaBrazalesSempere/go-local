@@ -246,7 +246,6 @@
     </div>
   </div>
 </div>
-
 <div class="container" *ngIf="!esGuia">
   <p class="fw-bold fs-4">MIS RESERVAS</p>
   <div class="reservas mb-5 mt-5">
@@ -256,6 +255,15 @@
   <div *ngIf="cancelSuccessMessage" class="alert alert-success alert-dismissible fade show mt-3" role="alert">
     {{ cancelSuccessMessage }}
     <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  <div *ngIf="reservas.length === 0" class="no-reservas-message">
+    <p> No tienes reservas en este momento. Te invitamos a explorar nuestras opciones. </p>
+    
+    <!--
+    Lo intente poniendo routerlink directamente al home pero mandaba a la parte de abajo del todo de la home en vez de arriba
+    -->
+    <button  class="btn-home-reservas mt-3" (click)="navigateToHome()">¡Haz clic aquí para comenzar!</button>
   </div>
 
 </div>

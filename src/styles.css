@@ -101,6 +101,18 @@ a {
   border: none;
 }
 
+.btn-home-reservas {
+  width: 260px;
+  height: 60px;
+  background-color: #f24e1e;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.32px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  border: none;
+}
+
 .align-self {
   align-self: center;
 }
