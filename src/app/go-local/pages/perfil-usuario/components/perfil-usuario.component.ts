@@ -61,6 +61,7 @@ export class PerfilUsuarioComponent implements OnInit {
       if (this.loggedInUser) {
         this.user = { ...this.loggedInUser };
         this.checkIfUserIsGuia();
+        this.loadReservas(this.loggedInUser.idUsuario);
       }
     });
     //Para poder poner el mensaje de reserva cancelada en el perfil de usuario
@@ -72,9 +73,6 @@ export class PerfilUsuarioComponent implements OnInit {
         }, 3000);
       }
     });
-
-    this.loadReservas();
-
   }
 
   checkIfUserIsGuia(): void {
@@ -113,9 +111,11 @@ export class PerfilUsuarioComponent implements OnInit {
       });
   }
 
-  loadReservas(){
-    this.apiService.getAllReservas().subscribe((data) => {
-      this.reservas = data;
+  loadReservas(idUsuario: number): void{
+    this.apiService
+      .getReservasByUserId(idUsuario)
+      .subscribe((reservas: Reserva[]) => {
+        this.reservas = reservas;
     });
   }
 
