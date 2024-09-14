@@ -7,7 +7,7 @@ import { Itinerario } from 'src/app/go-local/interfaces/itinerario';
 import { AuthService } from 'src/app/go-local/services/auth.service';
 import { UserProfileService } from '../services/user-profile.service';
 import { RolesService } from 'src/app/go-local/Services/roles.service';
-import { ReservaService } from '../services/reserva.service';
+import { ReservaService } from '../../../Services/reserva.service';
 import { ApiService } from 'src/app/api.service';
 import { Reserva } from 'src/app/go-local/interfaces/reserva';
 import { Router } from '@angular/router';
@@ -56,6 +56,9 @@ export class PerfilUsuarioComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Limpiar el mensaje de reserva cancelada al inicializar el componente
+    this.reservaService.limpiarCancelMessage();
+
     this.authService.getLoggedInUser().subscribe((user) => {
       this.loggedInUser = user;
       if (this.loggedInUser) {
@@ -64,12 +67,14 @@ export class PerfilUsuarioComponent implements OnInit {
         this.loadReservas(this.loggedInUser.idUsuario);
       }
     });
-    //Para poder poner el mensaje de reserva cancelada en el perfil de usuario
-    this.reservaService.cancelMessage$.subscribe((message) => {
+
+    // Suscribirse a los mensajes de cancelación y mostrarlos solo en este componente
+    this.reservaService.message$.subscribe((message) => {
       if (message) {
         this.cancelSuccessMessage = message;
         setTimeout(() => {
           this.cancelSuccessMessage = '';
+          this.reservaService.limpiarCancelMessage();
         }, 3000);
       }
     });
