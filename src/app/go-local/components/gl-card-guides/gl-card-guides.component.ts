@@ -17,6 +17,7 @@ export class GlCardGuidesComponent implements OnInit {
 
   constructor(private apiService: ApiService) {}
 
+
   ngOnInit(): void {
     this.apiService.getGuides().subscribe((data) => {
       this.guides = data.sort((a, b) => a.idGuia - b.idGuia).slice(0, 4);

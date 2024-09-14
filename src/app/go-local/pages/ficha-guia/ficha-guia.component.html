@@ -13,6 +13,9 @@
       </div>
     </div>
   </div>
+  <div *ngIf="cancelSuccessMessage" class="alert alert-success mt-4">
+    {{ cancelSuccessMessage }}
+  </div>
 
   <div class="opinion mt-5">
     <p class="fw-bold fs-4">LO QUE OPINAN DE {{guia.usuario.nombre | uppercase}} {{guia.usuario.apellidos | uppercase}}
@@ -21,5 +24,6 @@
   <div class="opinion-container mt-5">
     <shared-opinion *ngFor="let rev of reviews" [reviews]="rev" class="opinion-cards"></shared-opinion>
   </div>
+
 
 </div>

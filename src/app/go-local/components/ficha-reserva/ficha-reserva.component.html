@@ -15,10 +15,10 @@
         </div>
         <p *ngIf="reserva.itinerario.guia?.idioma" class="mt-3">Idiomas: {{ reserva.itinerario.guia.idioma }}</p>
         <p *ngIf="reserva.itinerario?.precio" class="mt-3">Precio: {{ reserva.itinerario.precio }}€ día</p>
-        <p *ngIf="reserva.itinerario?.fechaDisponible" class="mt-3">{{ reserva.itinerario.fechaDisponible }}</p>
+        <p *ngIf="reserva.itinerario?.fechaDisponible" class="mt-3">Fecha: {{ reserva.itinerario.fechaDisponible }}</p>
       </div>
       <button class="btn-medium mt-3 mb-4" (click)="cancelarReserva(reserva.idReserva)">Cancelar</button>
     </div>
-    
+
   </div>
 </div>

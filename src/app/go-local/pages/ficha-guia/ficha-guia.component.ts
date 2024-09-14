@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 import { Guia } from '../../interfaces/Guia';
 import { Reseña } from '../../interfaces/Reseña';
 import { ApiService } from 'src/app/api.service';
 import { Itinerario } from '../../interfaces/itinerario';
-
+import { ReservaService } from '../../Services/reserva.service';
+// Asegúrate de importar el servicio
 
 @Component({
   selector: 'app-ficha-guia',
@@ -17,23 +19,37 @@ export class FichaGuiaComponent implements OnInit {
   guia!: Guia;
   reviews: Reseña[] = [];
   itinerario!: Itinerario;
+  cancelSuccessMessage: string = ''; // Campo para el mensaje de éxito
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private apiService: ApiService,
+    private reservaService: ReservaService // Inyección del servicio
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.idGuia = +params['idGuia'];
       this.apiService.getGuiaById(this.idGuia).subscribe((data) => {
         this.guia = data;
-        this.apiService
-          .getItinerarioByIdGuia(this.idGuia)
-          .subscribe((itinerario) => {
+        this.apiService.getItinerarioByIdGuia(this.idGuia).subscribe((itinerario) => {
             this.itinerario = itinerario;
           });
       });
       this.apiService.getReseñasByGuiaId(this.idGuia).subscribe((data) => {
         this.reviews = data;
       });
+    });
+
+    // Suscribirse al observable del mensaje de cancelación
+    this.reservaService.message$.subscribe((message) => {
+      if (message) {
+        this.cancelSuccessMessage = message;
+        setTimeout(() => {
+          this.cancelSuccessMessage = '';
+          this.reservaService.limpiarCancelMessage();
+        }, 3000);
+      }
     });
   }
 }

@@ -6,7 +6,7 @@ import { Guia } from '../../interfaces/Guia';
 import { Itinerario } from '../../interfaces/itinerario';
 import { Reseña } from '../../interfaces/Reseña';
 import { Reserva } from '../../interfaces/reserva';
-import { ReservaService } from '../../pages/perfil-usuario/services/reserva.service';
+import { ReservaService } from '../../Services/reserva.service';
 
 
 @Component({
@@ -65,7 +65,11 @@ export class FichaReservaComponent implements OnInit {
           (reserva) => reserva.idReserva !== idReserva
         );
         this.reservaService.setCancelMessage('Reserva cancelada con éxito');
+        setTimeout(() => {
+          window.location.reload(); // Recargar la página
+        }, 1000);  // Esperar 1 segundo antes de recargar (opcional)
       },
+
       (error) => {
         console.error('Error al cancelar la reserva: ', error);
         this.reservaService.setCancelMessage('Error al cancelar la reserva');
