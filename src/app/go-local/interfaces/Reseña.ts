@@ -7,4 +7,5 @@ export interface Reseña {
   contenido: string;
   nombreCliente: string;
   nombreCiudad: string;
+  nombrePais: string;
 }
