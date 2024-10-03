@@ -23,12 +23,13 @@ export class TarjetaGuiaComponent implements OnInit {
   averageReview: number = 0;
   reserva!: Reserva;
   idUsuario!: number;
+  isError: boolean = false;
 
   constructor(
     private apiService: ApiService,
     private reservaService: ReservaService,
     private authService: AuthService,
-    private clienteService: ClienteService  // Asegúrate de que esté en private
+    private clienteService: ClienteService // Asegúrate de que esté en private
   ) {}
 
   ngOnInit(): void {
@@ -38,40 +39,50 @@ export class TarjetaGuiaComponent implements OnInit {
         this.idUsuario = user.idUsuario;
 
         // Obtener el cliente usando el ID del usuario
-        this.clienteService.getClienteByUserId(this.idUsuario).subscribe((cliente) => {
-          // Cargar los datos del guía
-          this.apiService.getGuiaById(this.idGuia).subscribe((guiaData) => {
-            this.guia = guiaData;
+        this.clienteService
+          .getClienteByUserId(this.idUsuario)
+          .subscribe((cliente) => {
+            // Cargar los datos del guía
+            this.apiService.getGuiaById(this.idGuia).subscribe((guiaData) => {
+              this.guia = guiaData;
 
-            // Cargar el itinerario del guía
-            this.apiService.getItinerarioByIdGuia(this.idGuia).subscribe((itinerarioData) => {
-              this.itinerario = itinerarioData;
+              // Cargar el itinerario del guía
+              this.apiService
+                .getItinerarioByIdGuia(this.idGuia)
+                .subscribe((itinerarioData) => {
+                  this.itinerario = itinerarioData;
 
-              // Inicializa la reserva con los datos del itinerario y cliente
-              this.reserva = {
-                idReserva: 0,  // Esto puede ser un valor por defecto o autogenerado
-                fecha: this.itinerario.fechaDisponible,  // Usa la fecha del itinerario del guía
-                itinerario: this.itinerario,  // Asigna el objeto itinerario completo
-                cliente: cliente,  // Asigna el objeto cliente completo
-              };
+                  // Inicializa la reserva con los datos del itinerario y cliente
+                  this.reserva = {
+                    idReserva: 0, // Esto puede ser un valor por defecto o autogenerado
+                    fecha: this.itinerario.fechaDisponible, // Usa la fecha del itinerario del guía
+                    itinerario: this.itinerario, // Asigna el objeto itinerario completo
+                    cliente: cliente, // Asigna el objeto cliente completo
+                  };
+                });
+
+              // Cargar la ciudad del guía
+              this.apiService
+                .getCiudadByGuiaId(this.idGuia)
+                .subscribe((ciudadData) => {
+                  this.ciudad = ciudadData;
+                });
             });
 
-            // Cargar la ciudad del guía
-            this.apiService.getCiudadByGuiaId(this.idGuia).subscribe((ciudadData) => {
-              this.ciudad = ciudadData;
-            });
-          });
+            // Cargar las reseñas del guía
+            this.apiService
+              .getReseñasByGuiaId(this.idGuia)
+              .subscribe((reviewsData) => {
+                this.reviews = reviewsData;
+              });
 
-          // Cargar las reseñas del guía
-          this.apiService.getReseñasByGuiaId(this.idGuia).subscribe((reviewsData) => {
-            this.reviews = reviewsData;
+            // Cargar la puntuación promedio del guía
+            this.apiService
+              .getMediaPuntuacionByGuiaId(this.idGuia)
+              .subscribe((averageReviewData) => {
+                this.averageReview = averageReviewData;
+              });
           });
-
-          // Cargar la puntuación promedio del guía
-          this.apiService.getMediaPuntuacionByGuiaId(this.idGuia).subscribe((averageReviewData) => {
-            this.averageReview = averageReviewData;
-          });
-        });
       }
     });
   }
@@ -79,30 +90,38 @@ export class TarjetaGuiaComponent implements OnInit {
   crearReserva(): void {
     this.authService.getLoggedInUser().subscribe((user) => {
       if (user) {
-        this.clienteService.getClienteByUserId(user.idUsuario).subscribe((cliente) => {
-          this.apiService.getItinerarioByIdGuia(this.idGuia).subscribe((itinerarioData) => {
-            this.reserva = {
-              idReserva: 0,  // Puede ser 0 si se genera en el backend
-              fecha: this.itinerario.fechaDisponible,  // Usa la fecha del itinerario del guía
-              itinerario: this.itinerario,  // Incluye el itinerario completo
-              cliente: cliente,  // Incluye el cliente completo
-            };
+        this.clienteService
+          .getClienteByUserId(user.idUsuario)
+          .subscribe((cliente) => {
+            this.apiService
+              .getItinerarioByIdGuia(this.idGuia)
+              .subscribe((itinerarioData) => {
+                this.reserva = {
+                  idReserva: 0,
+                  fecha: this.itinerario.fechaDisponible,
+                  itinerario: this.itinerario,
+                  cliente: cliente,
+                };
 
-            // Solo enviamos la reserva con la estructura adecuada
-            this.reservaService.createReserva(this.reserva).subscribe(
-              () => {
-                this.reservaService.setCancelMessage('Reserva creada con éxito');
-              },
-              (error) => {
-                console.error('Error al crear la reserva: ', error);
-                this.reservaService.setCancelMessage('Error al crear la reserva');
-              }
-            );
+                // Solo enviamos la reserva con la estructura adecuada
+                this.reservaService.createReserva(this.reserva).subscribe(
+                  () => {
+                    this.reservaService.setCancelMessage(
+                      'Reserva creada con éxito'
+                    );
+                    this.isError = false;
+                  },
+                  (error) => {
+                    console.error('Error al crear la reserva: ', error);
+                    this.reservaService.setCancelMessage(
+                      'Error al crear la reserva'
+                    );
+                    this.isError = true;
+                  }
+                );
+              });
           });
-        });
       }
     });
   }
-
-
 }

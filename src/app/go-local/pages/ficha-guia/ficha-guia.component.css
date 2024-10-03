@@ -32,6 +32,18 @@ hr {
   width: 48%;
 }
 
+/* Estilos para los mensajes de éxito */
+.custom-alert-success {
+  background-color: #44700E;
+  color: #ffffff;
+}
+
+/* Estilos para los mensajes de error */
+.custom-alert-error {
+  background-color: #D0090B;
+  color: #ffffff;
+}
+
 @media (max-width: 967px) {
   .d-flex {
     display: grid !important;

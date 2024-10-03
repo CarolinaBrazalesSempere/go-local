@@ -24,6 +24,7 @@ export class FichaReservaComponent implements OnInit {
   averageReview: number = 0;
   reservas: Reserva[] = [];
   cancelSuccessMessage : string | null = null;
+  isError: boolean = false;
 
   constructor(
     private apiService: ApiService,
@@ -65,14 +66,16 @@ export class FichaReservaComponent implements OnInit {
           (reserva) => reserva.idReserva !== idReserva
         );
         this.reservaService.setCancelMessage('Reserva cancelada con éxito');
+        this.isError = false;
         setTimeout(() => {
-          window.location.reload(); // Recargar la página
-        }, 1000);  // Esperar 1 segundo antes de recargar (opcional)
+          window.location.reload();
+        }, 1000);  // Esperar 1 segundo antes de recargar
       },
 
       (error) => {
         console.error('Error al cancelar la reserva: ', error);
         this.reservaService.setCancelMessage('Error al cancelar la reserva');
+        this.isError = true;
       }
     );
   }
