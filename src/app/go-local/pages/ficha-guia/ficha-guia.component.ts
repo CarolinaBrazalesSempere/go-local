@@ -19,12 +19,14 @@ export class FichaGuiaComponent implements OnInit {
   guia!: Guia;
   reviews: Reseña[] = [];
   itinerario!: Itinerario;
-  cancelSuccessMessage: string = ''; // Campo para el mensaje de éxito
+  cancelSuccessMessage: string = '';
+  isError: boolean = false;
+
 
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
-    private reservaService: ReservaService // Inyección del servicio
+    private reservaService: ReservaService
   ) {}
 
   ngOnInit(): void {
@@ -45,10 +47,12 @@ export class FichaGuiaComponent implements OnInit {
     this.reservaService.message$.subscribe((message) => {
       if (message) {
         this.cancelSuccessMessage = message;
+        this.isError = this.cancelSuccessMessage.includes('Error');
+
         setTimeout(() => {
           this.cancelSuccessMessage = '';
           this.reservaService.limpiarCancelMessage();
-        }, 3000);
+        }, 2000); // para que dure solo 2 segundo el mensaje
       }
     });
   }

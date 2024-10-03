@@ -57,6 +57,19 @@ textarea {
 
 }
 
+.custom-alert-success {
+  background-color: #44700E;
+  color: #ffffff;
+}
+
+.custom-alert-error {
+  background-color: #ffeeba;
+  color: #D0090B;
+}
+
+
+
+
 @media (max-width: 967px) {
   .formulario {
     width: 100%;

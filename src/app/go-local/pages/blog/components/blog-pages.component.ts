@@ -13,7 +13,7 @@ export class BlogPageComponent implements OnInit {
   blogEntries: PostBlog[] = [];
   displayedEntries: PostBlog[] = [];
   currentPage: number = 0;
-  pageSize: number = 7;
+  pageSize: number = 3; // lo he cambiado para ver como salen mas opciones de pestañas (Antes estaba en 7 para que se viesen todos los articulos en una sola pagina)
   totalPages: number = 0;
 
   constructor(private blogService: BlogService) {}

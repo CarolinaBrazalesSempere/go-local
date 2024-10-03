@@ -49,6 +49,7 @@ a {
   cursor: pointer;
 }
 
+
 @media (max-width: 576px) {
   h1 {
     font-size: 1.2rem;

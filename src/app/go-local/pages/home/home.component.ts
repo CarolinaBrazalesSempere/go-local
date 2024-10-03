@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from 'src/app/go-local/services/auth.service';
 import { Usuario } from '../../interfaces/Usuario';
 
 @Component({

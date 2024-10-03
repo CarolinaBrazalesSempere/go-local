@@ -13,9 +13,12 @@
       </div>
     </div>
   </div>
-  <div *ngIf="cancelSuccessMessage" class="alert alert-success mt-4">
-    {{ cancelSuccessMessage }}
-  </div>
+  <div *ngIf="cancelSuccessMessage"
+     [ngClass]="{'custom-alert-success': !isError, 'custom-alert-error': isError, 'custom-alert': true}"
+     role="alert" class="alert fade show mt-3">
+  {{ cancelSuccessMessage }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 
   <div class="opinion mt-5">
     <p class="fw-bold fs-4">LO QUE OPINAN DE {{guia.usuario.nombre | uppercase}} {{guia.usuario.apellidos | uppercase}}

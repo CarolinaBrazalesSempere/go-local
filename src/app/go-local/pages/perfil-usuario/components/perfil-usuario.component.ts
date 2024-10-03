@@ -45,6 +45,7 @@ export class PerfilUsuarioComponent implements OnInit {
   @Input()
   itinerario!: Itinerario;
   reservas: Reserva[] = [];
+  isError: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -68,14 +69,14 @@ export class PerfilUsuarioComponent implements OnInit {
       }
     });
 
-    // Suscribirse a los mensajes de cancelación y mostrarlos solo en este componente
     this.reservaService.message$.subscribe((message) => {
       if (message) {
         this.cancelSuccessMessage = message;
+        this.isError = this.cancelSuccessMessage.includes('Error');
         setTimeout(() => {
           this.cancelSuccessMessage = '';
           this.reservaService.limpiarCancelMessage();
-        }, 3000);
+        }, 2000);
       }
     });
   }
