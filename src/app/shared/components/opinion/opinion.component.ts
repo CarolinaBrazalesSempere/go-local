@@ -9,7 +9,4 @@ import { Reseña } from 'src/app/go-local/interfaces/Reseña';
 export class OpinionComponent {
   @Input() reviews!: Reseña;
 
-  ngOnInit() {
-    console.log(this.reviews); // Verifica que aquí se están recibiendo los datos correctamente
-  }
 }
